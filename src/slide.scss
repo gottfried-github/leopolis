@@ -25,3 +25,22 @@
   height: 100%;
   background-color: grey;
 }
+
+@media (max-width: 850px) {
+  .ratio {
+    padding-bottom: 165%;
+  }
+
+  .content {
+    // box-sizing: border-box;
+    position: absolute;
+
+    background-image: url('up-bckrd-mobile_01-01plain.svg');
+    background-size: cover;
+    background-position: center;
+
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+  }
+}
