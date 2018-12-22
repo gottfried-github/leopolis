@@ -1,7 +1,8 @@
 .ratio-wrap {
   // box-sizing: border-box;
 
-  width: 500px;
+  // width: 100%;
+  // width: 500px;
   // width: 500px;
   // height: 50px;
 }
@@ -16,8 +17,9 @@
   // box-sizing: border-box;
   position: absolute;
 
-  // background-image: url('out-bckd_01-01plain.svg');
-  // background-size: cover;
+  background-image: url('out-bckd_01-01plain.svg');
+  background-size: cover;
+  background-position: center;
 
   width: 100%;
   height: 100%;

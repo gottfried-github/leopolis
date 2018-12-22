@@ -1,5 +1,10 @@
 @import './slide.scss';
 
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+
 .content {
   // background-image: url('out-bckd_01-01plain.svg');
   // background-size: cover;
