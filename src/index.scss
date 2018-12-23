@@ -1,7 +1,25 @@
-@import './slide-generic.scss';
+@import './slide.scss';
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
 
 .content {
-  background-image: url('out-bckd_01-01plain.svg');
-  background-size: cover;
-  background-color: grey;
+  // background-image: url('out-bckd_01-01plain.svg');
+  // background-size: cover;
+  // background-color: grey;
+}
+
+svg.symbol-bckrd path {
+  display:inline;
+  opacity:1;
+  fill:none;
+  fill-opacity:1;
+  stroke:#b4aeb0;
+  stroke-width:13.22916698;
+  stroke-linejoin:round;
+  stroke-miterlimit:4;
+  stroke-dasharray:none;
+  stroke-opacity:1;
 }
