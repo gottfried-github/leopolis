@@ -1,7 +1,10 @@
-@import './slide-generic.scss';
+@import './slide.scss';
 
-.content {
-  background-image: url('out-bckd_01-01plain.svg');
-  background-size: cover;
-  background-color: grey;
+html, body {
+  margin: 0px;
+  padding: 0px;
+
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: normal;
 }
