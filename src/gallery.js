@@ -45,14 +45,35 @@ class DeckItem {
     this.el = document.createElement('div')
     this.el.className = 'deck-item'
 
-    this.breakpoint = options.breakpoint
+    // this.narrowScreen = (typeof(options.narrowScreenMode) === 'undefined')
+    //   ? false
+    //   : options.narrowScreenMode
 
-    this.contentBasedWidth = options.contentBasedWidth
+    this.breakpoint = options.breakpoint
+    // this.contentBasedWidth = options.contentBasedWidth
+
+    this.narrowMode = getViewportWidth() < this.breakpoint
+
+    window.on('resize', (ev) => {
+      if (getViewportWidth() < this.breakpoint) {
+        if (!this.narrowMode) this.narrowMode = true
+
+      } else if (this.narrowMode) {
+        if (this.narrowMode) this.narrowMode = false
+      }
+
+    })
+
     // this.settings = {
     //   height: options.height
     // }
 
     this.loadPhoto(imageUrl)
+  }
+
+  turnOnNarrowMode(mode) {
+    this.narrowMode = true
+    this.el.style.width = getViewportWidth()
   }
 
   /**
@@ -129,7 +150,7 @@ class DeckItem {
       img.style.visibility = "hidden"
       this.el.appendChild(img)
 
-      if (getViewportWidth() > this.breakpoint) {
+      if (!this.narrowMode) {
         // this.fitByHeight(img)
         const imgDims = this.calculateFitByHeight(img, this.el)
         img.style.width = imgDims.width + 'px'
@@ -148,16 +169,26 @@ class DeckItem {
 }
 
 class Deck {
-  constructor() {
+  constructor(imageUrls, options) {
     this.el = document.createElement('div')
     this.el.className = 'gallery-deck'
 
     this.breakpoint = options.breakpoint
+
+    this.items = this.setPhotos(imageUrls)
+
+    window.on('resize', (ev) => {
+      if (getViewportWidth() < this.breakpoint) {
+
+      }
+    })
   }
 
   setPhotos(urls) {
     return urls.map(() => {
-      return new DeckItem(url, )
+      return new DeckItem(url, {
+
+      })
     })
   }
 }
