@@ -20,24 +20,80 @@ function getViewportWidth() {
 
 class Photo {
   constructor(url) {
-
+    this.url = url
+    this.el = document.createElement('img')
   }
 
-  loadImage(url) {
-    const img = document.createElement('img')
+  load() {
+    // const img = document.createElement('img')
 
     return new Promise((resolve, reject) => {
-      img.onload = () => {
-        resolve(img)
+      this.el.onload = () => {
+        resolve(this)
       }
 
-      img.src = url
+      this.el.src = this.url
     })
   }
 
-  fitImage() {
+  calculateFitByBothSides(img, container) {
+    const imgDims = img.getBoundingClientRect()
+    const containerDims = container.getBoundingClientRect()
 
+    imgDims.ratio = imgDims.width / imgDims.height
+    containerDims.ratio = containerDims.width / containerDims.height
+
+    // if wider than higher
+    if (imgDims.ratio >= containerDims.ratio) {
+      const imgDimsNew = {
+        width: containerDims.width,
+        height: containerDims.width / imgDims.ratio
+      }
+
+    // if higher than wider
+    } else {
+      const imgDimsNew = {
+        // width: containerDims.height * imgDims.ratio,
+        width: containerDims.height * imgDims.ratio,
+        height: containerDims.height
+      }
+    }
+
+    return imgDimsNew
   }
+
+  calculateFitByHeight(img, container) {
+    const imgDims = img.getBoundingClientRect()
+    const containerDims = container.getBoundingClientRect()
+
+    imgDims.ratio = imgDims.width / imgDims.height
+    const imgDimsNew = {
+      height: containerDims.height,
+      width: containerDims.height * imgDims.ratio,
+      ratio: imgDims.ratio
+    }
+
+    return imgDimsNew
+  }
+
+  fitByHeight(container) {
+    this.dims = this.calculateFitByHeight(this.el, container)
+    // const imgDims = this.calculateFitByHeight(img, this.el)
+    this.el.style.width = this.dims.width
+    this.el.style.height = this.dims.height
+
+    return this
+  }
+
+  fitByBothSides(container) {
+    this.dims = this.calculateFitByBothSides(this.el, container)
+
+    this.el.style.width = this.dims.width
+    this.el.style.height = this.dims.height
+
+    return this
+  }
+
 }
 
 class DeckItem {
@@ -97,61 +153,6 @@ class DeckItem {
 
   setWidth(width) {
     this.el.style.width = width
-  }
-
-  calculateFitBoth(img, container) {
-    const imgDims = img.getBoundingClientRect()
-    const containerDims = container.getBoundingClientRect()
-
-    imgDims.ratio = imgDims.width / imgDims.height
-    containerDims.ratio = containerDims.width / containerDims.height
-
-    // if wider than higher
-    if (imgDims.ratio >= containerDims.ratio) {
-      const imgDimsNew = {
-        width: containerDims.width,
-        height: containerDims.width / imgDims.ratio
-      }
-
-    // if higher than wider
-    } else {
-      const imgDimsNew = {
-        // width: containerDims.height * imgDims.ratio,
-        width: containerDims.height * imgDims.ratio,
-        height: containerDims.height
-      }
-    }
-
-    return imgDimsNew
-  }
-
-  calculateFitByHeight(img, container) {
-    const imgDims = img.getBoundingClientRect()
-    const containerDims = container.getBoundingClientRect()
-
-    imgDims.ratio = imgDims.width / imgDims.height
-    const imgDimsNew = {
-      height: containerDims.height,
-      width: containerDims.height * imgDims.ratio
-    }
-
-    return imgDimsNew
-  }
-
-  fitByHeight(img) {
-    const imgDims = this.calculateFitByHeight(img, this.el)
-    img.style.width = imgDims.width
-    img.style.height = imgDims.height
-
-    return img
-  }
-
-  fitBoth(img) {
-    const imgDims = this.calculateFitByHeight(img, this.el)
-    img.style.width = imgDims.width
-    img.style.height = imgDims.height
-
-    return img
   }
 
   loadPhoto(url) {
