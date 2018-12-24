@@ -1,0 +1,18 @@
+.deck-item {
+
+}
+
+.deck-img {
+
+}
+
+@media (max-width: 800px;) {
+  .deck-item {
+    display: flex;
+    
+  }
+
+  .deck-img {
+    flex-shrink: 0;
+  }
+}
