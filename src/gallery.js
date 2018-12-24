@@ -19,7 +19,7 @@ function getViewportWidth() {
 }
 
 class Photo {
-  constructor() {
+  constructor(url) {
 
   }
 
@@ -74,6 +74,18 @@ class DeckItem {
   turnOnNarrowMode(mode) {
     this.narrowMode = true
     this.el.style.width = getViewportWidth()
+    this.photo.fitByBothSides(this.el)
+  }
+
+  turnOffNarrowMode() {
+    this.narrowMode = false
+    // this.el.style.width = getViewportWidth()
+
+    const imgDims = this.photo.fitByHeight(this.el)
+    // img.style.width = imgDims.width + 'px'
+    // img.style.height = imgDims.height + 'px'
+
+    this.el.style.width = this.photo.width + 'px'
   }
 
   /**
