@@ -36,9 +36,9 @@ class Photo {
     })
   }
 
-  calculateFitByBothSides(img, container) {
-    const imgDims = img.getBoundingClientRect()
-    const containerDims = container.getBoundingClientRect()
+  calculateFitByBothSides(imgDims, containerDims) {
+    // const imgDims = img.getBoundingClientRect()
+    // const containerDims = container.getBoundingClientRect()
 
     imgDims.ratio = imgDims.width / imgDims.height
     containerDims.ratio = containerDims.width / containerDims.height
@@ -62,9 +62,9 @@ class Photo {
     return imgDimsNew
   }
 
-  calculateFitByHeight(img, container) {
-    const imgDims = img.getBoundingClientRect()
-    const containerDims = container.getBoundingClientRect()
+  calculateFitByHeight(imgDims, containerDims) {
+    // const imgDims = img.getBoundingClientRect()
+    // const containerDims = container.getBoundingClientRect()
 
     imgDims.ratio = imgDims.width / imgDims.height
     const imgDimsNew = {
@@ -77,7 +77,11 @@ class Photo {
   }
 
   fitByHeight(container) {
-    this.dims = this.calculateFitByHeight(this.el, container)
+    this.dims = this.calculateFitByHeight(
+      this.el.getBoundingClientRect(),
+      container.getBoundingClientRect()
+    )
+
     // const imgDims = this.calculateFitByHeight(img, this.el)
     this.el.style.width = this.dims.width
     this.el.style.height = this.dims.height
@@ -86,7 +90,10 @@ class Photo {
   }
 
   fitByBothSides(container) {
-    this.dims = this.calculateFitByBothSides(this.el, container)
+    this.dims = this.calculateFitByHeight(
+      this.el.getBoundingClientRect(),
+      container.getBoundingClientRect()
+    )
 
     this.el.style.width = this.dims.width
     this.el.style.height = this.dims.height
@@ -94,6 +101,13 @@ class Photo {
     return this
   }
 
+  hide(hard) {
+    hard ? this.el.style.display = "none" : this.el.style.visibility = "hidden"
+  }
+
+  show(hard) {
+    hard ? this.el.style.display = "inline" : this.el.style.visibility = "visible"
+  }
 }
 
 class DeckItem {
@@ -101,47 +115,39 @@ class DeckItem {
     this.el = document.createElement('div')
     this.el.className = 'deck-item'
 
-    // this.narrowScreen = (typeof(options.narrowScreenMode) === 'undefined')
-    //   ? false
-    //   : options.narrowScreenMode
-
     this.breakpoint = options.breakpoint
-    // this.contentBasedWidth = options.contentBasedWidth
 
     this.narrowMode = getViewportWidth() < this.breakpoint
 
     window.on('resize', (ev) => {
       if (getViewportWidth() < this.breakpoint) {
-        if (!this.narrowMode) this.narrowMode = true
+        if (!this.narrowMode) {
+          // this.narrowMode = true
+          this.turnOnNarrowMode()
+        }
 
       } else if (this.narrowMode) {
-        if (this.narrowMode) this.narrowMode = false
+        if (this.narrowMode) {
+          this.turnOffNarrowMode()
+        }
       }
 
     })
-
-    // this.settings = {
-    //   height: options.height
-    // }
 
     this.loadPhoto(imageUrl)
   }
 
   turnOnNarrowMode(mode) {
     this.narrowMode = true
-    this.el.style.width = getViewportWidth()
+    this.el.style.width = getViewportWidth() + 'px'
     this.photo.fitByBothSides(this.el)
   }
 
   turnOffNarrowMode() {
     this.narrowMode = false
-    // this.el.style.width = getViewportWidth()
+    this.photo.fitByHeight(this.el)
 
-    const imgDims = this.photo.fitByHeight(this.el)
-    // img.style.width = imgDims.width + 'px'
-    // img.style.height = imgDims.height + 'px'
-
-    this.el.style.width = this.photo.width + 'px'
+    this.el.style.width = this.photo.dims.width + 'px'
   }
 
   /**
@@ -156,27 +162,31 @@ class DeckItem {
   }
 
   loadPhoto(url) {
-    this.loadImage() // Photo.prototype.loadImage()
-    .then((img) => {
+    this.photo.load() // Photo.prototype.loadImage()
+    .then((photo) => {
 
       // we don't want to see the img, but we want to be able to measure it with getBoundingClientRect (so display: none is not a fit)
-      img.style.visibility = "hidden"
-      this.el.appendChild(img)
+      // img.style.visibility = "hidden"
+      photo.hide()
+      this.el.appendChild(photo.el)
 
       if (!this.narrowMode) {
         // this.fitByHeight(img)
-        const imgDims = this.calculateFitByHeight(img, this.el)
-        img.style.width = imgDims.width + 'px'
-        img.style.height = imgDims.height + 'px'
+        // const imgDims = this.calculateFitByHeight(img, this.el)
+        // img.style.width = imgDims.width + 'px'
+        // img.style.height = imgDims.height + 'px'
 
-        if (this.contentBasedWidth) {
-          this.el.style.width = imgDims.width + 'px'
-        }
+        this.photo.fitByHeight(this.el)
+
+        this.el.style.width = this.photo.dims.width + 'px'
+        // if (this.contentBasedWidth) {
+        // }
       } else {
-        this.fitBoth(img)
+        this.photo.fitByBothSides(this.el)
       }
 
-      img.style.visibility = 'visible'
+      this.photo.show()
+      // img.style.visibility = 'visible'
     })
   }
 }
@@ -190,26 +200,39 @@ class Deck {
 
     this.items = this.setPhotos(imageUrls)
 
-    window.on('resize', (ev) => {
-      if (getViewportWidth() < this.breakpoint) {
-
-      }
-    })
+    // window.on('resize', (ev) => {
+    //   if (getViewportWidth() < this.breakpoint) {
+    //
+    //   }
+    // })
   }
 
-  setPhotos(urls) {
+  initItems(urls) {
     return urls.map(() => {
       return new DeckItem(url, {
-
+        breakpoint: this.breakpoint
       })
     })
   }
-}
 
-class Gallery() {
-  constructor() {
-
+  appendItem(item) {
+    this.el.appendChild(item.el)
   }
 
-
+  appendItems() {
+    this.items.forEach(item => {
+      this.appendItem(item)
+    })
+  }
 }
+
+function boot() {
+  const photoUrls = []
+  const container = document.querySelector('.gallery')
+
+  const deck = new Deck(photoUrls)
+
+  container.appendChild(deck.el)
+}
+
+export {boot}

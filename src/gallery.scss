@@ -1,3 +1,7 @@
+.deck {
+  // float: left;
+}
+
 .deck-item {
 
 }
@@ -9,7 +13,7 @@
 @media (max-width: 800px;) {
   .deck-item {
     display: flex;
-    
+
   }
 
   .deck-img {
