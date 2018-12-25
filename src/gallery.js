@@ -187,6 +187,20 @@ class DeckItem {
     this.photo.clearInlineStyles()
   }
 
+  getWidth() {
+    return this.el.getBoundingClientRect().width
+  }
+
+  // get position of the item, relative to the containing Deck
+  getOffset() {
+    return this.el.offsetLeft
+  }
+
+  // get position of the midpoint of the item, relative to the containing deck
+  getMidpoint() {
+    return this.getOffset() + (this.getWidth() / 2)
+  }
+
   /**
     @param {String} height height in css syntax
   */
@@ -228,16 +242,85 @@ class Deck {
     this.el = document.createElement('div')
     this.el.className = 'gallery-deck'
 
+    this.options = options
     this.breakpoint = options.breakpoint
 
     this.items = this.initItems(imageUrls)
     this.appendItems()
+
+    // initialize the transform matrix styling
+    this.el.style.transform = 'matrix(1, 0, 0, 1, 0, 0)'
 
     // window.on('resize', (ev) => {
     //   if (getViewportWidth() < this.breakpoint) {
     //
     //   }
     // })
+  }
+
+  calculateDeckOffset(index) {
+    if (getViewportWidth() < this.breakpoint) {
+      const itemOffset = this.items[index].getOffset()
+      const deckOffsetNew = -itemOffset
+
+      return deckOffsetNew
+    } else {
+      const itemOffset = this.items[index].getMidpoint()
+
+      const galleryMidpoint = this.options.getGalleryWidth() / 2 // .getBoundingClientRect().width / 2
+      const deckOffsetNew = -itemOffset + galleryMidpoint
+
+      console.log('Deck.calculateDeckOffset, index', index)
+      console.log('Deck.calculateDeckOffset, items[index]', this.items[index])
+      console.log('Deck.calculateDeckOffset, items[index]', this.items[index].getMidpoint())
+      console.log('Deck.calculateDeckOffset, itemOffset', itemOffset)
+      console.log('Deck.calculateDeckOffset, deckOffsetNew', deckOffsetNew)
+
+      return deckOffsetNew
+    }
+  }
+
+  goToItem(index) {
+    // const itemOffset = getViewportWidth() < this.breakpoint
+    //   ? this.items[index].getOffset()
+    //   : this.items[index].getMidPoint()
+    //
+    // const deckOffsetNew = getViewportWidth() < this.breakpoint
+    //   ? -itemOffset
+    //   : this.items[index].getMidPoint()
+
+    if (index < 0 || index > this.items.length-1) {
+      // throw new Warning("there's no item at "+ i)
+      return
+    }
+
+    const deckOffset = this.calculateDeckOffset(index)
+    this.offset = deckOffset
+
+    if (this.transitioning) {
+      this.el.style.transform = this.makeMatrix(this.offset)
+    } else {
+
+      function transitionendCb() {
+        this.transitionendCb()
+        this.el.removeEventListener('transitionend', transitionendCb)
+        this.transitioning = false
+      }
+
+      this.transitioning = true
+      this.el.addEventListener('transitionend', transitionendCb.bind(this))
+      this.el.style.transform = this.makeMatrix(this.offset)
+    }
+
+  }
+
+  makeMatrix(x) {
+    return 'matrix(1, 0, 0, 1, '+ x +', 0)'
+  }
+
+  transitionendCb() {
+    this.el.style.left = this.offset +'px'
+    this.el.style.transform = 'matrix(1, 0, 0, 1, 0, 0)'
   }
 
   initItems(urls) {
@@ -259,15 +342,32 @@ class Deck {
   }
 }
 
+class Gallery {
+  constructor(photoUrls, options) {
+    this.el = document.createElement('div')
+    this.el.className = 'gallery'
+
+
+    this.deck = new Deck(photoUrls, {
+      getGalleryWidth: () => { return this.el.getBoundingClientRect().width },
+      breakpoint: options.breakpoint
+    })
+
+    this.el.appendChild(this.deck.el)
+  }
+}
+
 function boot(photoUrls) {
   // const photoUrls = []
-  const container = document.querySelector('.gallery')
+  const container = document.querySelector('.container')
 
-  const deck = new Deck(photoUrls, {breakpoint: 800})
+  // const deck = new Deck(photoUrls, {breakpoint: 800})
 
-  container.appendChild(deck.el)
+  const gallery = new Gallery(photoUrls, {breakpoint: 800})
+  container.appendChild(gallery.el)
 
-  console.log(deck)
+  console.log(gallery.deck)
+  // gallery.deck.goToItem(3)
 }
 
 export {boot}

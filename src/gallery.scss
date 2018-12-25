@@ -3,7 +3,11 @@
 }
 
 .gallery-deck {
-  // position: absolute;
+
+  // non-positine elements are not returned as offsetParent of to their children
+  position: relative;
+
+  // align display-inline children without wrapping them and without irrelevant vertical blank space
   white-space: nowrap;
   line-height: 0px;
 
@@ -29,7 +33,7 @@
 
 .deck-item img {
   display: block;
-  
+
   width: auto;
   height: 450px;
 
