@@ -1,22 +1,45 @@
-.deck {
-  // float: left;
+.gallery-deck-test {
+  display: none;
+}
+
+.gallery-deck {
+  // position: absolute;
+  white-space: nowrap;
+  line-height: 0px;
+
+  overflow: hidden;
+  background-color: grey;
 }
 
 .deck-item {
-
+  display: inline-block;
+  // float: left;
 }
 
-.deck-img {
-
+.deck-item img {
+  display: block;
 }
 
-@media (max-width: 800px;) {
+@media (max-width: 800px) {
   .deck-item {
-    display: flex;
-
+    height: 300px;
+    width: 100vw;
   }
+}
 
-  .deck-img {
-    flex-shrink: 0;
-  }
+.deck-item img {
+  height: 450px;
+  width: auto;
+  line-height: normal;
+  white-space: normal;
+}
+
+.deck-item-content {
+  width: 150px;
+  height: 150px;
+  background-color: green;
+}
+
+.clearleft {
+  clear: left;
 }

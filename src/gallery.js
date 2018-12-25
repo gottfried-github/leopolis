@@ -50,6 +50,8 @@ class Photo {
         height: containerDims.width / imgDims.ratio
       }
 
+      return imgDimsNew
+
     // if higher than wider
     } else {
       const imgDimsNew = {
@@ -57,9 +59,10 @@ class Photo {
         width: containerDims.height * imgDims.ratio,
         height: containerDims.height
       }
+
+      return imgDimsNew
     }
 
-    return imgDimsNew
   }
 
   calculateFitByHeight(imgDims, containerDims) {
@@ -90,15 +93,26 @@ class Photo {
   }
 
   fitByBothSides(container) {
-    this.dims = this.calculateFitByHeight(
+    this.dims = this.calculateFitByBothSides(
       this.el.getBoundingClientRect(),
       container.getBoundingClientRect()
     )
 
-    this.el.style.width = this.dims.width
-    this.el.style.height = this.dims.height
+    this.el.style.width = this.dims.width + 'px'
+    this.el.style.height = this.dims.height + 'px'
 
     return this
+  }
+
+  clearInlineStyles() {
+    if (this.el.style.removeProperty) {
+      this.el.style.removeProperty('width')
+      this.el.style.removeProperty('height')
+    } else {
+      // IE9
+      this.el.style.removeAttribute('width')
+      this.el.style.removeAttribute('height')
+    }
   }
 
   hide(hard) {
@@ -106,7 +120,13 @@ class Photo {
   }
 
   show(hard) {
-    hard ? this.el.style.display = "inline" : this.el.style.visibility = "visible"
+    if (hard) {
+      this.el.style.removeProperty('display')
+    } else {
+      this.el.style.removeProperty('visibility')
+    }
+
+    // hard ? this.el.style.display = "inline" : this.el.style.visibility = "visible"
   }
 }
 
@@ -119,35 +139,44 @@ class DeckItem {
 
     this.narrowMode = getViewportWidth() < this.breakpoint
 
-    window.on('resize', (ev) => {
-      if (getViewportWidth() < this.breakpoint) {
+    window.addEventListener('resize', (ev) => {
+      if (getViewportWidth() <= this.breakpoint) {
         if (!this.narrowMode) {
-          // this.narrowMode = true
-          this.turnOnNarrowMode()
+          console.log('resize, turning on')
+          this.narrowMode = true
+          // this.turnOnNarrowMode()
         }
 
-      } else if (this.narrowMode) {
+        this.photo.fitByBothSides(this.el)
+
+      } else {
         if (this.narrowMode) {
+          console.log('resize, turning Off')
           this.turnOffNarrowMode()
         }
       }
 
     })
 
-    this.loadPhoto(imageUrl)
+    this.photo = new Photo(imageUrl)
+    this.loadPhoto()
   }
 
   turnOnNarrowMode(mode) {
-    this.narrowMode = true
-    this.el.style.width = getViewportWidth() + 'px'
-    this.photo.fitByBothSides(this.el)
+    // this.narrowMode = true
+
+    // this perhaps would be better to set with css vw
+    // this.el.style.width = getViewportWidth() + 'px'
+
+    // this.photo.fitByBothSides(this.el)
   }
 
   turnOffNarrowMode() {
     this.narrowMode = false
-    this.photo.fitByHeight(this.el)
+    // this.photo.fitByHeight(this.el)
 
-    this.el.style.width = this.photo.dims.width + 'px'
+    // this.el.style.width = this.photo.dims.width + 'px'
+    this.photo.clearInlineStyles()
   }
 
   /**
@@ -171,16 +200,11 @@ class DeckItem {
       this.el.appendChild(photo.el)
 
       if (!this.narrowMode) {
-        // this.fitByHeight(img)
-        // const imgDims = this.calculateFitByHeight(img, this.el)
-        // img.style.width = imgDims.width + 'px'
-        // img.style.height = imgDims.height + 'px'
+        // at the moment, seems like we handle all of this with css,
+        // and don't need to fite the photo and set it's container's width respectively
 
-        this.photo.fitByHeight(this.el)
-
-        this.el.style.width = this.photo.dims.width + 'px'
-        // if (this.contentBasedWidth) {
-        // }
+        // this.photo.fitByHeight(this.el)
+        // this.el.style.width = this.photo.dims.width + 'px'
       } else {
         this.photo.fitByBothSides(this.el)
       }
@@ -198,7 +222,8 @@ class Deck {
 
     this.breakpoint = options.breakpoint
 
-    this.items = this.setPhotos(imageUrls)
+    this.items = this.initItems(imageUrls)
+    this.appendItems()
 
     // window.on('resize', (ev) => {
     //   if (getViewportWidth() < this.breakpoint) {
@@ -208,7 +233,7 @@ class Deck {
   }
 
   initItems(urls) {
-    return urls.map(() => {
+    return urls.map((url) => {
       return new DeckItem(url, {
         breakpoint: this.breakpoint
       })
@@ -226,13 +251,15 @@ class Deck {
   }
 }
 
-function boot() {
-  const photoUrls = []
+function boot(photoUrls) {
+  // const photoUrls = []
   const container = document.querySelector('.gallery')
 
-  const deck = new Deck(photoUrls)
+  const deck = new Deck(photoUrls, {breakpoint: 800})
 
   container.appendChild(deck.el)
+
+  console.log(deck)
 }
 
 export {boot}
