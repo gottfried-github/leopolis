@@ -293,16 +293,8 @@ class Deck {
   */
 
   goToItem(index) {
-    // const itemOffset = getViewportWidth() < this.breakpoint
-    //   ? this.items[index].getOffset()
-    //   : this.items[index].getMidPoint()
-    //
-    // const deckOffsetNew = getViewportWidth() < this.breakpoint
-    //   ? -itemOffset
-    //   : this.items[index].getMidPoint()
 
     if (index < 0 || index > this.items.length-1) {
-      // throw new Warning("there's no item at "+ i)
       throw new Error("can't go to unexisting item at "+ i)
       return
     }
@@ -316,7 +308,6 @@ class Deck {
 
     this.offset = deckPositionNew - this.position
     this.position = deckPositionNew
-    // this.position =
 
     if (this.transitioning) {
       this.el.style.transform = this.makeMatrix(this.offset)
