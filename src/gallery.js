@@ -283,9 +283,14 @@ class Deck {
     }
   }
 
+  /*
+  // TODO:
   getActualPositionWhileTransitioning() {
-    this.el.getBoundingClientRect().left -  + window.scrollX
+    return this.el.getBoundingClientRect().left + window.parseInt(window.getComputedStyle(this.el)['margin-left'])
+    - this.options.getGalleryPos().left
+    + window.scrollX
   }
+  */
 
   goToItem(index) {
     // const itemOffset = getViewportWidth() < this.breakpoint
@@ -304,7 +309,7 @@ class Deck {
 
     const deckPositionNew = this.calculateDeckOffset(index)
 
-
+    // TODO:
     // this.offset = this.transitioning
     //   ? deckPositionNew - this.getActualPositionWhileTransitioning()
     //   : deckPositionNew - this.position
@@ -375,6 +380,21 @@ class Gallery {
 
     this.el.appendChild(this.deck.el)
   }
+
+  /*
+  // TODO:
+  // get the actual position of the el, relative to body.
+  getAbsPosition() {
+    var position = 0
+
+    // const computedStyle = window.getComputedStyle(this.el)
+
+      position = this.el.getBoundingClientRect().left
+        + window.parseInt(window.getComputedStyle(this.el)['margin-left'])
+
+      return position
+  }
+  */
 }
 
 function boot(photoUrls) {
