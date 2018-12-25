@@ -243,7 +243,10 @@ class Deck {
     this.el.className = 'gallery-deck'
 
     this.options = options
+
     this.breakpoint = options.breakpoint
+    this.position = 0
+    this.offset = 0
 
     this.items = this.initItems(imageUrls)
     this.appendItems()
@@ -280,6 +283,10 @@ class Deck {
     }
   }
 
+  getActualPositionWhileTransitioning() {
+    this.el.getBoundingClientRect().left -  + window.scrollX
+  }
+
   goToItem(index) {
     // const itemOffset = getViewportWidth() < this.breakpoint
     //   ? this.items[index].getOffset()
@@ -291,11 +298,20 @@ class Deck {
 
     if (index < 0 || index > this.items.length-1) {
       // throw new Warning("there's no item at "+ i)
+      throw new Error("can't go to unexisting item at "+ i)
       return
     }
 
-    const deckOffset = this.calculateDeckOffset(index)
-    this.offset = deckOffset
+    const deckPositionNew = this.calculateDeckOffset(index)
+
+
+    // this.offset = this.transitioning
+    //   ? deckPositionNew - this.getActualPositionWhileTransitioning()
+    //   : deckPositionNew - this.position
+
+    this.offset = deckPositionNew - this.position
+    this.position = deckPositionNew
+    // this.position =
 
     if (this.transitioning) {
       this.el.style.transform = this.makeMatrix(this.offset)
@@ -306,6 +322,8 @@ class Deck {
         this.el.removeEventListener('transitionend', transitionendCb)
         this.transitioning = false
       }
+
+      this.el.classList.add('transition')
 
       this.transitioning = true
       this.el.addEventListener('transitionend', transitionendCb.bind(this))
@@ -319,7 +337,9 @@ class Deck {
   }
 
   transitionendCb() {
-    this.el.style.left = this.offset +'px'
+    this.el.style.left = this.position +'px'
+
+    this.el.classList.remove('transition')
     this.el.style.transform = 'matrix(1, 0, 0, 1, 0, 0)'
   }
 
