@@ -15,6 +15,10 @@
   background-color: grey;
 }
 
+.gallery-deck.transition {
+  transition: transform 2s;
+}
+
 .deck-item {
   display: inline-block;
   position: relative;
