@@ -135,6 +135,14 @@ class DeckItem {
     this.el = document.createElement('div')
     this.el.className = 'deck-item'
 
+    this.contentEl = document.createElement('div')
+    this.contentEl.className = 'deck-item-content'
+
+    const contentWrap = document.createElement('div')
+    contentWrap.className = 'deck-item-content_wrapper'
+    this.el.appendChild(contentWrap)
+    contentWrap.appendChild(this.contentEl)
+
     this.breakpoint = options.breakpoint
 
     this.narrowMode = getViewportWidth() < this.breakpoint
@@ -197,7 +205,7 @@ class DeckItem {
       // we don't want to see the img, but we want to be able to measure it with getBoundingClientRect (so display: none is not a fit)
       // img.style.visibility = "hidden"
       photo.hide()
-      this.el.appendChild(photo.el)
+      this.contentEl.appendChild(photo.el)
 
       if (!this.narrowMode) {
         // at the moment, seems like we handle all of this with css,
@@ -206,7 +214,7 @@ class DeckItem {
         // this.photo.fitByHeight(this.el)
         // this.el.style.width = this.photo.dims.width + 'px'
       } else {
-        this.photo.fitByBothSides(this.el)
+        this.photo.fitByBothSides(this.contentEl)
       }
 
       this.photo.show()
