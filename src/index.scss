@@ -1,5 +1,20 @@
-@import './slide.scss';
+// @import './slide.scss';
 @import './gallery.scss';
+
+/*
+The plan was to put svg backgrounds into the elements,
+containing the text (each symbol (frm up, in, out) has a text description),
+and set overflow-y: visible and overfow-x: hidden in order to allow
+the svg overflow visibly vertically, and be hidden horizontally (that way,
+we can have a bigger svg, that we could use in a large-screen layout, where
+fit in entirely, and at the same time, use the same svg in a smaller screen layout, where
+it has to be cut off, but still preserve the composition of the image).
+But the idea with overflow-y -x turned out to be impssible to implement, because
+browsers can't handle such a setup (it's only possible to have overflow: visible on both axes or
+the other axe will switch to auto..)
+
+Another approach I want to try to use is CSS's clip-path
+*/
 
 html, body {
   margin: 0px;
@@ -12,18 +27,91 @@ html, body {
   // background-color: grey;
 }
 
-svg.symbol-bckrd path {
-  display:inline;
-  opacity:1;
-  fill:none;
-  fill-opacity:1;
-  stroke:#b4aeb0;
-  stroke-width:13.22916698;
-  stroke-linejoin:round;
-  stroke-miterlimit:4;
-  stroke-dasharray:none;
-  stroke-opacity:1;
+#up {
+  padding-top: 500px;
+  // position: absolute;
+
+  background: linear-gradient(to bottom, transparent, 500px, white, 150px, white),
+  url('media/up/21688306_1596531477075367_2999301465771200079_o.jpg');
+  background-size: 120%;
+  background-repeat: no-repeat;
 }
+
+.concept-description {
+  position: relative;
+  // margin-top: 500px;
+}
+
+.concept-description .background-wrap {
+  position: relative;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.concept-description .background {
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: visible;
+
+  // background-image: url('out-bckd_01-01plain.svg');
+  // background-size: cover;
+  // background-position: center;
+
+  width: 100%;
+  height: 100%;
+  // background-color: grey;
+}
+
+.concept-description .background svg {
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  //
+  width: 100%;
+}
+
+//
+// .bckd-img {
+//   position: absolute;
+//   width: 100%;
+// }
+//
+// .bckrd-img .ratio {
+//   padding-bottom: 75%;
+//
+//   background: linear-gradient(to top, white, 25%, transparent, 80%, transparent),
+//   url('media/up/21688306_1596531477075367_2999301465771200079_o.jpg');
+//   // background: linear-gradient(to top, white, transparent, 15%, grey, 80%, grey);
+//   // background: linear-gradient(to top, white, %20, transparent);
+//
+//   // background-image: url('media/up/21688306_1596531477075367_2999301465771200079_o.jpg');
+//   background-size: 120%;
+//   background-repeat: no-repeat;
+//
+// }
+//
+// #out .background {
+//   background: linear-gradient(to bottom, transparent,15%, grey, 80%, grey);
+//   // background: linear-gradient(to bottom, transparent, %20, grey);
+// }
+
+//
+// svg.symbol-bckrd path {
+//   display:inline;
+//   opacity:1;
+//   fill:none;
+//   fill-opacity:1;
+//   stroke:#b4aeb0;
+//   stroke-width:13.22916698;
+//   stroke-linejoin:round;
+//   stroke-miterlimit:4;
+//   stroke-dasharray:none;
+//   stroke-opacity:1;
+// }
 
 #up svg.widescreen {
   display: inline;
