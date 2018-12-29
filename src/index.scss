@@ -1,4 +1,4 @@
-// @import './slide.scss';
+@import './slide.scss';
 @import './gallery.scss';
 
 /*
@@ -21,31 +21,30 @@ html, body {
   padding: 0px;
 }
 
+.content-wrap {
+  display: flex;
+}
+
 .content {
+  margin: auto;
   // background-image: url('out-bckd_01-01plain.svg');
   // background-size: cover;
   // background-color: grey;
 }
 
 #up {
-  padding-top: 500px;
+  // padding-top: 500px;
   // position: absolute;
 
-  background: linear-gradient(to bottom, transparent, 500px, white, 150px, white),
-  url('media/up/21688306_1596531477075367_2999301465771200079_o.jpg');
-  background-size: 120%;
-  background-repeat: no-repeat;
+  // background: linear-gradient(to bottom, transparent, 500px, white, 150px, white),
+  // url('media/up/21688306_1596531477075367_2999301465771200079_o.jpg');
+  // background-size: 120%;
+  // background-repeat: no-repeat;
 }
 
 .concept-description {
   position: relative;
   // margin-top: 500px;
-}
-
-.concept-description .background-wrap {
-  position: relative;
-  height: 100%;
-  overflow-x: hidden;
 }
 
 .concept-description .background {
@@ -55,7 +54,7 @@ html, body {
   justify-content: center;
   align-items: center;
 
-  overflow: visible;
+  overflow: hidden;
 
   // background-image: url('out-bckd_01-01plain.svg');
   // background-size: cover;
@@ -66,12 +65,16 @@ html, body {
   // background-color: grey;
 }
 
+.concept-description .ratio {
+  padding-bottom: 45%;
+}
+
 .concept-description .background svg {
   flex-grow: 0;
   flex-shrink: 0;
 
   //
-  width: 100%;
+  width: 430%;
 }
 
 //
@@ -113,7 +116,7 @@ html, body {
 //   stroke-opacity:1;
 // }
 
-#up svg.widescreen {
+.concept svg path {
   display: inline;
   fill: none;
   stroke: #dcd8de;
@@ -123,5 +126,17 @@ html, body {
   stroke-miterlimit: 4;
   stroke-dasharray: none;
   stroke-opacity: 1;
-
 }
+//
+// #up svg.widescreen path {
+//   // display: inline;
+//   fill: none;
+//   stroke: #dcd8de;
+//   stroke-width: 13.22916698;
+//   stroke-linecap: round;
+//   stroke-linejoin: miter;
+//   stroke-miterlimit: 4;
+//   stroke-dasharray: none;
+//   stroke-opacity: 1;
+//
+// }
