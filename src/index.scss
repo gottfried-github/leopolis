@@ -139,6 +139,27 @@ html, body {
   background-size: cover;
 }
 
+
+#out .showcase .description-wrap {
+  float: left;
+  width: 150px;
+  height: 250px;
+
+  margin-left: 15px;
+  line-height: 250px;
+}
+
+#out .showcase .description-wrap p {
+  display: inline-block;
+  line-height: normal;
+  vertical-align: middle;
+}
+
+.description-container {
+  display: inline-block;
+}
+
+
 .clearleft {
   clear: left;
 }
