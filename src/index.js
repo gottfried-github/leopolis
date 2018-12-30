@@ -1,6 +1,6 @@
 // import {slide} from './slide.js'
 import {boot} from './gallery.js'
-
+// 
 // boot([
 //   'media/in/14902841_1259112727483912_3284315106318981574_o.jpg',
 //   'media/in/19875272_10100482296286706_3883306275546166676_n.jpg',
