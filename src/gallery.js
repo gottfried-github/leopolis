@@ -295,7 +295,7 @@ class Deck {
   goToItem(index) {
 
     if (index < 0 || index > this.items.length-1) {
-      throw new Error("can't go to unexisting item at "+ i)
+      throw new Error("can't go to unexisting item at "+ index)
       return
     }
 
@@ -388,17 +388,4 @@ class Gallery {
   */
 }
 
-function boot(photoUrls) {
-  // const photoUrls = []
-  const container = document.querySelector('.container')
-
-  // const deck = new Deck(photoUrls, {breakpoint: 800})
-
-  const gallery = new Gallery(photoUrls, {breakpoint: 800})
-  container.appendChild(gallery.el)
-
-  console.log(gallery.deck)
-  // gallery.deck.goToItem(3)
-}
-
-export {boot}
+export {Gallery}
