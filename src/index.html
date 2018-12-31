@@ -161,10 +161,13 @@
             </p>
             <div class="location-wrap">
               <div class="street-view"></div>
-              <!-- width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" -->
-              <iframe
-              src="https://www.openstreetmap.org/export/embed.html?bbox=24.02348399162293%2C49.84000292700687%2C24.02444958686829%2C49.84063949718989&amp;layer=mapnik&amp;marker=49.84032121314602%2C24.023966789245605" style="border: 1px solid black">
+              <div class="map">
+                <!-- width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" -->
+                <iframe
+                src="https://www.openstreetmap.org/export/embed.html?bbox=24.02348399162293%2C49.84000292700687%2C24.02444958686829%2C49.84063949718989&amp;layer=mapnik&amp;marker=49.84032121314602%2C24.023966789245605" style="border: 1px solid black">
               </iframe>
+              </div>
+              <div class="clearleft"></div>
             </div>
             <!-- <br/>
             <small>
@@ -174,23 +177,40 @@
           </div>
 
           <div id="staff">
-            <div class="member" id="norris">
-              <div class="avatar"></div>
-              <h2>Kirk Norris</h2>
-              <span>Director</span>
+            <div class="members-wrap">
+              <div class="member" id="norris">
+                <div class="ratio-wrap">
+                  <div class="ratio">
+                    <div class="avatar"></div>
+                  </div>
+                </div>
+                <h2>Kirk Norris</h2>
+                <span>Director</span>
+              </div>
+
+              <div class="member" id="powell">
+                <div class="ratio-wrap">
+                  <div class="ratio">
+                    <div class="avatar"></div>
+                  </div>
+                </div>
+
+                <h2>Jon Powell</h2>
+                <span>Event Coordinator</span>
+              </div>
+
+              <div class="member" id="ball">
+                <div class="ratio-wrap">
+                  <div class="ratio">
+                    <div class="avatar"></div>
+                  </div>
+                </div>
+                <h2>Laura Ball</h2>
+                <span>Staff​</span>
+              </div>
+              <div class="clearleft"></div>
             </div>
 
-            <div class="member" id="powell">
-              <div class="avatar"></div>
-              <h2>Jon Powell</h2>
-              <span>Event Coordinator</span>
-            </div>
-
-            <div class="member" id="ball">
-              <div class="avatar"></div>
-              <h2>Laura Ball</h2>
-              <span>Staff​</span>
-            </div>
           </div>
     </div>
     <script src="index.js">

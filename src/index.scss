@@ -111,75 +111,9 @@ html, body {
 // }
 
 @import './out.scss';
+@import './contact.scss';
 
-#contact .contact_content-wrap {
-  margin: auto 100px;
-}
-
-#contact .location-wrap {
-  display: flex;
-  justify-content: center;
-}
-
-#contact .street-view {
-  margin: 0px 5px 0px 0px;
-  flex-grow: 1;
-  // width: 50%;
-  width: 250px;
-  height: 300px;
-  background-image: url('media/locationStreetView.jpeg');
-  background-size: cover;
-  background-position: center;
-}
-
-#contact iframe {
-  margin: 0px 0px 0px 5px;
-  // flex-grow: 1;
-  // width: 45%;
-  width: 400px;
-  height: 300px;
-
-}
-
-#contact p {
-  margin: 50px auto 50px auto;
-}
-
-#staff {
-  margin: auto 100px;
-
-  display: flex;
-  justify-content: center;
-}
-
-#staff .member {
-  width: 250px;
-  text-align: center;
-}
-
-#staff .member .avatar {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-}
-
-#staff .member#norris .avatar {
-  background-image: url('media/staff/norris.jpg');
-  background-position: center;
-  background-size: cover;
-}
-
-#staff .member#powell .avatar {
-  background-image: url('media/staff/powell.jpg');
-  background-position: center;
-  background-size: cover;
-}
-
-#staff .member#ball .avatar {
-  background-image: url('media/staff/laura.jpg');
-  background-position: center;
-  background-size: cover;
-}
+@import './staff.scss';
 
 // #staff .member h2, #staff .member span {
 //
