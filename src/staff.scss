@@ -1,23 +1,36 @@
-
-
 #staff {
   margin: 25px 100px 15px 100px;
   // margin: auto 100px;
 
-  display: flex;
-  justify-content: center;
+  // display: flex;
+  // justify-content: center;
+}
+
+#staff .members-wrap {
+  margin: 0px 5px 0px 5px;
 }
 
 #staff .member {
-  width: 250px;
+  box-sizing: border-box;
+  float: left;
+  width: 33.3%;
+  // width: 250px;
   text-align: center;
-  padding-bottom: 50px;
-  margin: auto 5px;
+  padding: 0px 2px 50px 2px;
+  // padding-bottom: 50px;
+  // margin: auto 5px;
+}
+
+#staff .ratio {
+  padding-bottom: 100%;
 }
 
 #staff .member .avatar {
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  height: 100%;
+  // width: 250px;
+  // height: 250px;
+  position: absolute;
   border-radius: 50%;
 }
 
@@ -47,15 +60,15 @@
   }
 
   #staff .member {
-    width: 250px;
+    // width: 250px;
     text-align: center;
     padding-bottom: 50px;
-    margin: auto 5px;
+    // margin: auto 5px;
   }
 
   #staff .member .avatar {
-    width: 250px;
-    height: 250px;
+    // width: 250px;
+    // height: 250px;
     border-radius: 50%;
   }
 }
