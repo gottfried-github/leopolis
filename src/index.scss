@@ -239,3 +239,33 @@ html, body {
 // #in .showcase:nth-child(1)  { // .image-thumb
 //   background-image: url('22219946_1606186132776568_2916948056513412695_o.jpg');
 // }
+
+.concept svg.mobile {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .concept svg.widescreen {
+    display: none;
+  }
+
+  .concept svg.mobile {
+    display: block;
+  }
+
+  .concept-description .ratio {
+    padding-bottom: 0px;
+  }
+
+  .content {
+    margin: auto 20px;
+  }
+
+  .concept-description .background svg {
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    //
+    width: 650%;
+  }
+}
