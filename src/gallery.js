@@ -131,7 +131,7 @@ class Photo {
 }
 
 class DeckItem {
-  constructor(imageUrl, options) {
+  constructor(imageUrl, index, options) {
     this.el = document.createElement('div')
     this.el.className = 'deck-item'
 
@@ -143,12 +143,12 @@ class DeckItem {
     this.el.appendChild(contentWrap)
     contentWrap.appendChild(this.contentEl)
 
-    this.breakpoint = options.breakpoint
-
-    this.narrowMode = getViewportWidth() < this.breakpoint
+    this.options = options
+    this.narrowMode = getViewportWidth() < this.options.breakpoint
+    this.index = index
 
     window.addEventListener('resize', (ev) => {
-      if (getViewportWidth() <= this.breakpoint) {
+      if (getViewportWidth() <= this.options.breakpoint) {
         if (!this.narrowMode) {
           console.log('resize, turning on')
           this.narrowMode = true
@@ -167,7 +167,7 @@ class DeckItem {
     })
 
     this.photo = new Photo(imageUrl)
-    this.loadPhoto()
+    this.loadPhoto().catch((err) => {throw err})
   }
 
   turnOnNarrowMode(mode) {
@@ -213,27 +213,36 @@ class DeckItem {
   }
 
   loadPhoto(url) {
-    this.photo.load() // Photo.prototype.loadImage()
+    return this.photo.load() // Photo.prototype.loadImage()
     .then((photo) => {
+      try {
+        this.options.photoLoadCb(photo)
 
-      // we don't want to see the img, but we want to be able to measure it with getBoundingClientRect (so display: none is not a fit)
-      // img.style.visibility = "hidden"
-      photo.hide()
-      this.contentEl.appendChild(photo.el)
+        // we don't want to see the img, but we want to be able to measure it with getBoundingClientRect (so display: none is not a fit)
+        // img.style.visibility = "hidden"
+        photo.hide()
+        this.contentEl.appendChild(photo.el)
 
-      if (!this.narrowMode) {
-        // at the moment, seems like we handle all of this with css,
-        // and don't need to fite the photo and set it's container's width respectively
+        if (!this.narrowMode) {
+          // at the moment, seems like we handle all of this with css,
+          // and don't need to fite the photo and set it's container's width respectively
 
-        // this.photo.fitByHeight(this.el)
-        // this.el.style.width = this.photo.dims.width + 'px'
-      } else {
-        this.photo.fitByBothSides(this.contentEl)
+          // this.photo.fitByHeight(this.el)
+          // this.el.style.width = this.photo.dims.width + 'px'
+        } else {
+          this.photo.fitByBothSides(this.contentEl)
+        }
+
+        this.photo.show()
+        // img.style.visibility = 'visible'
+      } catch(err) {
+        Promise.reject(err)
       }
 
-      this.photo.show()
-      // img.style.visibility = 'visible'
     })
+    // .catch((err) => {
+    //   throw err
+    // })
   }
 }
 
@@ -248,6 +257,8 @@ class Deck {
     this.position = 0
     this.offset = 0
 
+    this.loaded = false
+    this.itemsLoaded = 0
     this.items = this.initItems(imageUrls)
     this.appendItems()
 
@@ -296,7 +307,17 @@ class Deck {
 
     if (index < 0 || index > this.items.length-1) {
       throw new Error("can't go to unexisting item at "+ index)
-      return
+    }
+
+    if (!this.loaded) {
+      // throw new Error("")
+      // TODO: make it so it can go to the items that are already loaded, and
+      // then, adjust the position of the deck so it stays on the item we've gone to
+      // as other items load (if necessary).
+      // This could be impactful if the deck is right at the top of the page and user
+      // wants to immediately be able to interact with things.
+      console.log("photos in the deck haven't loaded yet");
+      return undefined
     }
 
     const deckPositionNew = this.calculateDeckOffset(index)
@@ -326,6 +347,8 @@ class Deck {
       this.el.style.transform = this.makeMatrix(this.offset)
     }
 
+    return this.items[index]
+
   }
 
   makeMatrix(x) {
@@ -340,9 +363,19 @@ class Deck {
   }
 
   initItems(urls) {
-    return urls.map((url) => {
-      return new DeckItem(url, {
-        breakpoint: this.breakpoint
+    return urls.map((url, i) => {
+      return new DeckItem(url, i, {
+        breakpoint: this.breakpoint,
+        photoLoadCb: () => {
+          console.log("photoLoadCb, deck.itemsLoaded: ", this.itemsLoaded);
+          this.itemsLoaded++
+
+          if (this.itemsLoaded == this.items.length) {
+            console.log("photoLoadCb, deck.itemsLoaded == deck.items.length, deck.itemsLoaded: ", this.itemsLoaded);
+            this.loaded = true
+            this.options.loadCb()
+          }
+        }
       })
     })
   }
@@ -366,12 +399,33 @@ class Gallery {
 
     this.deck = new Deck(photoUrls, {
       getGalleryWidth: () => { return this.el.getBoundingClientRect().width },
+      loadCb: () => {
+        this.activeItem = this.deck.goToItem(0)
+        // this.goToNext.call(this)
+      },
       breakpoint: options.breakpoint
     })
 
     this.el.appendChild(this.deck.el)
+
+
+    // const activeItem = this.deck.goToItem(0)
+    // this.activeItem = activeItem
   }
 
+  goToNext() {
+    if (this.activeItem.index == this.deck.items.length-1) return
+    if (!this.deck.loaded) return
+
+    this.activeItem = this.deck.goToItem(this.activeItem.index+1)
+  }
+
+  goToPrevious() {
+    if (this.activeItem.index == 0) return
+    if (!this.deck.loaded) return
+
+    this.activeItem = this.deck.goToItem(this.activeItem.index-1)
+  }
   /*
   // TODO:
   // get the actual position of the el, relative to body.

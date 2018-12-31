@@ -10,6 +10,7 @@ function boot(photoUrls) {
   container.appendChild(gallery.el)
 
   console.log(gallery.deck)
+  console.log('gallery', gallery)
   // gallery.deck.goToItem(3)
 }
 

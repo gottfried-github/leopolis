@@ -2,6 +2,10 @@
   // display: none;
 }
 
+.gallery {
+  overflow: hidden;
+}
+
 .gallery-deck {
 
   // non-positine elements are not returned as offsetParent of to their children
