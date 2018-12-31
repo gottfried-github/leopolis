@@ -111,39 +111,7 @@ html, body {
 // }
 
 @import './out.scss';
-
-#contact .contact_content-wrap {
-  margin: auto 100px;
-}
-
-#contact .location-wrap {
-  display: flex;
-  justify-content: center;
-}
-
-#contact .street-view {
-  margin: 0px 5px 0px 0px;
-  flex-grow: 1;
-  // width: 50%;
-  width: 250px;
-  height: 300px;
-  background-image: url('media/locationStreetView.jpeg');
-  background-size: cover;
-  background-position: center;
-}
-
-#contact iframe {
-  margin: 0px 0px 0px 5px;
-  // flex-grow: 1;
-  // width: 45%;
-  width: 400px;
-  height: 300px;
-
-}
-
-#contact p {
-  margin: 50px auto 50px auto;
-}
+@import './contact.scss';
 
 #staff {
   margin: auto 100px;
