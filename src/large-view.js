@@ -1,5 +1,5 @@
 import {getBackgroundImageUrl, getViewportWidth, getViewportHeight} from './lib.js'
-import {Photo} from 'photo.js'
+import {Photo} from './photo.js'
 
 const LargeView = {
   init(photoUrl) {
@@ -8,6 +8,10 @@ const LargeView = {
     // same as in the scss
     container.className = 'large-view_container'
     this.container = container
+
+    this.container.classList.add('transparent')
+    this.container.classList.add('noned')
+    this.hidden = true
   },
 
   setPhoto(url) {
@@ -69,6 +73,8 @@ const LargeView = {
       if (url) {
         return this.setPhoto(url)
       }
+    }, (err) => {
+      Promise.reject(err)
     })
   },
 
@@ -96,25 +102,34 @@ const LargeView = {
   },
 }
 
-class Enlargable {
-  constructor() {
+// console.log('LargeView', LargeView)
 
+class Enlargable {
+  constructor(el, url) {
+    this.el = el
+    this.url = url
+
+    this.el.addEventListener('click', this.clickCb.bind(this))
+  }
+
+  enlarge(url) {
+    LargeView.show(url)
+    .then(() => {
+      console.log('Enlargable.enlarge, LargeView shown')
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+
+  }
+
+  clickCb() {
+    console.log('Enlargable.clickCb, this: ', this);
+    this.enlarge(this.url)
   }
 }
 
 /*
-
-NodeList to array
-function toArray(obj) {
-  var array = [];
-  // iterate backwards ensuring that length is an UInt32
-  for (var i = obj.length >>> 0; i--;) {
-    array[i] = obj[i];
-  }
-  return array;
-}
-*/
-
 function enlargeShowcase() {
   const imageUrl = getBackgroundImageUrl(this)
   LargeView.show(imageUrl)
@@ -128,3 +143,6 @@ function getEnlargableElements() {
     el.addEventListener('click', enlargeShowcaseCb)
   })
 }
+*/
+
+export {LargeView, Enlargable}

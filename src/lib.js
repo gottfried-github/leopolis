@@ -20,6 +20,19 @@ function getViewportWidth() {
 }
 
 
+/*
+
+NodeList to array
+function toArray(obj) {
+  var array = [];
+  // iterate backwards ensuring that length is an UInt32
+  for (var i = obj.length >>> 0; i--;) {
+    array[i] = obj[i];
+  }
+  return array;
+}
+*/
+
 function getBackgroundImageUrl(el) {
   const computedStyle = window.getComputedStyle(el)
 
@@ -31,4 +44,13 @@ function getBackgroundImageUrl(el) {
   }
 }
 
-export {getViewportWidth, getViewportHeight}
+function logFactory(env) {
+  return function(data) {
+    if (!env.dev) return
+
+    console.trace()
+    console.log(data)
+  }
+}
+
+export {getViewportWidth, getViewportHeight, getBackgroundImageUrl, logFactory}
