@@ -11,7 +11,7 @@ html, body {
   display: flex;
 }
 
-.content { 
+.content {
   margin: auto 100px;
 }
 
@@ -100,7 +100,7 @@ html, body {
 //   // background: linear-gradient(to bottom, transparent, %20, grey);
 // }
 
-.concept svg path {
+.concept .background svg path {
   display: inline;
   fill: none;
   stroke: #dcd8de;
@@ -128,8 +128,37 @@ html, body {
 // }
 
 @import './out.scss';
-@import './contact.scss';
 
+#in .gallery-wrap {
+  position: relative;
+}
+
+#in .gallery-wrap .icon {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  top: 0px;
+
+  box-sizing: border-box;
+  padding: 75px;
+}
+
+#in .gallery-wrap .icon svg {
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+#in .gallery-wrap .icon#fwd {
+  right: 0px;
+}
+
+#in .gallery-wrap .icon#bwd {
+  left: 0px;
+}
+
+
+@import './contact.scss';
 @import './staff.scss';
 
 // #staff .member h2, #staff .member span {
@@ -144,16 +173,16 @@ html, body {
 //   background-image: url('22219946_1606186132776568_2916948056513412695_o.jpg');
 // }
 
-.concept svg.mobile {
+.concept .backround svg.mobile {
   display: none;
 }
 
 @media (max-width: 800px) {
-  .concept svg.widescreen {
+  .concept .background svg.widescreen {
     display: none;
   }
 
-  .concept svg.mobile {
+  .concept .background svg.mobile {
     display: block;
   }
 
