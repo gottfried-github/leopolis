@@ -10,6 +10,8 @@ const LargeView = {
     // same as in the scss
     container.className = 'large-view_container'
     this.container = container
+    this.container.addEventListener('click', () => {this.hide()})
+
 
     this.container.style.opacity = '0'
     // this.container.classList.add('transparent')
@@ -95,7 +97,7 @@ const LargeView = {
           this.showPending = false
           this.container.style.opacity = '1'
           // this.container.classList.add('transition')
-        }, 1)
+        }, 50)
 
         // this.container.classList.add('solid')
       } catch(err) {
