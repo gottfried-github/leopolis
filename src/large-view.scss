@@ -7,6 +7,10 @@
   width: 100%;
   height: 100%;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   // display: block;
   // opacity: 1;
 
@@ -15,6 +19,11 @@
 
 .large-view_container.transition {
   transition: opacity 0.4s;
+}
+
+.large-view_container img {
+  flex-shrink: 0;
+  flex-grow: 0;
 }
 
 /*

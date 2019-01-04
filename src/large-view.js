@@ -53,6 +53,15 @@ const LargeView = {
     new photo
   */
   show(url) {
+    // if (this.showPending) {
+    //   window.clearTimeout(this.showTimeoutId)
+    //   // this.container.removeEventListener()
+    //
+    //   // should removeEventListener of itself
+    //   this.transitionendCb()
+    //
+    //
+    // }
     return new Promise((resolve, reject) => {
       try {
         const self = this
@@ -67,16 +76,18 @@ const LargeView = {
           resolve()
         }
 
-        this.container.style.display = 'block'
+        this.container.style.display = 'flex'
         // this.container.classList.remove('noned')
         this.container.addEventListener('transitionend', transitionendCb)
         this.transitionOn()
 
+        this.showPending = true
         // this is nuts
-        window.setTimeout(() => {
+        this.showTimeoutId = window.setTimeout(() => {
+          this.showPending = false
           this.container.style.opacity = '1'
           // this.container.classList.add('transition')
-        }, 50)
+        }, 1)
 
         // this.container.classList.add('solid')
       } catch(err) {
