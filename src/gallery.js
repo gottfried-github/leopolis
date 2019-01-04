@@ -1,5 +1,5 @@
 import {Photo} from './photo.js'
-import {getViewportWidth, getViewportHeight} from './lib.js'
+import {getViewportWidth, getViewportHeight, logFactory} from './lib.js'
 
 class DeckItem {
   constructor(imageUrl, index, options) {
@@ -21,7 +21,7 @@ class DeckItem {
     window.addEventListener('resize', (ev) => {
       if (getViewportWidth() <= this.options.breakpoint) {
         if (!this.narrowMode) {
-          console.log('resize, turning on')
+          // console.log('resize, turning on')
           this.narrowMode = true
           // this.turnOnNarrowMode()
         }
@@ -30,7 +30,7 @@ class DeckItem {
 
       } else {
         if (this.narrowMode) {
-          console.log('resize, turning Off')
+          // console.log('resize, turning Off')
           this.turnOffNarrowMode()
         }
       }
@@ -155,11 +155,11 @@ class Deck {
       const galleryMidpoint = this.options.getGalleryWidth() / 2 // .getBoundingClientRect().width / 2
       const deckOffsetNew = -itemOffset + galleryMidpoint
 
-      console.log('Deck.calculateDeckOffset, index', index)
-      console.log('Deck.calculateDeckOffset, items[index]', this.items[index])
-      console.log('Deck.calculateDeckOffset, items[index]', this.items[index].getMidpoint())
-      console.log('Deck.calculateDeckOffset, itemOffset', itemOffset)
-      console.log('Deck.calculateDeckOffset, deckOffsetNew', deckOffsetNew)
+      // console.log('Deck.calculateDeckOffset, index', index)
+      // console.log('Deck.calculateDeckOffset, items[index]', this.items[index])
+      // console.log('Deck.calculateDeckOffset, items[index]', this.items[index].getMidpoint())
+      // console.log('Deck.calculateDeckOffset, itemOffset', itemOffset)
+      // console.log('Deck.calculateDeckOffset, deckOffsetNew', deckOffsetNew)
 
       return deckOffsetNew
     }
@@ -187,7 +187,7 @@ class Deck {
       // as other items load (if necessary).
       // This could be impactful if the deck is right at the top of the page and user
       // wants to immediately be able to interact with things.
-      console.log("photos in the deck haven't loaded yet");
+      // console.log("photos in the deck haven't loaded yet");
       return undefined
     }
 
@@ -238,11 +238,11 @@ class Deck {
       return new DeckItem(url, i, {
         breakpoint: this.breakpoint,
         photoLoadCb: () => {
-          console.log("photoLoadCb, deck.itemsLoaded: ", this.itemsLoaded);
+          // console.log("photoLoadCb, deck.itemsLoaded: ", this.itemsLoaded);
           this.itemsLoaded++
 
           if (this.itemsLoaded == this.items.length) {
-            console.log("photoLoadCb, deck.itemsLoaded == deck.items.length, deck.itemsLoaded: ", this.itemsLoaded);
+            // console.log("photoLoadCb, deck.itemsLoaded == deck.items.length, deck.itemsLoaded: ", this.itemsLoaded);
             this.loaded = true
             this.options.loadCb()
           }
