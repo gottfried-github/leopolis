@@ -2,15 +2,20 @@ import {getBackgroundImageUrl, getViewportWidth, getViewportHeight} from './lib.
 import {Photo} from './photo.js'
 
 const LargeView = {
-  init(photoUrl) {
+  init(options) {
+    options = options || {}
+    if (options.transition) this.transitionSetup = options.transition
     const container = document.createElement('div')
 
     // same as in the scss
     container.className = 'large-view_container'
     this.container = container
 
-    this.container.classList.add('transparent')
-    this.container.classList.add('noned')
+    this.container.style.opacity = '0'
+    // this.container.classList.add('transparent')
+
+    this.container.style.display = 'none'
+    // this.container.classList.add('noned')
     this.hidden = true
   },
 
@@ -50,21 +55,30 @@ const LargeView = {
   show(url) {
     return new Promise((resolve, reject) => {
       try {
+        const self = this
         function transitionendCb() {
-          this.container.classList.remove('transition')
-          this.container.removeEventListener('transitionend', transitionendCb)
+          self.container.removeEventListener('transitionend', transitionendCb)
+          self.transitionOff()
+          // this.container.classList.remove('transition')
 
-          this.hidden = false
+          self.hidden = false
 
+          console.log('LargeView.show, transitionendCb', self)
           resolve()
         }
 
-        this.container.classList.remove('noned')
+        this.container.style.display = 'block'
+        // this.container.classList.remove('noned')
+        this.container.addEventListener('transitionend', transitionendCb)
+        this.transitionOn()
 
-        this.container.classList.add('transition')
-        this.container.addEventListener('transitionend', transitionendCb.bind(this))
+        // this is nuts
+        window.setTimeout(() => {
+          this.container.style.opacity = '1'
+          // this.container.classList.add('transition')
+        }, 50)
 
-        this.container.classList.remove('transparent')
+        // this.container.classList.add('solid')
       } catch(err) {
         reject(err)
       }
@@ -81,25 +95,38 @@ const LargeView = {
   hide() {
     return new Promise((resolve, reject) => {
       try {
+        const self = this;
         function transitionendCb() {
-          this.container.classList.remove('transition')
-          this.container.classList.add('noned')
+          self.container.removeEventListener('transitionend', transitionendCb)
+          self.transitionOff()
+          // self.container.classList.remove('transition')
+          self.container.style.display = 'none'
+          // self.container.classList.add('noned')
 
-          this.container.removeEventListener('transitionend', transitionendCb)
-
-          this.hidden = true
+          self.hidden = true
+          console.log('LargeView.hide, transitionendCb', LargeView);
           resolve()
         }
 
-        this.container.classList.add('transition')
-        this.container.addEventListener('transitionend', transitionendCb.bind(this))
+        this.container.addEventListener('transitionend', transitionendCb)
+        this.transitionOn()
+        // this.container.classList.add('transition')
 
-        this.container.classList.add('transparent')
+        this.container.style.opacity = '0'
+        // this.container.classList.remove('solid')
       } catch(err) {
         reject(err)
       }
     })
   },
+
+  transitionOff() {
+    this.container.style.transition = 'none'
+  },
+
+  transitionOn() {
+    this.container.style.transition = this.transitionSetup
+  }
 }
 
 // console.log('LargeView', LargeView)

@@ -11,7 +11,7 @@ class ShowcaseImage extends Enlargable {
 }
 
 function initShowcases() {
-  LargeView.init()
+  LargeView.init({transition: 'opacity 0.4s'})
   document.querySelector('body').appendChild(LargeView.container)
   console.log('LargeView', LargeView)
 
