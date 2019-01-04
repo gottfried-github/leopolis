@@ -17,23 +17,31 @@ const LargeView = {
     this.container.style.display = 'none'
     // this.container.classList.add('noned')
     this.hidden = true
+    // this.photo = new Photo()
   },
 
   setPhoto(url) {
-    this.photo = new Photo(url)
+    const photo = new Photo(url)
+    // this.photo = new Photo(url)
 
-    return this.photo.load()
+    return photo.load()
     // .then()
-    .then(() => {
+    .then((photo) => {
       try {
         if (this.hidden) {
           Promise.reject(new Error('the large-view container must be displayed before we can fit in the photo'))
         } else {
-          this.photo.hide(false)
-          this.container.appendChild(this.photo.el)
+          // this.photo.hide(false)
+          photo.hide(false)
+          if (this.photo) {
+            this.container.replaceChild(photo.el, this.photo.el)
+          } else {
+            this.container.appendChild(photo.el)
+          }
 
-          this.photo.fitByBothSides(this.container)
-          this.photo.show(false)
+          photo.fitByBothSides(this.container)
+          photo.show(false)
+          this.photo = photo
         }
       } catch(err) {
         Promise.reject(err)
@@ -112,6 +120,7 @@ const LargeView = {
           self.transitionOff()
           // self.container.classList.remove('transition')
           self.container.style.display = 'none'
+          self.photo.hide(false)
           // self.container.classList.add('noned')
 
           self.hidden = true
