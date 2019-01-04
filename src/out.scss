@@ -24,11 +24,19 @@
   width: 450px;
   height: 250px;
 
-  background-image: url('media/out/22219946_1606186132776568_2916948056513412695_o.jpg');
   background-position: center;
   background-size: cover;
 }
 
+#out .showcase#trash .image-thumb {
+  background-image: url('media/out/bRKZ2X7P_T4.jpg');
+}
+#out .showcase#playground .image-thumb {
+  background-image: url('media/out/22219946_1606186132776568_2916948056513412695_o.jpg');
+}
+#out .showcase#gifts .image-thumb {
+  background-image: url('media/out/25440299_1682244401837407_1959189880887880611_o.jpg');
+}
 
 #out .showcase .description-wrap {
   float: left;
