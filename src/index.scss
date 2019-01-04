@@ -11,8 +11,24 @@ html, body {
   display: flex;
 }
 
-.content {
+.content { 
   margin: auto 100px;
+}
+
+.icon svg {
+  width: 64px;
+  height: 64px;
+}
+
+.icon svg path {
+  fill:none;
+  stroke:#00d264;
+  stroke-width:1.05833328;
+  stroke-linecap:butt;
+  stroke-linejoin:miter;
+  stroke-miterlimit:4;
+  stroke-dasharray:none;
+  stroke-opacity:0.57438013;
 }
 
 #up {
