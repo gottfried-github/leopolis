@@ -36,11 +36,19 @@ p, span {
 
 .large-view_wrap {
   position: fixed;
-  top: 0px; 
+  top: 0px;
   left: 0px;
   z-index: 99;
   width: 100%;
   height: 100%;
+}
+
+.large-view_wrap .icon#cross {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+
+  margin: 50px;
 }
 
 .concept h1 {

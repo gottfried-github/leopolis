@@ -12,7 +12,9 @@ const LargeView = {
     // same as in the scss
     container.className = 'large-view_container'
     this.container = container
-    this.container.addEventListener('click', () => {this.hide()})
+
+    // if (options.clickCb)
+    // this.container.addEventListener('click', () => {this.hide()})
     this.wrap = options.wrap || this.container
 
     this.wrap.style.opacity = '0'

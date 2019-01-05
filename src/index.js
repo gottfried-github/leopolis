@@ -38,13 +38,18 @@ function initGallery(photoUrls) {
 }
 
 function boot(galleryUrls) {
+  const largeViewWrap = document.querySelector('.large-view_wrap')
   LargeView.init({
     transition: 'opacity 0.4s',
     display: 'block',
-    wrap: document.querySelector('.large-view_wrap')
+    wrap: largeViewWrap
+  })
+
+  largeViewWrap.appendChild(LargeView.container)
+  largeViewWrap.querySelector('.icon#cross').addEventListener('click', () => {
+    LargeView.hide()
   })
   
-  document.querySelector('.large-view_wrap').appendChild(LargeView.container)
   console.log('LargeView', LargeView)
 
   initGallery(galleryUrls)
