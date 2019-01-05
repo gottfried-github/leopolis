@@ -1,7 +1,7 @@
-@import './didactGothic.scss';
-@import './openSans.scss';
-@import './objective.scss';
-@import './futura.scss';
+// @import './didactGothic.scss';
+// @import './openSans.scss';
+// @import './objective.scss';
+// @import './futura.scss';
 @import './montserrat.scss';
 
 @import './slide.scss';
@@ -11,24 +11,26 @@ html, body {
   margin: 0px;
   padding: 0px;
 
-  font-family: DidactGothic;
-  font-family: FuturaPT;
-  font-family: Objective;
+  // font-family: DidactGothic;
+  // font-family: FuturaPT;
+  // font-family: Objective;
   font-family: Montserrat;
-  font-family: OpenSans;
+  // font-family: OpenSans;
 
   font-size: 16px;
 }
 
 h1 {
-  // font-size: 3em;
+  font-size: 3em;
+  font-weight: 900;
 }
 
 h1, h2 {
-  font-weight: 800;
+  // font-weight: 800;
 }
 
 p, span {
+  font-weight: 500;
 }
 
 .content-wrap {
