@@ -102,8 +102,17 @@ p, span {
 }
 
 .concept-description .ratio {
-  padding-bottom: 45%;
+  padding-bottom: 0px;
 }
+
+.concept-description .content-wrap {
+  position: relative;
+}
+
+.concept-description .content {
+  margin: 75px 100px;
+}
+
 
 .concept-description .background svg {
   flex-grow: 0;
