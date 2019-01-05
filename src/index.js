@@ -38,8 +38,13 @@ function initGallery(photoUrls) {
 }
 
 function boot(galleryUrls) {
-  LargeView.init({transition: 'opacity 0.4s'})
-  document.querySelector('body').appendChild(LargeView.container)
+  LargeView.init({
+    transition: 'opacity 0.4s',
+    display: 'block',
+    wrap: document.querySelector('.large-view_wrap')
+  })
+  
+  document.querySelector('.large-view_wrap').appendChild(LargeView.container)
   console.log('LargeView', LargeView)
 
   initGallery(galleryUrls)
