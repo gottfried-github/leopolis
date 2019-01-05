@@ -22,8 +22,7 @@ html, body {
 }
 
 h1 {
-  font-size: 3em;
-  font-weight: 900;
+  font-weight: 800;
 }
 
 h1, h2 {
@@ -31,7 +30,17 @@ h1, h2 {
 }
 
 p, span {
-  font-weight: 500;
+  font-weight: 300;
+}
+
+.concept h1 {
+  font-size: 3em;
+}
+
+.concept .concept-description p,
+.concept .concept-description span {
+  font-weight: 200;
+  font-size: 1.5em; // 24px
 }
 
 .concept h1 {
