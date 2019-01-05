@@ -1,10 +1,55 @@
 @import './large-view.scss';
+
+// @import './didactGothic.scss';
+// @import './openSans.scss';
+// @import './objective.scss';
+// @import './futura.scss';
+@import './montserrat.scss';
 @import './slide.scss';
 @import './gallery.scss';
 
 html, body {
   margin: 0px;
   padding: 0px;
+
+  // font-family: DidactGothic;
+  // font-family: FuturaPT;
+  // font-family: Objective;
+  font-family: Montserrat;
+  // font-family: OpenSans;
+
+  // 0.125em == 2px
+  font-size: 16px;
+}
+
+h1 {
+  font-weight: 800;
+}
+
+h1, h2 {
+  // font-weight: 800;
+}
+
+p, span {
+  font-weight: 300;
+}
+
+.concept h1 {
+  font-size: 3em;
+}
+
+.concept .concept-description p,
+.concept .concept-description span {
+  font-weight: 200;
+  font-size: 1.5em; // 24px
+}
+
+.concept h1 {
+  // font-size: 3em;
+}
+
+.concept .concept-description p,
+.concept .concept-description span {
 }
 
 .content-wrap {
@@ -29,6 +74,16 @@ html, body {
   // margin-top: 500px;
 }
 
+.concept-description p {
+  // font-weight: 300;
+  // font-size: 1.1em;
+}
+
+.concept-description h1 {
+  // font-size: 3.3em;
+  // font-weight: bold;
+}
+
 .concept-description .background {
   position: absolute;
 
@@ -48,8 +103,17 @@ html, body {
 }
 
 .concept-description .ratio {
-  padding-bottom: 45%;
+  padding-bottom: 0px;
 }
+
+.concept-description .content-wrap {
+  position: relative;
+}
+
+.concept-description .content {
+  margin: 75px 100px;
+}
+
 
 .concept-description .background svg {
   flex-grow: 0;
