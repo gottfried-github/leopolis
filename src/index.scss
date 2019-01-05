@@ -17,6 +17,7 @@ html, body {
   font-family: Montserrat;
   // font-family: OpenSans;
 
+  // 0.125em == 2px
   font-size: 16px;
 }
 
@@ -31,6 +32,14 @@ h1, h2 {
 
 p, span {
   font-weight: 500;
+}
+
+.concept h1 {
+  // font-size: 3em;
+}
+
+.concept .concept-description p,
+.concept .concept-description span {
 }
 
 .content-wrap {
