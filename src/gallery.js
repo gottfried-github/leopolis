@@ -164,6 +164,7 @@ class Deck {
     // })
   }
 
+  /*
   calculateDeckOffset(index) {
     if (getViewportWidth() < this.breakpoint) {
       const itemOffset = this.items[index].getOffset()
@@ -185,6 +186,29 @@ class Deck {
       return deckOffsetNew
     }
   }
+  */
+
+  calculateDeckOffsetCentered(index) {
+    const itemOffset = this.items[index].getMidpoint()
+
+    const galleryMidpoint = this.options.getGalleryViewportWidth() / 2 // .getBoundingClientRect().width / 2
+    const deckOffsetNew = -itemOffset + galleryMidpoint
+
+    // console.log('Deck.calculateDeckOffset, index', index)
+    // console.log('Deck.calculateDeckOffset, items[index]', this.items[index])
+    // console.log('Deck.calculateDeckOffset, items[index]', this.items[index].getMidpoint())
+    // console.log('Deck.calculateDeckOffset, itemOffset', itemOffset)
+    // console.log('Deck.calculateDeckOffset, deckOffsetNew', deckOffsetNew)
+
+    return deckOffsetNew
+  }
+
+  calculateDeckOffset(index) {
+    const itemOffset = this.items[index].getOffset()
+    const deckOffsetNew = -itemOffset
+
+    return deckOffsetNew
+  }
 
   /*
   // TODO:
@@ -195,7 +219,10 @@ class Deck {
   }
   */
 
-  goToItem(index) {
+  /**
+  @param {boolean} centered if true - centers the item, if falsy - doesn't center
+  */
+  goToItem(index, centered) {
 
     if (index < 0 || index > this.items.length-1) {
       throw new Error("can't go to unexisting item at "+ index)
@@ -212,7 +239,7 @@ class Deck {
       return undefined
     }
 
-    const deckPositionNew = this.calculateDeckOffset(index)
+    const deckPositionNew = centered ? this.calculateDeckOffsetCentered(index) : this.calculateDeckOffset(index)
 
     // TODO:
     // this.offset = this.transitioning
@@ -294,7 +321,7 @@ class Gallery {
     this.deck = new Deck(photoUrls, {
       getGalleryViewportWidth: () => { return this.el.getBoundingClientRect().width },
       loadCb: () => {
-        this.activeItem = this.deck.goToItem(0)
+        this.activeItem = this.deck.goToItem(0, false)
         // this.goToNext.call(this)
       },
       breakpoint: options.breakpoint
@@ -308,17 +335,17 @@ class Gallery {
   }
 
   goToNext() {
-    if (this.activeItem.index == this.deck.items.length-1) return
     if (!this.deck.loaded) return
+    if (this.activeItem.index == this.deck.items.length-1) return
 
-    this.activeItem = this.deck.goToItem(this.activeItem.index+1)
+    this.activeItem = this.deck.goToItem(this.activeItem.index+1, true)
   }
 
   goToPrevious() {
-    if (this.activeItem.index == 0) return
     if (!this.deck.loaded) return
+    if (this.activeItem.index == 0) return
 
-    this.activeItem = this.deck.goToItem(this.activeItem.index-1)
+    this.activeItem = this.deck.goToItem(this.activeItem.index-1, true)
   }
   /*
   // TODO:
