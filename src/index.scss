@@ -1,9 +1,55 @@
+@import './large-view.scss';
+
+// @import './didactGothic.scss';
+// @import './openSans.scss';
+// @import './objective.scss';
+// @import './futura.scss';
+@import './montserrat.scss';
 @import './slide.scss';
 @import './gallery.scss';
 
 html, body {
   margin: 0px;
   padding: 0px;
+
+  // font-family: DidactGothic;
+  // font-family: FuturaPT;
+  // font-family: Objective;
+  font-family: Montserrat;
+  // font-family: OpenSans;
+
+  // 0.125em == 2px
+  font-size: 16px;
+}
+
+h1 {
+  font-weight: 800;
+}
+
+h1, h2 {
+  // font-weight: 800;
+}
+
+p, span {
+  font-weight: 300;
+}
+
+.concept h1 {
+  font-size: 3em;
+}
+
+.concept .concept-description p,
+.concept .concept-description span {
+  font-weight: 200;
+  font-size: 1.5em; // 24px
+}
+
+.concept h1 {
+  // font-size: 3em;
+}
+
+.concept .concept-description p,
+.concept .concept-description span {
 }
 
 .content-wrap {
@@ -28,6 +74,16 @@ html, body {
   // margin-top: 500px;
 }
 
+.concept-description p {
+  // font-weight: 300;
+  // font-size: 1.1em;
+}
+
+.concept-description h1 {
+  // font-size: 3.3em;
+  // font-weight: bold;
+}
+
 .concept-description .background {
   position: absolute;
 
@@ -47,8 +103,17 @@ html, body {
 }
 
 .concept-description .ratio {
-  padding-bottom: 45%;
+  padding-bottom: 0px;
 }
+
+.concept-description .content-wrap {
+  position: relative;
+}
+
+.concept-description .content {
+  margin: 75px 100px;
+}
+
 
 .concept-description .background svg {
   flex-grow: 0;
@@ -110,123 +175,10 @@ html, body {
 //
 // }
 
-#out .showcases-wrap {
-  margin: 75px auto;
-}
+@import './out.scss';
+@import './contact.scss';
 
-#out .showcases {
-  // margin: auto;
-  // display: flex;
-  // flex-wrap: wrap;
-  // justify-content: center;
-}
-
-#out .showcase {
-  // flex-shrink: 0;
-  // flex-grow: 0;
-
-  width: 700px;
-  margin: 0px auto;
-}
-
-#out .showcase .image-thumb {
-  float: left;
-  width: 450px;
-  height: 250px;
-
-  background-image: url('media/out/22219946_1606186132776568_2916948056513412695_o.jpg');
-  background-position: center;
-  background-size: cover;
-}
-
-
-#out .showcase .description-wrap {
-  float: left;
-  width: 150px;
-  height: 250px;
-
-  margin-left: 15px;
-  line-height: 250px;
-}
-
-#out .showcase .description-wrap p {
-  display: inline-block;
-  line-height: normal;
-  vertical-align: middle;
-}
-
-#out .description-container {
-  display: inline-block;
-}
-
-#contact .contact_content-wrap {
-  margin: auto 100px;
-}
-
-#contact .location-wrap {
-  display: flex;
-  justify-content: center;
-}
-
-#contact .street-view {
-  margin: 0px 5px 0px 0px;
-  flex-grow: 1;
-  // width: 50%;
-  width: 250px;
-  height: 300px;
-  background-image: url('media/locationStreetView.jpeg');
-  background-size: cover;
-  background-position: center;
-}
-
-#contact iframe {
-  margin: 0px 0px 0px 5px;
-  // flex-grow: 1;
-  // width: 45%;
-  width: 400px;
-  height: 300px;
-
-}
-
-#contact p {
-  margin: 50px auto 50px auto;
-}
-
-#staff {
-  margin: auto 100px;
-
-  display: flex;
-  justify-content: center;
-}
-
-#staff .member {
-  width: 250px;
-  text-align: center;
-}
-
-#staff .member .avatar {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-}
-
-#staff .member#norris .avatar {
-  background-image: url('media/staff/norris.jpg');
-  background-position: center;
-  background-size: cover;
-}
-
-#staff .member#powell .avatar {
-  background-image: url('media/staff/powell.jpg');
-  background-position: center;
-  background-size: cover;
-}
-
-#staff .member#ball .avatar {
-  background-image: url('media/staff/laura.jpg');
-  background-position: center;
-  background-size: cover;
-}
+@import './staff.scss';
 
 // #staff .member h2, #staff .member span {
 //
@@ -239,3 +191,37 @@ html, body {
 // #in .showcase:nth-child(1)  { // .image-thumb
 //   background-image: url('22219946_1606186132776568_2916948056513412695_o.jpg');
 // }
+
+.concept svg.mobile {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .concept svg.widescreen {
+    display: none;
+  }
+
+  .concept svg.mobile {
+    display: block;
+  }
+
+  .concept-description .ratio {
+    padding-bottom: 0px;
+  }
+
+  .content {
+    margin: auto 75px;
+  }
+
+  .content p {
+    margin: 15px 15px;
+  }
+
+  .concept-description .background svg {
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    //
+    width: 650%;
+  }
+}

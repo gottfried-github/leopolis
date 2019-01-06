@@ -1,17 +1,55 @@
 // import {slide} from './slide.js'
+import {getBackgroundImageUrl} from './lib.js'
 import {Gallery} from './gallery.js'
-function boot(photoUrls) {
-  // const photoUrls = []
-  const container = document.querySelector('.gallery-container')
+import {LargeView, Enlargable} from './large-view.js'
 
-  // const deck = new Deck(photoUrls, {breakpoint: 800})
+class ShowcaseImage extends Enlargable {
+  constructor(el) {
+    super(el, getBackgroundImageUrl(el))
+    // this.image = new Enlargable()
+  }
+}
+//
+// function initShowcases() {
+//   var els = document.querySelectorAll('#out .showcase .image-thumb')
+//   els = Array.prototype.slice.call(els, 0)
+//
+//   // console.log(els);
+//
+//   els.forEach(el => {new ShowcaseImage(el)})
+// }
+
+function initEnlargables(selector) {
+  var els = document.querySelectorAll(selector)
+  els = Array.prototype.slice.call(els, 0)
+
+  // console.log(els);
+
+  els.forEach(el => {new ShowcaseImage(el)})
+}
+
+function initGallery(photoUrls) {
+  const container = document.querySelector('.gallery-container')
 
   const gallery = new Gallery(photoUrls, {breakpoint: 800})
   container.appendChild(gallery.el)
 
-  console.log(gallery.deck)
   console.log('gallery', gallery)
-  // gallery.deck.goToItem(3)
+}
+
+function boot(galleryUrls) {
+  LargeView.init({transition: 'opacity 0.4s'})
+  document.querySelector('body').appendChild(LargeView.container)
+  console.log('LargeView', LargeView)
+
+  initGallery(galleryUrls)
+
+  initEnlargables('#out .showcase .image-thumb')
+  initEnlargables('#staff .member .avatar')
+  new ShowcaseImage(document.querySelector('#contact .street-view'))
+  // els.forEach(el => {new ShowcaseImage(el)})
+
+  // initShowcases()
 }
 
 window.addEventListener('load', () => {

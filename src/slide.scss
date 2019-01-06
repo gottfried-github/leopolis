@@ -52,6 +52,28 @@
   position: relative;
 }
 
+@media (max-width: 850px) {
+
+  // .ratio {
+  //   padding-bottom: 0px;
+  // }
+
+  // .content-wrap {
+  //   position: relative;
+  // }
+}
+
+@media (max-width: 800px) {
+
+  .ratio {
+    padding-bottom: 0px;
+  }
+
+  .content-wrap {
+    position: relative;
+  }
+}
+
 /*
 @media (max-width: 850px) {
   .ratio {
