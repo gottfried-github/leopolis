@@ -83,6 +83,22 @@ class DeckItem {
     this.el.style.width = width
   }
 
+  isInView() {
+    const offset = this.getOffset()
+
+    // deckPosition could be negative
+    return offset + this.options.getDeckPosition() >= 0 &&
+    this.offset + this.getWidth() <= this.options.getGalleryViewportWidth()
+      ? true : false
+
+    // if (
+    //   this.getOffset() + this.options.getDeckPosition() > 0 &&
+    //   this.getOffset() + this.getWidth() < this.options.getGalleryViewportWidth()
+    // ) {
+    //
+    // }
+  }
+
   loadPhoto(url) {
     return this.photo.load() // Photo.prototype.loadImage()
     .then((photo) => {
@@ -152,7 +168,7 @@ class Deck {
     } else {
       const itemOffset = this.items[index].getMidpoint()
 
-      const galleryMidpoint = this.options.getGalleryWidth() / 2 // .getBoundingClientRect().width / 2
+      const galleryMidpoint = this.options.getGalleryViewportWidth() / 2 // .getBoundingClientRect().width / 2
       const deckOffsetNew = -itemOffset + galleryMidpoint
 
       // console.log('Deck.calculateDeckOffset, index', index)
@@ -246,7 +262,9 @@ class Deck {
             this.loaded = true
             this.options.loadCb()
           }
-        }
+        },
+        getGalleryViewportWidth: this.options.getGalleryViewportWidth,
+        getDeckPosition: () => {return this.position}
       })
     })
   }
@@ -269,7 +287,7 @@ class Gallery {
 
 
     this.deck = new Deck(photoUrls, {
-      getGalleryWidth: () => { return this.el.getBoundingClientRect().width },
+      getGalleryViewportWidth: () => { return this.el.getBoundingClientRect().width },
       loadCb: () => {
         this.activeItem = this.deck.goToItem(0)
         // this.goToNext.call(this)
