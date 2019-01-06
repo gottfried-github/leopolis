@@ -5,18 +5,22 @@ const LargeView = {
   init(options) {
     options = options || {}
     if (options.transition) this.transitionSetup = options.transition
+    this.options = options
+
     const container = document.createElement('div')
 
     // same as in the scss
     container.className = 'large-view_container'
     this.container = container
-    this.container.addEventListener('click', () => {this.hide()})
 
+    // if (options.clickCb)
+    // this.container.addEventListener('click', () => {this.hide()})
+    this.wrap = options.wrap || this.container
 
-    this.container.style.opacity = '0'
-    // this.container.classList.add('transparent')
+    this.wrap.style.opacity = '0'
+    // this.wrap.classList.add('transparent')
 
-    this.container.style.display = 'none'
+    this.wrap.style.display = 'none'
     // this.container.classList.add('noned')
     this.hidden = true
     // this.photo = new Photo()
@@ -76,7 +80,7 @@ const LargeView = {
       try {
         const self = this
         function transitionendCb() {
-          self.container.removeEventListener('transitionend', transitionendCb)
+          self.wrap.removeEventListener('transitionend', transitionendCb)
           self.transitionOff()
           // this.container.classList.remove('transition')
 
@@ -86,16 +90,16 @@ const LargeView = {
           resolve()
         }
 
-        this.container.style.display = 'flex'
-        // this.container.classList.remove('noned')
-        this.container.addEventListener('transitionend', transitionendCb)
+        this.wrap.style.display = this.options.display || 'flex'
+        // this.wrap.classList.remove('noned')
+        this.wrap.addEventListener('transitionend', transitionendCb)
         this.transitionOn()
 
         this.showPending = true
         // this is nuts
         this.showTimeoutId = window.setTimeout(() => {
           this.showPending = false
-          this.container.style.opacity = '1'
+          this.wrap.style.opacity = '1'
           // this.container.classList.add('transition')
         }, 50)
 
@@ -118,10 +122,10 @@ const LargeView = {
       try {
         const self = this;
         function transitionendCb() {
-          self.container.removeEventListener('transitionend', transitionendCb)
+          self.wrap.removeEventListener('transitionend', transitionendCb)
           self.transitionOff()
-          // self.container.classList.remove('transition')
-          self.container.style.display = 'none'
+          // self.wrap.classList.remove('transition')
+          self.wrap.style.display = 'none'
           self.photo.hide(false)
           // self.container.classList.add('noned')
 
@@ -130,11 +134,11 @@ const LargeView = {
           resolve()
         }
 
-        this.container.addEventListener('transitionend', transitionendCb)
+        this.wrap.addEventListener('transitionend', transitionendCb)
         this.transitionOn()
         // this.container.classList.add('transition')
 
-        this.container.style.opacity = '0'
+        this.wrap.style.opacity = '0'
         // this.container.classList.remove('solid')
       } catch(err) {
         reject(err)
@@ -143,11 +147,11 @@ const LargeView = {
   },
 
   transitionOff() {
-    this.container.style.transition = 'none'
+    this.wrap.style.transition = 'none'
   },
 
   transitionOn() {
-    this.container.style.transition = this.transitionSetup
+    this.wrap.style.transition = this.transitionSetup
   }
 }
 
