@@ -34,6 +34,12 @@ function initGallery(photoUrls) {
   const gallery = new Gallery(photoUrls, {breakpoint: 800})
   container.appendChild(gallery.el)
 
+  const arrows = document.querySelector('.gallery-wrap')
+  arrows.querySelector('.icon#bwd')
+    .addEventListener('click', gallery.goToPrevious.bind(gallery))
+  arrows.querySelector('.icon#fwd')
+    .addEventListener('click', gallery.goToNext.bind(gallery))
+
   console.log('gallery', gallery)
 }
 
@@ -49,7 +55,7 @@ function boot(galleryUrls) {
   largeViewWrap.querySelector('.icon#cross').addEventListener('click', () => {
     LargeView.hide()
   })
-  
+
   console.log('LargeView', LargeView)
 
   initGallery(galleryUrls)
