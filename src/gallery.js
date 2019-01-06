@@ -14,7 +14,7 @@ class DeckItem {
     this.el.appendChild(contentWrap)
     contentWrap.appendChild(this.contentEl)
 
-    this.options = options
+    this.options = options || {}
     this.narrowMode = getViewportWidth() < this.options.breakpoint
     this.index = index
 
@@ -85,10 +85,15 @@ class DeckItem {
 
   isInView() {
     const offset = this.getOffset()
+    const deckPosition = this.options.getDeckPosition()
+    console.log('deckItem.isInView, offset: ', offset);
+    console.log('deckItem.isInView, width: ', this.getWidth());
+    console.log('deckItem.isInView, getDeckPosition: ', this.options.getDeckPosition());
+    console.log('deckItem.isInView, getGalleryViewportWidth: ', this.options.getGalleryViewportWidth());
 
     // deckPosition could be negative
-    return offset + this.options.getDeckPosition() >= 0 &&
-    this.offset + this.getWidth() <= this.options.getGalleryViewportWidth()
+    return offset + deckPosition >= 0 &&
+    deckPosition + offset + this.getWidth() <= this.options.getGalleryViewportWidth()
       ? true : false
 
     // if (
