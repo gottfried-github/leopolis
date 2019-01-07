@@ -51,18 +51,21 @@ $colder_yellow: rgba(225, 255, 118, 1);
 .concept#out .background svg path {
   // background: linear-gradient(to left, $saturated-green, white);
   // stroke: linear-gradient(to left, $saturated-green, white);
-  stroke: url(#out-gradient);
+  stroke: url('#out-gradient-widescreen');
 }
 
-.concept#out .concept-description .background svg.widescreen stop.left {
+.concept#out .concept-description .background svg.widescreen stop.left,
+.concept#out .concept-description .background svg.mobile stop.left {
   stop-color: $saturated_green;
 }
 
-.concept#out .concept-description .background svg.widescreen stop.leftish {
+.concept#out .concept-description .background svg.widescreen stop.leftish,
+.concept#out .concept-description .background svg.mobile stop.leftish {
   stop-color: $saturated_green;
 }
 
-.concept#out .concept-description .background svg.widescreen stop.right {
+.concept#out .concept-description .background svg.widescreen stop.right,
+.concept#out .concept-description .background svg.mobile stop.right {
   stop-color: $saturated_green; // $saturated_green_alpha;
 }
 
@@ -73,18 +76,21 @@ $colder_yellow: rgba(225, 255, 118, 1);
 .concept#in .background svg path {
   // background: linear-gradient(to left, $saturated-green, white);
   // stroke: linear-gradient(to left, $saturated-green, white);
-  stroke: url(#in-gradient);
+  stroke: url('#in-gradient-widescreen');
 }
 
-.concept#in .concept-description .background svg.widescreen stop.left {
+.concept#in .concept-description .background svg.widescreen stop.left,
+.concept#in .concept-description .background svg.mobile stop.left {
   stop-color: $saturated_yellow_alpha; // $saturated_green_alpha;
 }
 
-.concept#in .concept-description .background svg.widescreen stop.leftish {
+.concept#in .concept-description .background svg.widescreen stop.leftish,
+.concept#in .concept-description .background svg.mobile stop.leftish {
   stop-color: $saturated_yellow;
 }
 
-.concept#in .concept-description .background svg.widescreen stop.right {
+.concept#in .concept-description .background svg.widescreen stop.right,
+.concept#in .concept-description .background svg.mobile stop.right {
   stop-color: $saturated_yellow;
 }
 
@@ -346,6 +352,18 @@ p, span {
 
   .concept .background svg.mobile {
     display: block;
+  }
+
+  .concept#out .background svg path {
+    // background: linear-gradient(to left, $saturated-green, white);
+    // stroke: linear-gradient(to left, $saturated-green, white);
+    stroke: url('#out-gradient-mobile');
+  }
+
+  .concept#in .background svg path {
+    // background: linear-gradient(to left, $saturated-green, white);
+    // stroke: linear-gradient(to left, $saturated-green, white);
+    stroke: url('#in-gradient-mobile');
   }
 
   .concept-description .ratio {
