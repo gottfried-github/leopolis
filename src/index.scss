@@ -8,6 +8,87 @@
 @import './slide.scss';
 @import './gallery.scss';
 
+// saturated colors
+$saturated_green: rgba(86, 255, 126, 1);
+$saturated_green_alpha: rgba(86, 255, 126, 0);
+$saturated_yellow: rgba(230, 232, 78, 1);
+$saturated_yellow_alpha: rgba(230, 232, 78, 0);
+$saturated_orange: rgba(255, 197, 98, 1);
+$saturated_red: rgba(232, 96, 78, 1);
+$saturated_purple: rgba(216, 93, 255, 1);
+$saturated_purple_alpha: rgba(216, 93, 255, 0);
+
+// cold colors:
+$cold_blue: rgba(25, 255, 216, 1);
+$cold_greenish: rgba(95, 232, 159, 1);
+$cold_green: rgba(117, 255, 131, 1);
+$cold_greener: rgba(140, 232, 95, 1);
+$cold_yellow: rgba(225, 255, 118, 1);
+
+// colder colors:
+$colder_blue: rgba(131, 255, 231, 1);
+$colder_greenish: rgba(95, 232, 159, 1);
+$colder_green: rgba(117, 255, 131, 1);
+$colder_greener: rgba(140, 232, 95, 1);
+$colder_yellow: rgba(225, 255, 118, 1);
+
+.concept#up {
+  background: linear-gradient(to right, $saturated_purple, $saturated_purple_alpha);
+}
+
+.concept#out .background {
+  background: linear-gradient(to left, rgba(86, 255, 126, 0.8), rgba(86, 255, 126, 0.3));
+
+  // background-color: rgba(86, 255, 126, 0.5); // $saturated_green;
+}
+
+.concept#out .showcases-wrap {
+  // background: linear-gradient(to left, rgba(86, 255, 126, 0.8), rgba(86, 255, 126, 0.3));
+
+  background-color: rgba(86, 255, 126, 0.8); // $saturated_green;
+}
+
+.concept#out .background svg path {
+  // background: linear-gradient(to left, $saturated-green, white);
+  // stroke: linear-gradient(to left, $saturated-green, white);
+  stroke: url(#out-gradient);
+}
+
+.concept#out .concept-description .background svg.widescreen stop.left {
+  stop-color: $saturated_green;
+}
+
+.concept#out .concept-description .background svg.widescreen stop.leftish {
+  stop-color: $saturated_green;
+}
+
+.concept#out .concept-description .background svg.widescreen stop.right {
+  stop-color: $saturated_green; // $saturated_green_alpha;
+}
+
+.concept#in {
+  background: linear-gradient(to right, $saturated_yellow, $saturated_yellow_alpha);
+}
+
+.concept#in .background svg path {
+  // background: linear-gradient(to left, $saturated-green, white);
+  // stroke: linear-gradient(to left, $saturated-green, white);
+  stroke: url(#in-gradient);
+}
+
+.concept#in .concept-description .background svg.widescreen stop.left {
+  stop-color: $saturated_yellow_alpha; // $saturated_green_alpha;
+}
+
+.concept#in .concept-description .background svg.widescreen stop.leftish {
+  stop-color: $saturated_yellow;
+}
+
+.concept#in .concept-description .background svg.widescreen stop.right {
+  stop-color: $saturated_yellow;
+}
+
+
 html, body {
   margin: 0px;
   padding: 0px;
@@ -184,7 +265,7 @@ p, span {
 .concept .background svg path {
   display: inline;
   fill: none;
-  stroke: #dcd8de;
+  stroke: white; // #dcd8de
   stroke-width: 25px;
   // stroke-width: 13.22916698;
   stroke-linecap: round;
