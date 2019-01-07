@@ -36,10 +36,16 @@ $colder_yellow: rgba(225, 255, 118, 1);
   background: linear-gradient(to right, $saturated_purple, $saturated_purple_alpha);
 }
 
-.concept#out {
+.concept#out .background {
   background: linear-gradient(to left, rgba(86, 255, 126, 0.8), rgba(86, 255, 126, 0.3));
 
   // background-color: rgba(86, 255, 126, 0.5); // $saturated_green;
+}
+
+.concept#out .showcases-wrap {
+  // background: linear-gradient(to left, rgba(86, 255, 126, 0.8), rgba(86, 255, 126, 0.3));
+
+  background-color: rgba(86, 255, 126, 0.8); // $saturated_green;
 }
 
 .concept#out .background svg path {
