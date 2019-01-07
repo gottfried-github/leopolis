@@ -52,7 +52,7 @@
   background-size: cover;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
 
   #staff {
     margin: 75px auto 15px auto;
@@ -69,6 +69,22 @@
   #staff .member .avatar {
     // width: 250px;
     // height: 250px;
-    border-radius: 50%;
+    // border-radius: 50%;
+  }
+}
+
+@media (max-width: 650px) {
+  #staff .member {
+    float: none;
+    width: 100%;
+    padding: 0px 15px 75px 15px;
+  }
+
+  #staff .member .info-wrap {
+    margin: 50px auto 15px auto;
+  }
+
+  #staff .members-wrap .clearleft {
+    display: none;
   }
 }
