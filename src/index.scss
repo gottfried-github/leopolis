@@ -152,6 +152,20 @@ p, span {
   // font-size: 3em;
 }
 
+#about .content {
+  margin: 100px 100px;
+}
+
+#about h1 {
+  font-size: 3em;
+}
+
+#about p,
+#about span {
+  font-weight: 200;
+  font-size: 1.5em; // 24px
+}
+
 .concept .concept-description p,
 .concept .concept-description span {
 }
@@ -343,6 +357,30 @@ p, span {
 
 .concept .background svg.mobile {
   display: none;
+}
+
+#front {
+  height: 500px;
+  line-height: 500px;
+  background-image: url('media/landing/11745430_951029561625565_2841622478972039919_n.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+#front h1 {
+  display: inline-block;
+  line-height: normal;
+  vertical-align: middle;
+  text-align: center;
+  // color: $saturated_green;
+  margin: auto 50px;
+  font-size: 4em;
+
+  color: transparent;
+  background-image: linear-gradient(to right, rgba(230, 232, 78, 0.8), rgba(86, 255, 126, 0.8));
+  background-clip: text;
+  // $saturated_yellow: rgba(230, 232, 78, 1);
+  // $saturated_purple: rgba(216, 93, 255, 1);
 }
 
 @media (max-width: 850px) {
