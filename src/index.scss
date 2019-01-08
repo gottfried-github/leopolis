@@ -36,6 +36,11 @@ $colder_yellow: rgba(225, 255, 118, 1);
   background: linear-gradient(to right, $saturated_purple, $saturated_purple_alpha);
 }
 
+span.highlight {
+  font-weight: 800;
+
+}
+
 .concept#out .background {
   background: linear-gradient(to left, rgba(86, 255, 126, 0.8), rgba(86, 255, 126, 0.3));
 
@@ -107,6 +112,12 @@ html, body {
 
   // 0.125em == 2px
   font-size: 16px;
+  // background-color: $light_green;
+  // background-color: rgba(225, 255, 118, 0.3); // $colder_yellow;
+  // $colder_yellow: rgba(225, 255, 118, 1);
+  background-color: rgba(230, 230, 230, 1);
+  // color: $dark_green;
+  font-weight: 300;
 }
 
 h1 {
