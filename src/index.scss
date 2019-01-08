@@ -166,6 +166,25 @@ p, span {
   font-size: 1.5em; // 24px
 }
 
+#up .photo {
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  margin: 1px auto;
+}
+
+#up .photo#audience {
+  background-image: url('media/up/21688306_1596531477075367_2999301465771200079_o.jpg');
+}
+
+#up .photo#lecturer {
+  background-image: url('media/up/23551059_1648234865238361_2582291400729201502_o.jpg');
+}
+
+#up .photo#group {
+  background-image: url('media/up/21552067_1585036934891488_5713564960741055310_o.jpg');
+}
+
 .concept .concept-description p,
 .concept .concept-description span {
 }
