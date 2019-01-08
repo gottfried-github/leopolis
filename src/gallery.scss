@@ -16,7 +16,7 @@
   line-height: 0px;
 
   // overflow: hidden;
-  background-color: grey;
+  // background-color: grey;
 }
 
 .gallery-deck.transition {
@@ -37,7 +37,7 @@
 .deck-item-content {
   // width: 150px;
   // height: 150px;
-  background-color: green;
+  // background-color: green;
 }
 
 .deck-item img {
@@ -50,9 +50,9 @@
   white-space: normal;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .deck-item {
-    height: 300px;
+    height: 600px;
     width: 100vw;
   }
 

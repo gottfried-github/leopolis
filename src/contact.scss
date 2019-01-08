@@ -44,8 +44,24 @@
   margin: 50px auto 50px auto;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   #contact .contact_content-wrap {
     margin: auto 0px;
+  }
+}
+
+@media (max-width: 650px) {
+
+  #contact .location-wrap .street-view,
+  #contact .location-wrap .map {
+    float: none;
+    width: 100%;
+    // height: 300px;
+    // margin: auto 0px;
+  }
+
+  #contact .location-wrap .clearleft {
+    display: none;
+    // margin: auto 0px;
   }
 }
