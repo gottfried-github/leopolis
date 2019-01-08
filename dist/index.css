@@ -169,11 +169,10 @@ opacity: 1;
     height: 100%; } }
 
 span.highlight {
-  font-weight: 800;
-  color: #590023; }
+  font-weight: 800; }
 
 .concept#up .background {
-  background: linear-gradient(to left, #1eb927, #5bc561); }
+  background: linear-gradient(to left, #5bc561, #e6e6e6); }
 
 /*
 .concept#up .background svg path {
@@ -190,10 +189,10 @@ span.highlight {
 
 .concept#up .concept-description .background svg.widescreen stop.right,
 .concept#up .concept-description .background svg.mobile stop.right {
-  stop-color: #1eb927; }
+  stop-color: rgba(230, 230, 230, 0.3); }
 
 .concept#out .background {
-  background: linear-gradient(to right, #1eb927, #5bc561); }
+  background: linear-gradient(to right, #5bc561, #e6e6e6); }
 
 /*
 .concept#out .background svg path {
@@ -207,14 +206,14 @@ span.highlight {
 
 .concept#out .concept-description .background svg.widescreen stop.left,
 .concept#out .concept-description .background svg.mobile stop.left {
-  stop-color: white; }
+  stop-color: rgba(230, 230, 230, 0.3); }
 
 .concept#out .concept-description .background svg.widescreen stop.right,
 .concept#out .concept-description .background svg.mobile stop.right {
-  stop-color: #1eb927; }
+  stop-color: white; }
 
 .concept#in .background {
-  background: linear-gradient(to left, #1eb927, #5bc561); }
+  background: linear-gradient(to left, #5bc561, #e6e6e6); }
 
 /*
 .concept#in .background svg path {\
@@ -228,11 +227,11 @@ span.highlight {
 
 .concept#in .concept-description .background svg.widescreen stop.left,
 .concept#in .concept-description .background svg.mobile stop.left {
-  stop-color: #1eb927; }
+  stop-color: white; }
 
 .concept#in .concept-description .background svg.widescreen stop.right,
 .concept#in .concept-description .background svg.mobile stop.right {
-  stop-color: white; }
+  stop-color: rgba(230, 230, 230, 0.3); }
 
 html, body {
   margin: 0px;
@@ -240,7 +239,7 @@ html, body {
   font-family: Montserrat;
   font-size: 16px;
   background-color: #e6e6e6;
-  color: #1a391c;
+  color: black;
   font-weight: 300; }
 
 h1 {

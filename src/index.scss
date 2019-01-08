@@ -8,6 +8,11 @@
 @import './slide.scss';
 @import './gallery.scss';
 
+$whitish: rgba(230, 230, 230, 1);
+$whitish_alpha: rgba(230, 230, 230, 0.3);
+$white: white;
+$white_alpha: rgba(255, 255, 255, 0.3);
+
 // saturated colors
 $saturated_green: rgba(86, 255, 126, 1);
 $saturated_green_alpha: rgba(86, 255, 126, 0);
@@ -36,9 +41,11 @@ $colder_yellow: rgba(225, 255, 118, 1);
 $darkish_green: rgba(10, 65, 14, 1);
 $light_green: rgba(91, 197, 97, 1);
 $light_green_alpha: rgba(91, 197, 97, 0.5);
+// $light_green_alpha_bckd: rgba(91, 197, 97, 0.5);
 $primary_green: rgba(30, 185, 39, 1);
 $dark_green: rgba(26, 57, 28, 1);
 $shade_green: rgba(22, 134, 28, 1);
+$shade_green_alpha: rgba(22, 134, 28, 0.2);
 
 // complement to colors_02
 $dark_purple: rgba(89, 0, 35, 1);
@@ -46,7 +53,7 @@ $light_purple: rgba(166, 27, 81, 1);
 
 span.highlight {
   font-weight: 800;
-  color: $dark_purple;
+  // color: $dark_purple;
   // color: $saturated_yellow;
 }
 .concept-description {
@@ -54,7 +61,7 @@ span.highlight {
 }
 
 .concept#up .background {
-  background: linear-gradient(to left, $primary_green, $light_green);
+  background: linear-gradient(to left, $light_green, $whitish);
   // background: linear-gradient(to left, $primary_green, $darkish_green);
 }
 
@@ -72,7 +79,7 @@ span.highlight {
 
 .concept#up .concept-description .background svg.widescreen stop.left,
 .concept#up .concept-description .background svg.mobile stop.left {
-  stop-color: white; // $shade_green;
+  stop-color: $white; // $shade_green;
 }
 
 // .concept#up .concept-description .background svg.widescreen stop.leftish,
@@ -82,12 +89,12 @@ span.highlight {
 
 .concept#up .concept-description .background svg.widescreen stop.right,
 .concept#up .concept-description .background svg.mobile stop.right {
-  stop-color: $primary_green; // $saturated_green_alpha;
+  stop-color: $whitish_alpha; // $saturated_green_alpha;
 }
 
 .concept#out .background {
   // rgba(86, 255, 126, 0.8)
-  background: linear-gradient(to right, $primary_green, $light_green);
+  background: linear-gradient(to right, $light_green, $whitish);
   // background: linear-gradient(to left, $primary_green, $darkish_green);
 
   // background-color: rgba(86, 255, 126, 0.5); // $saturated_green;
@@ -108,7 +115,7 @@ span.highlight {
 
 .concept#out .concept-description .background svg.widescreen stop.left,
 .concept#out .concept-description .background svg.mobile stop.left {
-  stop-color: white;
+  stop-color: $whitish_alpha;
 }
 
 // .concept#out .concept-description .background svg.widescreen stop.leftish,
@@ -118,12 +125,12 @@ span.highlight {
 
 .concept#out .concept-description .background svg.widescreen stop.right,
 .concept#out .concept-description .background svg.mobile stop.right {
-  stop-color: $primary_green; // $shade_green; // $saturated_green_alpha;
+  stop-color: $white; // $shade_green; // $saturated_green_alpha;
 }
 
 
 .concept#in .background {
-  background: linear-gradient(to left, $primary_green, $light_green);
+  background: linear-gradient(to left, $light_green, $whitish);
   // background: linear-gradient(to left, $primary_green, $darkish_green);
   // background: linear-gradient(to right, $saturated_yellow, $saturated_yellow_alpha);
 }
@@ -143,7 +150,7 @@ span.highlight {
 
 .concept#in .concept-description .background svg.widescreen stop.left,
 .concept#in .concept-description .background svg.mobile stop.left {
-  stop-color: $primary_green; // $shade_green; // $saturated_green_alpha;
+  stop-color: $white; // $shade_green; // $saturated_green_alpha;
 }
 
 // .concept#in .concept-description .background svg.widescreen stop.leftish,
@@ -153,7 +160,7 @@ span.highlight {
 
 .concept#in .concept-description .background svg.widescreen stop.right,
 .concept#in .concept-description .background svg.mobile stop.right {
-  stop-color: white;
+  stop-color: $whitish_alpha;
 }
 
 
@@ -172,8 +179,8 @@ html, body {
   // background-color: $light_green;
   // background-color: rgba(225, 255, 118, 0.3); // $colder_yellow;
   // $colder_yellow: rgba(225, 255, 118, 1);
-  background-color: rgba(230, 230, 230, 1);
-  color: $dark_green;
+  background-color: $whitish;
+  color: black; // $dark_purple;
   // color: $dark_green;
   font-weight: 300;
 }
