@@ -219,9 +219,6 @@ html, body {
 h1 {
   font-weight: 800; }
 
-p, span {
-  font-weight: 300; }
-
 .large-view_wrap {
   position: fixed;
   top: 0px;
@@ -236,24 +233,22 @@ p, span {
   top: 0px;
   margin: 50px; }
 
-.concept h1 {
-  font-size: 3em; }
-
-.concept .concept-description p,
-.concept .concept-description span {
+.concept .concept-description {
   font-weight: 200;
   font-size: 1.5em; }
+
+.concept h1 {
+  font-size: 3em; }
 
 #about .content {
   margin: 100px 100px; }
 
-#about h1 {
-  font-size: 3em; }
-
-#about p,
-#about span {
+#about {
   font-weight: 200;
   font-size: 1.5em; }
+
+#about h1 {
+  font-size: 3em; }
 
 #up .photo {
   background-size: cover;
