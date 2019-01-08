@@ -40,102 +40,121 @@ $primary_green: rgba(30, 185, 39, 1);
 $dark_green: rgba(26, 57, 28, 1);
 $shade_green: rgba(22, 134, 28, 1);
 
+// complement to colors_02
+$dark_purple: rgba(89, 0, 35, 1);
+$light_purple: rgba(166, 27, 81, 1);
+
+span.highlight {
+  font-weight: 800;
+  color: $dark_purple;
+  // color: $saturated_yellow;
+}
+.concept-description {
+  // color: $saturated_yellow;
+}
+
 .concept#up .background {
-  background: linear-gradient(to left, $primary_green, $primary_green);
+  background: linear-gradient(to left, $primary_green, $light_green);
   // background: linear-gradient(to left, $primary_green, $darkish_green);
 }
 
+/*
 .concept#up .background svg path {
   stroke: $light_green_alpha;
 }
 
-span.highlight {
-  font-weight: 800;
+*/
+.concept#up .background svg path {
+  stroke: url('#up-gradient-widescreen');
+}
 
+// This is a gradient for svg path's stroke
+
+.concept#up .concept-description .background svg.widescreen stop.left,
+.concept#up .concept-description .background svg.mobile stop.left {
+  stop-color: white; // $shade_green;
+}
+
+// .concept#up .concept-description .background svg.widescreen stop.leftish,
+// .concept#up .concept-description .background svg.mobile stop.leftish {
+//   stop-color: $saturated_green;
+// }
+
+.concept#up .concept-description .background svg.widescreen stop.right,
+.concept#up .concept-description .background svg.mobile stop.right {
+  stop-color: $primary_green; // $saturated_green_alpha;
 }
 
 .concept#out .background {
   // rgba(86, 255, 126, 0.8)
-  background: linear-gradient(to left, $primary_green, $primary_green);
+  background: linear-gradient(to right, $primary_green, $light_green);
   // background: linear-gradient(to left, $primary_green, $darkish_green);
 
   // background-color: rgba(86, 255, 126, 0.5); // $saturated_green;
 }
 
-.concept#out .showcases-wrap {
-  // background: linear-gradient(to left, rgba(86, 255, 126, 0.8), rgba(86, 255, 126, 0.3));
-
-  // background-color: rgba(86, 255, 126, 0.8); // $saturated_green;
-}
-
-.concept#out .background svg path {
-  // background: linear-gradient(to left, $saturated-green, white);
-  // stroke: linear-gradient(to left, $saturated-green, white);
-  // stroke: url('#out-gradient-widescreen');
-  stroke: $light_green_alpha;
-}
-
-.concept#in .background {
-  background: linear-gradient(to left, $primary_green, $primary_green);
-  // background: linear-gradient(to left, $primary_green, $darkish_green);
-  // background: linear-gradient(to right, $saturated_yellow, $saturated_yellow_alpha);
-}
-
-.concept#in .background svg path {
-  // background: linear-gradient(to left, $saturated-green, white);
-  // stroke: linear-gradient(to left, $saturated-green, white);
-  // stroke: url('#out-gradient-widescreen');
-  stroke: $light_green_alpha;
-}
-
 /*
+.concept#out .background svg path {
+  // stroke: linear-gradient(to left, $saturated-green, white);
+  stroke: $light_green_alpha;
+}
 
-This is a gradient for svg path's stroke
+*/
+.concept#out .background svg path {
+  stroke: url('#out-gradient-widescreen');
+}
+
+// This is a gradient for svg path's stroke
 
 .concept#out .concept-description .background svg.widescreen stop.left,
 .concept#out .concept-description .background svg.mobile stop.left {
-  stop-color: $saturated_green;
+  stop-color: white;
 }
 
-.concept#out .concept-description .background svg.widescreen stop.leftish,
-.concept#out .concept-description .background svg.mobile stop.leftish {
-  stop-color: $saturated_green;
-}
+// .concept#out .concept-description .background svg.widescreen stop.leftish,
+// .concept#out .concept-description .background svg.mobile stop.leftish {
+//   stop-color: $saturated_green;
+// }
 
 .concept#out .concept-description .background svg.widescreen stop.right,
 .concept#out .concept-description .background svg.mobile stop.right {
-  stop-color: $saturated_green; // $saturated_green_alpha;
+  stop-color: $primary_green; // $shade_green; // $saturated_green_alpha;
+}
+
+
+.concept#in .background {
+  background: linear-gradient(to left, $primary_green, $light_green);
+  // background: linear-gradient(to left, $primary_green, $darkish_green);
+  // background: linear-gradient(to right, $saturated_yellow, $saturated_yellow_alpha);
+}
+/*
+.concept#in .background svg path {\
+  // stroke: linear-gradient(to left, $saturated-green, white);\
+  stroke: $light_green_alpha;
 }
 
 */
 
-/*
-
-This is a gradient for svg path's stroke
+// This is a gradient for svg path's stroke
 
 .concept#in .background svg path {
-// background: linear-gradient(to left, $saturated-green, white);
-// stroke: linear-gradient(to left, $saturated-green, white);
-stroke: $light_green_alpha;
-// stroke: url('#in-gradient-widescreen');
+  stroke: url('#in-gradient-widescreen');
 }
 
 .concept#in .concept-description .background svg.widescreen stop.left,
 .concept#in .concept-description .background svg.mobile stop.left {
-  stop-color: $saturated_yellow_alpha; // $saturated_green_alpha;
+  stop-color: $primary_green; // $shade_green; // $saturated_green_alpha;
 }
 
-.concept#in .concept-description .background svg.widescreen stop.leftish,
-.concept#in .concept-description .background svg.mobile stop.leftish {
-  stop-color: $saturated_yellow;
-}
+// .concept#in .concept-description .background svg.widescreen stop.leftish,
+// .concept#in .concept-description .background svg.mobile stop.leftish {
+//   stop-color: $saturated_yellow;
+// }
 
 .concept#in .concept-description .background svg.widescreen stop.right,
 .concept#in .concept-description .background svg.mobile stop.right {
-  stop-color: $saturated_yellow;
+  stop-color: white;
 }
-*/
-
 
 
 html, body {
@@ -189,7 +208,7 @@ h1, h2 {
 }
 
 .concept .concept-description {
-  font-weight: 200;
+  // font-weight: 200;
   font-size: 1.5em; // 24px
 }
 
@@ -206,7 +225,7 @@ h1, h2 {
 }
 
 #about {
-  font-weight: 200;
+  // font-weight: 200;
   font-size: 1.5em; // 24px
 }
 
