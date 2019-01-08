@@ -49,6 +49,11 @@ $shade_green: rgba(22, 134, 28, 1);
   stroke: $light_green_alpha;
 }
 
+span.highlight {
+  font-weight: 800;
+
+}
+
 .concept#out .background {
   // rgba(86, 255, 126, 0.8)
   background: linear-gradient(to left, $primary_green, $primary_green);
@@ -150,6 +155,8 @@ html, body {
   // $colder_yellow: rgba(225, 255, 118, 1);
   background-color: rgba(230, 230, 230, 1);
   color: $dark_green;
+  // color: $dark_green;
+  font-weight: 300;
 }
 
 h1 {
@@ -160,9 +167,9 @@ h1, h2 {
   // font-weight: 800;
 }
 
-p, span {
-  font-weight: 300;
-}
+// p, span {
+//   font-weight: 300;
+// }
 
 .large-view_wrap {
   position: fixed;
@@ -181,14 +188,13 @@ p, span {
   margin: 50px;
 }
 
-.concept h1 {
-  font-size: 3em;
-}
-
-.concept .concept-description p,
-.concept .concept-description span {
+.concept .concept-description {
   font-weight: 200;
   font-size: 1.5em; // 24px
+}
+
+.concept h1 {
+  font-size: 3em;
 }
 
 .concept h1 {
@@ -199,14 +205,13 @@ p, span {
   margin: 100px 100px;
 }
 
-#about h1 {
-  font-size: 3em;
-}
-
-#about p,
-#about span {
+#about {
   font-weight: 200;
   font-size: 1.5em; // 24px
+}
+
+#about h1 {
+  font-size: 3em;
 }
 
 #up .photo {
