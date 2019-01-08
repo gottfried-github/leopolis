@@ -411,6 +411,20 @@ p, span {
     //
     width: 650%;
   }
+
+  #front h1 {
+    margin: auto 25px;
+    font-size: 2.6em;
+  }
+
+
+  #about .content {
+    margin: 100px 25px;
+  }
+
+  // #about .content h1 {
+  //   margin: auto 15px;
+  // }
 }
 
 @media (max-width: 650px) {
@@ -448,7 +462,7 @@ p, span {
     stroke: url('#in-gradient-mobile');
   }
 
-  .concept-description .background svg path {
+  .concept-description .background svg {
     // flex-grow: 0;
     // flex-shrink: 0;
     //
