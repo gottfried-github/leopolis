@@ -1,0 +1,96 @@
+.symbol-slide {
+  position: relative;
+}
+
+.ratio-wrap {
+  // box-sizing: border-box;
+
+  // width: 100%;
+  // width: 500px;
+  // width: 500px;
+  // height: 50px;
+}
+
+.ratio {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56%; // 56.25% is the percentage of 9 relative to 16, in 16:9
+}
+
+.background {
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  // background-image: url('out-bckd_01-01plain.svg');
+  // background-size: cover;
+  // background-position: center;
+
+  width: 100%;
+  height: 100%;
+  // background-color: grey;
+}
+
+.background svg {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 160%;
+}
+
+.content-wrap {
+  // box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  position: relative;
+}
+
+@media (max-width: 850px) {
+
+  // .ratio {
+  //   padding-bottom: 0px;
+  // }
+
+  // .content-wrap {
+  //   position: relative;
+  // }
+}
+
+@media (max-width: 800px) {
+
+  .ratio {
+    padding-bottom: 0px;
+  }
+
+  .content-wrap {
+    position: relative;
+  }
+}
+
+/*
+@media (max-width: 850px) {
+  .ratio {
+    padding-bottom: 165%;
+  }
+
+  .content {
+    // box-sizing: border-box;
+    position: absolute;
+
+    background-image: url('up-bckrd-mobile_01-01plain.svg');
+    background-size: cover;
+    background-position: center;
+
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+  }
+}
+*/

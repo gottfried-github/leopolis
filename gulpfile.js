@@ -37,3 +37,7 @@ gulp.task('see', function() {
     done()
   }))
 })
+
+gulp.task('look', function() {
+  gulp.watch('./src/index.html')
+})
