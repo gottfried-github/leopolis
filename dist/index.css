@@ -168,53 +168,77 @@ opacity: 1;
     width: 100%;
     height: 100%; } }
 
-.concept#up {
-  background: linear-gradient(to right, #d85dff, rgba(216, 93, 255, 0)); }
+.concept#up .background {
+  background: linear-gradient(to left, #1eb927, #1eb927); }
+
+.concept#up .background svg path {
+  stroke: rgba(91, 197, 97, 0.5); }
 
 .concept#out .background {
-  background: linear-gradient(to left, rgba(86, 255, 126, 0.8), rgba(86, 255, 126, 0.3)); }
-
-.concept#out .showcases-wrap {
-  background-color: rgba(86, 255, 126, 0.8); }
+  background: linear-gradient(to left, #1eb927, #1eb927); }
 
 .concept#out .background svg path {
-  stroke: url("#out-gradient-widescreen"); }
+  stroke: rgba(91, 197, 97, 0.5); }
+
+.concept#in .background {
+  background: linear-gradient(to left, #1eb927, #1eb927); }
+
+.concept#in .background svg path {
+  stroke: rgba(91, 197, 97, 0.5); }
+
+/*
+
+This is a gradient for svg path's stroke
 
 .concept#out .concept-description .background svg.widescreen stop.left,
 .concept#out .concept-description .background svg.mobile stop.left {
-  stop-color: #56ff7e; }
+  stop-color: $saturated_green;
+}
 
 .concept#out .concept-description .background svg.widescreen stop.leftish,
 .concept#out .concept-description .background svg.mobile stop.leftish {
-  stop-color: #56ff7e; }
+  stop-color: $saturated_green;
+}
 
 .concept#out .concept-description .background svg.widescreen stop.right,
 .concept#out .concept-description .background svg.mobile stop.right {
-  stop-color: #56ff7e; }
+  stop-color: $saturated_green; // $saturated_green_alpha;
+}
 
-.concept#in {
-  background: linear-gradient(to right, #e6e84e, rgba(230, 232, 78, 0)); }
+*/
+/*
+
+This is a gradient for svg path's stroke
 
 .concept#in .background svg path {
-  stroke: url("#in-gradient-widescreen"); }
+// background: linear-gradient(to left, $saturated-green, white);
+// stroke: linear-gradient(to left, $saturated-green, white);
+stroke: $light_green_alpha;
+// stroke: url('#in-gradient-widescreen');
+}
 
 .concept#in .concept-description .background svg.widescreen stop.left,
 .concept#in .concept-description .background svg.mobile stop.left {
-  stop-color: rgba(230, 232, 78, 0); }
+  stop-color: $saturated_yellow_alpha; // $saturated_green_alpha;
+}
 
 .concept#in .concept-description .background svg.widescreen stop.leftish,
 .concept#in .concept-description .background svg.mobile stop.leftish {
-  stop-color: #e6e84e; }
+  stop-color: $saturated_yellow;
+}
 
 .concept#in .concept-description .background svg.widescreen stop.right,
 .concept#in .concept-description .background svg.mobile stop.right {
-  stop-color: #e6e84e; }
-
+  stop-color: $saturated_yellow;
+}
+*/
 html, body {
   margin: 0px;
   padding: 0px;
   font-family: Montserrat;
-  font-size: 16px; }
+  font-size: 16px;
+  background-color: #e6e6e6;
+  color: #1a391c; }
 
 h1 {
   font-weight: 800; }

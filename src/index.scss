@@ -32,12 +32,27 @@ $colder_green: rgba(117, 255, 131, 1);
 $colder_greener: rgba(140, 232, 95, 1);
 $colder_yellow: rgba(225, 255, 118, 1);
 
-.concept#up {
-  background: linear-gradient(to right, $saturated_purple, $saturated_purple_alpha);
+// monochromatic colors (colors_02):
+$darkish_green: rgba(10, 65, 14, 1);
+$light_green: rgba(91, 197, 97, 1);
+$light_green_alpha: rgba(91, 197, 97, 0.5);
+$primary_green: rgba(30, 185, 39, 1);
+$dark_green: rgba(26, 57, 28, 1);
+$shade_green: rgba(22, 134, 28, 1);
+
+.concept#up .background {
+  background: linear-gradient(to left, $primary_green, $primary_green);
+  // background: linear-gradient(to left, $primary_green, $darkish_green);
+}
+
+.concept#up .background svg path {
+  stroke: $light_green_alpha;
 }
 
 .concept#out .background {
-  background: linear-gradient(to left, rgba(86, 255, 126, 0.8), rgba(86, 255, 126, 0.3));
+  // rgba(86, 255, 126, 0.8)
+  background: linear-gradient(to left, $primary_green, $primary_green);
+  // background: linear-gradient(to left, $primary_green, $darkish_green);
 
   // background-color: rgba(86, 255, 126, 0.5); // $saturated_green;
 }
@@ -45,14 +60,32 @@ $colder_yellow: rgba(225, 255, 118, 1);
 .concept#out .showcases-wrap {
   // background: linear-gradient(to left, rgba(86, 255, 126, 0.8), rgba(86, 255, 126, 0.3));
 
-  background-color: rgba(86, 255, 126, 0.8); // $saturated_green;
+  // background-color: rgba(86, 255, 126, 0.8); // $saturated_green;
 }
 
 .concept#out .background svg path {
   // background: linear-gradient(to left, $saturated-green, white);
   // stroke: linear-gradient(to left, $saturated-green, white);
-  stroke: url('#out-gradient-widescreen');
+  // stroke: url('#out-gradient-widescreen');
+  stroke: $light_green_alpha;
 }
+
+.concept#in .background {
+  background: linear-gradient(to left, $primary_green, $primary_green);
+  // background: linear-gradient(to left, $primary_green, $darkish_green);
+  // background: linear-gradient(to right, $saturated_yellow, $saturated_yellow_alpha);
+}
+
+.concept#in .background svg path {
+  // background: linear-gradient(to left, $saturated-green, white);
+  // stroke: linear-gradient(to left, $saturated-green, white);
+  // stroke: url('#out-gradient-widescreen');
+  stroke: $light_green_alpha;
+}
+
+/*
+
+This is a gradient for svg path's stroke
 
 .concept#out .concept-description .background svg.widescreen stop.left,
 .concept#out .concept-description .background svg.mobile stop.left {
@@ -69,14 +102,17 @@ $colder_yellow: rgba(225, 255, 118, 1);
   stop-color: $saturated_green; // $saturated_green_alpha;
 }
 
-.concept#in {
-  background: linear-gradient(to right, $saturated_yellow, $saturated_yellow_alpha);
-}
+*/
+
+/*
+
+This is a gradient for svg path's stroke
 
 .concept#in .background svg path {
-  // background: linear-gradient(to left, $saturated-green, white);
-  // stroke: linear-gradient(to left, $saturated-green, white);
-  stroke: url('#in-gradient-widescreen');
+// background: linear-gradient(to left, $saturated-green, white);
+// stroke: linear-gradient(to left, $saturated-green, white);
+stroke: $light_green_alpha;
+// stroke: url('#in-gradient-widescreen');
 }
 
 .concept#in .concept-description .background svg.widescreen stop.left,
@@ -93,6 +129,8 @@ $colder_yellow: rgba(225, 255, 118, 1);
 .concept#in .concept-description .background svg.mobile stop.right {
   stop-color: $saturated_yellow;
 }
+*/
+
 
 
 html, body {
@@ -107,6 +145,11 @@ html, body {
 
   // 0.125em == 2px
   font-size: 16px;
+  // background-color: $light_green;
+  // background-color: rgba(225, 255, 118, 0.3); // $colder_yellow;
+  // $colder_yellow: rgba(225, 255, 118, 1);
+  background-color: rgba(230, 230, 230, 1);
+  color: $dark_green;
 }
 
 h1 {
