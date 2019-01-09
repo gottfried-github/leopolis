@@ -240,7 +240,8 @@ html, body {
   font-size: 16px;
   background-color: #e6e6e6;
   color: black;
-  font-weight: 300; }
+  font-weight: 300;
+  word-break: break-all; }
 
 h1 {
   font-weight: 800; }
@@ -252,6 +253,9 @@ h1 {
   z-index: 99;
   width: 100%;
   height: 100%; }
+
+.large-view_wrap.noned {
+  display: none; }
 
 .large-view_wrap .icon#cross {
   position: absolute;
@@ -540,18 +544,25 @@ h1 {
   vertical-align: middle;
   text-align: center;
   margin: auto 50px;
-  font-size: 4em;
+  font-size: 2em;
   color: transparent;
-  background-image: linear-gradient(to right, rgba(230, 232, 78, 0.8), rgba(86, 255, 126, 0.8));
+  background-image: linear-gradient(to right, #e6e84e, #56ff7e);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -ms-background-clip: text;
+  -o-background-clip: text;
   background-clip: text; }
 
 @media (max-width: 850px) {
   .concept-description .ratio {
     padding-bottom: 0px; }
-  .concept-description .content {
-    margin: 75px 75px; }
+  .concept-description .content,
+  #about .content {
+    margin: 35px 35px; }
+  #about .content h1,
   .concept-description .content h1 {
     margin: auto 15px; }
+  #about .content p,
   .concept-description .content p {
     margin: 15px 15px; }
   #out .showcases {
@@ -562,7 +573,7 @@ h1 {
     width: 650%; }
   #front h1 {
     margin: auto 25px;
-    font-size: 2.6em; }
+    font-size: 2em; }
   #about .content {
     margin: 100px 25px; } }
 
@@ -572,13 +583,14 @@ h1 {
   .concept-description .content h1 {
     margin: auto 15px; }
   .concept-description .content p {
-    margin: 15px 15px; } }
-
-@media (max-width: 650px) and (min-height: 650px) {
+    text-align: justify;
+    margin: 15px 15px; }
   .concept .background svg.widescreen {
     display: none; }
   .concept .background svg.mobile {
     display: block; }
+  .concept#up .background svg path {
+    stroke: url("#up-gradient-mobile"); }
   .concept#out .background svg path {
     stroke: url("#out-gradient-mobile"); }
   .concept#in .background svg path {
