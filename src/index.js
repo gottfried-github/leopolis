@@ -51,6 +51,8 @@ function boot(galleryUrls) {
     wrap: largeViewWrap
   })
 
+  largeViewWrap.classList.remove('noned')
+
   largeViewWrap.appendChild(LargeView.container)
   largeViewWrap.querySelector('.icon#cross').addEventListener('click', () => {
     LargeView.hide()
