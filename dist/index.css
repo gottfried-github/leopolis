@@ -240,8 +240,7 @@ html, body {
   font-size: 16px;
   background-color: #e6e6e6;
   color: black;
-  font-weight: 300;
-  word-break: break-all; }
+  font-weight: 300; }
 
 h1 {
   font-weight: 800; }
@@ -578,12 +577,14 @@ h1 {
     margin: 100px 25px; } }
 
 @media (max-width: 650px) {
+  body {
+    overflow-wrap: break-word; }
   .concept-description .content {
+    overflow: hidden;
     margin: 75px 10px; }
   .concept-description .content h1 {
     margin: auto 15px; }
   .concept-description .content p {
-    text-align: justify;
     margin: 15px 15px; }
   .concept .background svg.widescreen {
     display: none; }
