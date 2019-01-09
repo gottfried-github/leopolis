@@ -1,0 +1,113 @@
+
+#out .showcases-wrap {
+  // margin: 0px 100px;
+}
+
+#out .showcases {
+  margin: 0px 100px;
+  // margin: auto;
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: center;
+}
+
+#out .showcase {
+  // flex-shrink: 0;
+  // flex-grow: 0;
+
+  // width: 700px;
+  margin: 0px auto;
+  padding-bottom: 18px;
+}
+
+#out .showcase .image-thumb {
+  float: left;
+  width: 450px;
+  height: 250px;
+
+  background-position: center;
+  background-size: cover;
+}
+
+#out .showcase#trash .image-thumb {
+  background-image: url('media/out/bRKZ2X7P_T4.jpg');
+}
+#out .showcase#playground .image-thumb {
+  background-image: url('media/out/22219946_1606186132776568_2916948056513412695_o.jpg');
+}
+#out .showcase#gifts .image-thumb {
+  background-image: url('media/out/25440299_1682244401837407_1959189880887880611_o.jpg');
+}
+
+#out .showcase .description-wrap {
+  float: left;
+  width: 150px;
+  height: 250px;
+
+  // margin-left: 15px;
+  line-height: 250px;
+}
+
+#out .showcase .description-wrap p {
+  display: inline-block;
+  line-height: normal;
+  vertical-align: middle;
+  margin-left: 15px;
+}
+
+#out .description-container {
+  display: inline-block;
+}
+
+@media (max-width: 800px) {
+  #out .showcases-wrap {
+    margin: 0px auto;
+  }
+
+  #out .showcase {
+    // width: 80%;
+    width: auto;
+  }
+
+  #out .showcase .image-thumb {
+    float: none;
+    width: 100%;
+    height: 350px;
+    // width: 450px;
+    // height: 250px;
+    //
+    // background-image: url('media/out/22219946_1606186132776568_2916948056513412695_o.jpg');
+    // background-position: center;
+    // background-size: cover;
+  }
+
+  #out .showcase .description-wrap {
+    float: none;
+
+    width: auto;
+    height: auto;
+    margin: 10px 75px 10px 75px;
+
+    line-height: normal;
+
+    // width: 150px;
+    // height: 250px;
+    //
+    // margin-left: 15px;
+    // line-height: 250px;
+  }
+
+  #out .showcase .description-wrap p {
+    display: inline-block;
+    margin: 15px 15px 15px 15px;
+    // margin: 15px 15px 15px 75px;
+
+    // display: inline-block;
+    // line-height: normal;
+    // vertical-align: middle;
+  }
+
+  #out .showcase .clearleft {
+    display: none;
+  }
+}

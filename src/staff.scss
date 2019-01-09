@@ -1,0 +1,90 @@
+#staff {
+  margin: 25px 100px 15px 100px;
+  // margin: auto 100px;
+
+  // display: flex;
+  // justify-content: center;
+}
+
+#staff .members-wrap {
+  margin: 0px 5px 0px 5px;
+}
+
+#staff .member {
+  box-sizing: border-box;
+  float: left;
+  width: 33.3%;
+  // width: 250px;
+  text-align: center;
+  padding: 0px 2px 50px 2px;
+  // padding-bottom: 50px;
+  // margin: auto 5px;
+}
+
+#staff .ratio {
+  padding-bottom: 100%;
+}
+
+#staff .member .avatar {
+  width: 100%;
+  height: 100%;
+  // width: 250px;
+  // height: 250px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+#staff .member#norris .avatar {
+  background-image: url('media/staff/norris.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+#staff .member#powell .avatar {
+  background-image: url('media/staff/powell.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+#staff .member#ball .avatar {
+  background-image: url('media/staff/laura.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+@media (max-width: 850px) {
+
+  #staff {
+    margin: 75px auto 15px auto;
+    // margin: 25px 100px 15px 100px;
+  }
+
+  #staff .member {
+    // width: 250px;
+    text-align: center;
+    padding-bottom: 50px;
+    // margin: auto 5px;
+  }
+
+  #staff .member .avatar {
+    // width: 250px;
+    // height: 250px;
+    // border-radius: 50%;
+  }
+}
+
+@media (max-width: 650px) {
+  #staff .member {
+    float: none;
+    width: 100%;
+    padding: 0px 15px 75px 15px;
+  }
+
+  #staff .member .info-wrap {
+    margin: 50px auto 15px auto;
+  }
+
+  #staff .members-wrap .clearleft {
+    display: none;
+  }
+}

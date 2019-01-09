@@ -41,7 +41,7 @@
   width: 160%;
 }
 
-.content-wrapper {
+.content-wrap {
   // box-sizing: border-box;
   position: absolute;
   width: 100%;
@@ -50,6 +50,28 @@
 
 .content {
   position: relative;
+}
+
+@media (max-width: 850px) {
+
+  // .ratio {
+  //   padding-bottom: 0px;
+  // }
+
+  // .content-wrap {
+  //   position: relative;
+  // }
+}
+
+@media (max-width: 800px) {
+
+  .ratio {
+    padding-bottom: 0px;
+  }
+
+  .content-wrap {
+    position: relative;
+  }
 }
 
 /*

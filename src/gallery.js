@@ -1,137 +1,8 @@
-// https://stackoverflow.com/questions/6942785/window-innerwidth-vs-document-documentelement-clientwidth
-// https://bugzilla.mozilla.org/show_bug.cgi?id=156388#c14
-function getViewportHeight() {
-  // getElementsByTagName, if I'm not mistaken returns a livelist (hell knows what that is, but it's
-  // updated live - as dom gets changed). I'm not sure about using it, it behaved misteriously once...
-  // But, querySelector is not so compatible.
-  // Maybe: (document.querySelector('body') || document.getElementsByTagName('body')[0].clientWidth)
-  return window.innerHeight && document.documentElement.clientHeight ?
-    Math.min(window.innerHeight, document.documentElement.clientHeight) :
-    window.innerHeight || document.documentElement.clientHeight
-      || (document.querySelector('body') || document.getElementsByTagName('body')[0].clientHeight);
-}
-
-function getViewportWidth() {
-  return window.innerWidth && document.documentElement.clientWidth ?
-    Math.min(window.innerWidth, document.documentElement.clientWidth) :
-    window.innerWidth || document.documentElement.clientWidth
-      || (document.querySelector('body') || document.getElementsByTagName('body')[0].clientWidth);
-}
-
-class Photo {
-  constructor(url) {
-    this.url = url
-    this.el = document.createElement('img')
-  }
-
-  load() {
-    // const img = document.createElement('img')
-
-    return new Promise((resolve, reject) => {
-      this.el.onload = () => {
-        resolve(this)
-      }
-
-      this.el.src = this.url
-    })
-  }
-
-  calculateFitByBothSides(imgDims, containerDims) {
-    // const imgDims = img.getBoundingClientRect()
-    // const containerDims = container.getBoundingClientRect()
-
-    imgDims.ratio = imgDims.width / imgDims.height
-    containerDims.ratio = containerDims.width / containerDims.height
-
-    // if wider than higher
-    if (imgDims.ratio >= containerDims.ratio) {
-      const imgDimsNew = {
-        width: containerDims.width,
-        height: containerDims.width / imgDims.ratio
-      }
-
-      return imgDimsNew
-
-    // if higher than wider
-    } else {
-      const imgDimsNew = {
-        // width: containerDims.height * imgDims.ratio,
-        width: containerDims.height * imgDims.ratio,
-        height: containerDims.height
-      }
-
-      return imgDimsNew
-    }
-
-  }
-
-  calculateFitByHeight(imgDims, containerDims) {
-    // const imgDims = img.getBoundingClientRect()
-    // const containerDims = container.getBoundingClientRect()
-
-    imgDims.ratio = imgDims.width / imgDims.height
-    const imgDimsNew = {
-      height: containerDims.height,
-      width: containerDims.height * imgDims.ratio,
-      ratio: imgDims.ratio
-    }
-
-    return imgDimsNew
-  }
-
-  fitByHeight(container) {
-    this.dims = this.calculateFitByHeight(
-      this.el.getBoundingClientRect(),
-      container.getBoundingClientRect()
-    )
-
-    // const imgDims = this.calculateFitByHeight(img, this.el)
-    this.el.style.width = this.dims.width
-    this.el.style.height = this.dims.height
-
-    return this
-  }
-
-  fitByBothSides(container) {
-    this.dims = this.calculateFitByBothSides(
-      this.el.getBoundingClientRect(),
-      container.getBoundingClientRect()
-    )
-
-    this.el.style.width = this.dims.width + 'px'
-    this.el.style.height = this.dims.height + 'px'
-
-    return this
-  }
-
-  clearInlineStyles() {
-    if (this.el.style.removeProperty) {
-      this.el.style.removeProperty('width')
-      this.el.style.removeProperty('height')
-    } else {
-      // IE9
-      this.el.style.removeAttribute('width')
-      this.el.style.removeAttribute('height')
-    }
-  }
-
-  hide(hard) {
-    hard ? this.el.style.display = "none" : this.el.style.visibility = "hidden"
-  }
-
-  show(hard) {
-    if (hard) {
-      this.el.style.removeProperty('display')
-    } else {
-      this.el.style.removeProperty('visibility')
-    }
-
-    // hard ? this.el.style.display = "inline" : this.el.style.visibility = "visible"
-  }
-}
+import {Photo} from './photo.js'
+import {getViewportWidth, getViewportHeight, logFactory} from './lib.js'
 
 class DeckItem {
-  constructor(imageUrl, options) {
+  constructor(imageUrl, index, options) {
     this.el = document.createElement('div')
     this.el.className = 'deck-item'
 
@@ -143,14 +14,14 @@ class DeckItem {
     this.el.appendChild(contentWrap)
     contentWrap.appendChild(this.contentEl)
 
-    this.breakpoint = options.breakpoint
-
-    this.narrowMode = getViewportWidth() < this.breakpoint
+    this.options = options || {}
+    this.narrowMode = getViewportWidth() < this.options.breakpoint
+    this.index = index
 
     window.addEventListener('resize', (ev) => {
-      if (getViewportWidth() <= this.breakpoint) {
+      if (getViewportWidth() <= this.options.breakpoint) {
         if (!this.narrowMode) {
-          console.log('resize, turning on')
+          // console.log('resize, turning on')
           this.narrowMode = true
           // this.turnOnNarrowMode()
         }
@@ -159,7 +30,7 @@ class DeckItem {
 
       } else {
         if (this.narrowMode) {
-          console.log('resize, turning Off')
+          // console.log('resize, turning Off')
           this.turnOffNarrowMode()
         }
       }
@@ -167,7 +38,7 @@ class DeckItem {
     })
 
     this.photo = new Photo(imageUrl)
-    this.loadPhoto()
+    this.loadPhoto().catch((err) => {throw err})
   }
 
   turnOnNarrowMode(mode) {
@@ -212,28 +83,58 @@ class DeckItem {
     this.el.style.width = width
   }
 
+  isInView() {
+    const offset = this.getOffset()
+    const deckPosition = this.options.getDeckPosition()
+    console.log('deckItem.isInView, offset: ', offset);
+    console.log('deckItem.isInView, width: ', this.getWidth());
+    console.log('deckItem.isInView, getDeckPosition: ', this.options.getDeckPosition());
+    console.log('deckItem.isInView, getGalleryViewportWidth: ', this.options.getGalleryViewportWidth());
+
+    // deckPosition could be negative
+    return offset + deckPosition >= 0 &&
+    deckPosition + offset + this.getWidth() <= this.options.getGalleryViewportWidth()
+      ? true : false
+
+    // if (
+    //   this.getOffset() + this.options.getDeckPosition() > 0 &&
+    //   this.getOffset() + this.getWidth() < this.options.getGalleryViewportWidth()
+    // ) {
+    //
+    // }
+  }
+
   loadPhoto(url) {
-    this.photo.load() // Photo.prototype.loadImage()
+    return this.photo.load() // Photo.prototype.loadImage()
     .then((photo) => {
+      try {
+        this.options.photoLoadCb(photo)
 
-      // we don't want to see the img, but we want to be able to measure it with getBoundingClientRect (so display: none is not a fit)
-      // img.style.visibility = "hidden"
-      photo.hide()
-      this.contentEl.appendChild(photo.el)
+        // we don't want to see the img, but we want to be able to measure it with getBoundingClientRect (so display: none is not a fit)
+        // img.style.visibility = "hidden"
+        photo.hide()
+        this.contentEl.appendChild(photo.el)
 
-      if (!this.narrowMode) {
-        // at the moment, seems like we handle all of this with css,
-        // and don't need to fite the photo and set it's container's width respectively
+        if (!this.narrowMode) {
+          // at the moment, seems like we handle all of this with css,
+          // and don't need to fite the photo and set it's container's width respectively
 
-        // this.photo.fitByHeight(this.el)
-        // this.el.style.width = this.photo.dims.width + 'px'
-      } else {
-        this.photo.fitByBothSides(this.contentEl)
+          // this.photo.fitByHeight(this.el)
+          // this.el.style.width = this.photo.dims.width + 'px'
+        } else {
+          this.photo.fitByBothSides(this.contentEl)
+        }
+
+        this.photo.show()
+        // img.style.visibility = 'visible'
+      } catch(err) {
+        Promise.reject(err)
       }
 
-      this.photo.show()
-      // img.style.visibility = 'visible'
     })
+    // .catch((err) => {
+    //   throw err
+    // })
   }
 }
 
@@ -248,6 +149,8 @@ class Deck {
     this.position = 0
     this.offset = 0
 
+    this.loaded = false
+    this.itemsLoaded = 0
     this.items = this.initItems(imageUrls)
     this.appendItems()
 
@@ -261,6 +164,7 @@ class Deck {
     // })
   }
 
+  /*
   calculateDeckOffset(index) {
     if (getViewportWidth() < this.breakpoint) {
       const itemOffset = this.items[index].getOffset()
@@ -270,17 +174,40 @@ class Deck {
     } else {
       const itemOffset = this.items[index].getMidpoint()
 
-      const galleryMidpoint = this.options.getGalleryWidth() / 2 // .getBoundingClientRect().width / 2
+      const galleryMidpoint = this.options.getGalleryViewportWidth() / 2 // .getBoundingClientRect().width / 2
       const deckOffsetNew = -itemOffset + galleryMidpoint
 
-      console.log('Deck.calculateDeckOffset, index', index)
-      console.log('Deck.calculateDeckOffset, items[index]', this.items[index])
-      console.log('Deck.calculateDeckOffset, items[index]', this.items[index].getMidpoint())
-      console.log('Deck.calculateDeckOffset, itemOffset', itemOffset)
-      console.log('Deck.calculateDeckOffset, deckOffsetNew', deckOffsetNew)
+      // console.log('Deck.calculateDeckOffset, index', index)
+      // console.log('Deck.calculateDeckOffset, items[index]', this.items[index])
+      // console.log('Deck.calculateDeckOffset, items[index]', this.items[index].getMidpoint())
+      // console.log('Deck.calculateDeckOffset, itemOffset', itemOffset)
+      // console.log('Deck.calculateDeckOffset, deckOffsetNew', deckOffsetNew)
 
       return deckOffsetNew
     }
+  }
+  */
+
+  calculateDeckOffsetCentered(index) {
+    const itemOffset = this.items[index].getMidpoint()
+
+    const galleryMidpoint = this.options.getGalleryViewportWidth() / 2 // .getBoundingClientRect().width / 2
+    const deckOffsetNew = -itemOffset + galleryMidpoint
+
+    // console.log('Deck.calculateDeckOffset, index', index)
+    // console.log('Deck.calculateDeckOffset, items[index]', this.items[index])
+    // console.log('Deck.calculateDeckOffset, items[index]', this.items[index].getMidpoint())
+    // console.log('Deck.calculateDeckOffset, itemOffset', itemOffset)
+    // console.log('Deck.calculateDeckOffset, deckOffsetNew', deckOffsetNew)
+
+    return deckOffsetNew
+  }
+
+  calculateDeckOffset(index) {
+    const itemOffset = this.items[index].getOffset()
+    const deckOffsetNew = -itemOffset
+
+    return deckOffsetNew
   }
 
   /*
@@ -292,14 +219,27 @@ class Deck {
   }
   */
 
-  goToItem(index) {
+  /**
+  @param {boolean} centered if true - centers the item, if falsy - doesn't center
+  */
+  goToItem(index, centered) {
 
     if (index < 0 || index > this.items.length-1) {
-      throw new Error("can't go to unexisting item at "+ i)
-      return
+      throw new Error("can't go to unexisting item at "+ index)
     }
 
-    const deckPositionNew = this.calculateDeckOffset(index)
+    if (!this.loaded) {
+      // throw new Error("")
+      // TODO: make it so it can go to the items that are already loaded, and
+      // then, adjust the position of the deck so it stays on the item we've gone to
+      // as other items load (if necessary).
+      // This could be impactful if the deck is right at the top of the page and user
+      // wants to immediately be able to interact with things.
+      // console.log("photos in the deck haven't loaded yet");
+      return undefined
+    }
+
+    const deckPositionNew = centered ? this.calculateDeckOffsetCentered(index) : this.calculateDeckOffset(index)
 
     // TODO:
     // this.offset = this.transitioning
@@ -326,6 +266,8 @@ class Deck {
       this.el.style.transform = this.makeMatrix(this.offset)
     }
 
+    return this.items[index]
+
   }
 
   makeMatrix(x) {
@@ -340,9 +282,21 @@ class Deck {
   }
 
   initItems(urls) {
-    return urls.map((url) => {
-      return new DeckItem(url, {
-        breakpoint: this.breakpoint
+    return urls.map((url, i) => {
+      return new DeckItem(url, i, {
+        breakpoint: this.breakpoint,
+        photoLoadCb: () => {
+          // console.log("photoLoadCb, deck.itemsLoaded: ", this.itemsLoaded);
+          this.itemsLoaded++
+
+          if (this.itemsLoaded == this.items.length) {
+            // console.log("photoLoadCb, deck.itemsLoaded == deck.items.length, deck.itemsLoaded: ", this.itemsLoaded);
+            this.loaded = true
+            this.options.loadCb()
+          }
+        },
+        getGalleryViewportWidth: this.options.getGalleryViewportWidth,
+        getDeckPosition: () => {return this.position}
       })
     })
   }
@@ -365,13 +319,34 @@ class Gallery {
 
 
     this.deck = new Deck(photoUrls, {
-      getGalleryWidth: () => { return this.el.getBoundingClientRect().width },
+      getGalleryViewportWidth: () => { return this.el.getBoundingClientRect().width },
+      loadCb: () => {
+        this.activeItem = this.deck.goToItem(0, false)
+        // this.goToNext.call(this)
+      },
       breakpoint: options.breakpoint
     })
 
     this.el.appendChild(this.deck.el)
+
+
+    // const activeItem = this.deck.goToItem(0)
+    // this.activeItem = activeItem
   }
 
+  goToNext() {
+    if (!this.deck.loaded) return
+    if (this.activeItem.index == this.deck.items.length-1) return
+
+    this.activeItem = this.deck.goToItem(this.activeItem.index+1, true)
+  }
+
+  goToPrevious() {
+    if (!this.deck.loaded) return
+    if (this.activeItem.index == 0) return
+
+    this.activeItem = this.deck.goToItem(this.activeItem.index-1, true)
+  }
   /*
   // TODO:
   // get the actual position of the el, relative to body.
@@ -388,17 +363,4 @@ class Gallery {
   */
 }
 
-function boot(photoUrls) {
-  // const photoUrls = []
-  const container = document.querySelector('.container')
-
-  // const deck = new Deck(photoUrls, {breakpoint: 800})
-
-  const gallery = new Gallery(photoUrls, {breakpoint: 800})
-  container.appendChild(gallery.el)
-
-  console.log(gallery.deck)
-  // gallery.deck.goToItem(3)
-}
-
-export {boot}
+export {Gallery}
