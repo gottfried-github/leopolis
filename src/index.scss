@@ -183,7 +183,6 @@ html, body {
   color: black; // $dark_purple;
   // color: $dark_green;
   font-weight: 300;
-  word-break: break-all;
 }
 
 h1 {
@@ -533,7 +532,15 @@ h1, h2 {
 }
 
 @media (max-width: 650px) {
+  body {
+    // overflow-x: hidden;
+    overflow-wrap: break-word;
+    // word-wrap: break-word;
+    // word-break: break-all;
+  }
+
   .concept-description .content {
+    overflow: hidden;
     margin: 75px 10px;
   }
 
@@ -542,7 +549,7 @@ h1, h2 {
   }
 
   .concept-description .content p {
-    text-align: justify;
+    // text-align: justify;
     margin: 15px 15px;
   }
 
