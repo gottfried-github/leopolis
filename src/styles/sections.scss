@@ -288,26 +288,26 @@
 
 
 @media (max-width: 850px) {
-  .concept-description .ratio {
-    padding-bottom: 0px;
-  }
+  // .concept-description .ratio {
+  //   padding-bottom: 0px;
+  // }
 
-  .content-wrap_narrow {
-    margin: 0px 0px;
-  }
-  #out .showcases-wrap {
-    margin: 0px auto;
-  }
-  #out .showcases {
-    margin: 0px 0px;
-  }
-
-  .concept-description .background svg {
+  .concept .concept-description .background svg {
     flex-grow: 0;
     flex-shrink: 0;
 
     //
     width: 650%;
+  }
+
+  // .content-wrap_narrow {
+  //   margin: 0px 0px;
+  // }
+  // #out .showcases-wrap {
+  //   margin: 0px auto;
+  // }
+  #out .showcases {
+    margin: 0px 0px;
   }
 
   #out .showcase {
@@ -359,27 +359,32 @@
 }
 
 @media (max-width: 650px) {
+  .concept .concept-description .background svg {
+    // flex-grow: 0;
+    // flex-shrink: 0;
+    //
+    // //
+    width: 550%;
+    // stroke-width: 15px;
+  }
 
-
-  .concept-description .content {
+  .concept .concept-description .content {
     overflow: hidden;
     margin: 75px 10px;
   }
 
-  .concept-description .content h1 {
+  .concept .concept-description .content h1 {
     margin: auto 15px;
   }
-
-  .concept-description .content p {
+  .concept .concept-description .content p {
     // text-align: justify;
     margin: 15px 15px;
   }
 
-  .concept .background svg.widescreen {
+  .concept .concept-description .background svg.widescreen {
     display: none;
   }
-
-  .concept .background svg.mobile {
+  .concept .concept-description .background svg.mobile {
     display: block;
   }
 
@@ -399,14 +404,5 @@
     // background: linear-gradient(to left, $saturated-green, white);
     // stroke: linear-gradient(to left, $saturated-green, white);
     stroke: url('#in-gradient-mobile');
-  }
-
-  .concept-description .background svg {
-    // flex-grow: 0;
-    // flex-shrink: 0;
-    //
-    // //
-    width: 550%;
-    // stroke-width: 15px;
   }
 }

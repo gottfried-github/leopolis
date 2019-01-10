@@ -183,6 +183,9 @@ opacity: 1;
 .concept .concept-description .ratio {
   padding-bottom: 0px; }
 
+.concept h1 {
+  font-size: 3em; }
+
 .concept .concept-description .background {
   position: absolute;
   display: flex;
@@ -191,12 +194,6 @@ opacity: 1;
   overflow: hidden;
   width: 100%;
   height: 100%; }
-
-.concept .concept-description .content-wrap {
-  position: relative; }
-
-.concept .concept-description .content {
-  margin: 75px 100px; }
 
 .concept .concept-description .background svg {
   flex-grow: 0;
@@ -214,14 +211,18 @@ opacity: 1;
   stroke-dasharray: none;
   stroke-opacity: 1; }
 
-.concept .background svg.mobile {
+.concept .concept-description .background svg.mobile {
   display: none; }
+
+.concept .concept-description .content-wrap {
+  position: relative; }
+
+.concept .concept-description .content {
+  margin: 0px 100px;
+  padding: 75px 0px; }
 
 .concept .concept-description {
   font-size: 1.5em; }
-
-.concept h1 {
-  font-size: 3em; }
 
 #in .background {
   background: linear-gradient(to left, #5bc561, #e6e6e6); }
@@ -361,18 +362,12 @@ opacity: 1;
   left: 0px; }
 
 @media (max-width: 850px) {
-  .concept-description .ratio {
-    padding-bottom: 0px; }
-  .content-wrap_narrow {
-    margin: 0px 0px; }
-  #out .showcases-wrap {
-    margin: 0px auto; }
-  #out .showcases {
-    margin: 0px 0px; }
-  .concept-description .background svg {
+  .concept .concept-description .background svg {
     flex-grow: 0;
     flex-shrink: 0;
     width: 650%; }
+  #out .showcases {
+    margin: 0px 0px; }
   #out .showcase {
     width: auto; }
   #out .showcase .image-thumb {
@@ -392,25 +387,25 @@ opacity: 1;
     display: none; } }
 
 @media (max-width: 650px) {
-  .concept-description .content {
+  .concept .concept-description .background svg {
+    width: 550%; }
+  .concept .concept-description .content {
     overflow: hidden;
     margin: 75px 10px; }
-  .concept-description .content h1 {
+  .concept .concept-description .content h1 {
     margin: auto 15px; }
-  .concept-description .content p {
+  .concept .concept-description .content p {
     margin: 15px 15px; }
-  .concept .background svg.widescreen {
+  .concept .concept-description .background svg.widescreen {
     display: none; }
-  .concept .background svg.mobile {
+  .concept .concept-description .background svg.mobile {
     display: block; }
   #up .background svg path {
     stroke: url("#up-gradient-mobile"); }
   #out .background svg path {
     stroke: url("#out-gradient-mobile"); }
   #in .background svg path {
-    stroke: url("#in-gradient-mobile"); }
-  .concept-description .background svg {
-    width: 550%; } }
+    stroke: url("#in-gradient-mobile"); } }
 
 span.highlight {
   font-weight: 800; }
