@@ -1,3 +1,5 @@
+@import './contact.scss';
+
 .concept .concept-description {
   position: relative;
   // margin-top: 500px;
@@ -10,10 +12,15 @@
 
 .concept .concept-description .content,
 #out .showcases,
-#about .content {
+#about .content,
+#contact .contact_content-wrap {
   margin: 0px 100px;
   padding: 75px 0px;
 }
+// #contact .contact_content-wrap {
+//   margin: auto 100px;
+// }
+
 .concept .concept-description .content,
 #about {
   // font-weight: 200;
@@ -308,12 +315,19 @@
   }
 
   .concept .concept-description .content,
-  #about .content {
+  #about .content,
+  #contact .contact-info_wrap {
     margin: 0px 35px;
     padding: 50px 0px;
   }
+  #contact .contact_content-wrap {
+    margin: 0px 0px;
+  }
   // #about .content {
   //   margin: 100px 25px;
+  // }
+  // #contact .contact_content-wrap {
+  //   margin: auto 0px;
   // }
   #out .showcases {
     margin: 0px 0px;
@@ -406,6 +420,7 @@
     margin: 0px 10px;
   }
 
+
   // this should be already applied, by the 850px media query
   // .concept .concept-description .content h1 {
   //   margin: auto 15px;
@@ -439,5 +454,18 @@
     // background: linear-gradient(to left, $saturated-green, white);
     // stroke: linear-gradient(to left, $saturated-green, white);
     stroke: url('#in-gradient-mobile');
+  }
+
+  #contact .location-wrap .street-view,
+  #contact .location-wrap .map {
+    float: none;
+    width: 100%;
+    // height: 300px;
+    // margin: auto 0px;
+  }
+
+  #contact .location-wrap .clearleft {
+    display: none;
+    // margin: auto 0px;
   }
 }
