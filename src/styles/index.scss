@@ -72,18 +72,7 @@ h1, h2 {
   margin: 50px;
 }
 
-#about .content {
-  margin: 100px 100px;
-}
 
-#about {
-  // font-weight: 200;
-  font-size: 1.5em; // 24px
-}
-
-#about h1 {
-  font-size: 3em;
-}
 
 .icon svg {
   width: 64px;
@@ -121,59 +110,14 @@ h1, h2 {
 // }
 
 
-#front {
-  height: 500px;
-  line-height: 500px;
-  background-image: url('media/landing/11745430_951029561625565_2841622478972039919_n.jpg');
-  background-position: center;
-  background-size: cover;
-}
-
-#front h1 {
-  display: inline-block;
-  line-height: normal;
-  vertical-align: middle;
-  text-align: center;
-  // color: $saturated_green;
-  margin: auto 50px;
-  font-size: 2em;
-
-  color: transparent;
-  background-image: linear-gradient(to right, rgba(230, 232, 78, 1), rgba(86, 255, 126, 1));
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -ms-background-clip: text;
-  -o-background-clip: text;
-  background-clip: text;
-  // $saturated_yellow: rgba(230, 232, 78, 1);
-  // $saturated_purple: rgba(216, 93, 255, 1);
-}
 
 @media (max-width: 850px) {
 
-  .concept-description .content,
-  #about .content {
-    margin: 35px 35px;
-  }
 
-  #about .content h1,
-  .concept-description .content h1 {
-    margin: auto 15px;
-  }
 
-  #about .content p,
-  .concept-description .content p {
-    margin: 15px 15px;
-  }
 
-  #front h1 {
-    margin: auto 25px;
-    font-size: 2em;
-  }
 
-  #about .content {
-    margin: 100px 25px;
-  }
+
 
   // #about .content h1 {
   //   margin: auto 15px;

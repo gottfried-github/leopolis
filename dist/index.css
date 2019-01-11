@@ -168,14 +168,14 @@ opacity: 1;
     width: 100%;
     height: 100%; } }
 
-.content-wrap_narrow {
-  margin: 0px 100px; }
-
 .concept .content {
   margin: auto 100px; }
 
 #out .showcases {
   margin: 0px 100px; }
+
+#about .content {
+  margin: 100px 100px; }
 
 .concept .concept-description {
   position: relative; }
@@ -184,6 +184,12 @@ opacity: 1;
   padding-bottom: 0px; }
 
 .concept h1 {
+  font-size: 3em; }
+
+#about {
+  font-size: 1.5em; }
+
+#about h1 {
   font-size: 3em; }
 
 .concept .concept-description .background {
@@ -361,11 +367,44 @@ opacity: 1;
 #in .gallery-wrap .icon#bwd {
   left: 0px; }
 
+#front {
+  height: 500px;
+  line-height: 500px;
+  background-image: url("media/landing/11745430_951029561625565_2841622478972039919_n.jpg");
+  background-position: center;
+  background-size: cover; }
+
+#front h1 {
+  display: inline-block;
+  line-height: normal;
+  vertical-align: middle;
+  text-align: center;
+  margin: auto 50px;
+  font-size: 2em;
+  color: transparent;
+  background-image: linear-gradient(to right, #e6e84e, #56ff7e);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -ms-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text; }
+
 @media (max-width: 850px) {
   .concept .concept-description .background svg {
     flex-grow: 0;
     flex-shrink: 0;
     width: 650%; }
+  .concept .concept-description .content,
+  #about .content {
+    margin: 0px 35px; }
+  #about .content {
+    margin: 100px 25px; }
+  .concept .concept-description .content h1,
+  #about .content h1 {
+    margin: auto 15px; }
+  .concept .concept-description .content p,
+  #about .content p {
+    margin: 15px 15px; }
   #out .showcases {
     margin: 0px 0px; }
   #out .showcase {
@@ -384,14 +423,17 @@ opacity: 1;
     display: inline-block;
     margin: 15px 15px 15px 15px; }
   #out .showcase .clearleft {
-    display: none; } }
+    display: none; }
+  #front h1 {
+    margin: auto 25px;
+    font-size: 2em; } }
 
 @media (max-width: 650px) {
   .concept .concept-description .background svg {
     width: 550%; }
   .concept .concept-description .content {
     overflow: hidden;
-    margin: 75px 10px; }
+    margin: 0px 10px; }
   .concept .concept-description .content h1 {
     margin: auto 15px; }
   .concept .concept-description .content p {
@@ -438,15 +480,6 @@ h1 {
   right: 0px;
   top: 0px;
   margin: 50px; }
-
-#about .content {
-  margin: 100px 100px; }
-
-#about {
-  font-size: 1.5em; }
-
-#about h1 {
-  font-size: 3em; }
 
 .icon svg {
   width: 64px;
@@ -558,44 +591,6 @@ h1 {
 
 .clearleft {
   clear: left; }
-
-#front {
-  height: 500px;
-  line-height: 500px;
-  background-image: url("media/landing/11745430_951029561625565_2841622478972039919_n.jpg");
-  background-position: center;
-  background-size: cover; }
-
-#front h1 {
-  display: inline-block;
-  line-height: normal;
-  vertical-align: middle;
-  text-align: center;
-  margin: auto 50px;
-  font-size: 2em;
-  color: transparent;
-  background-image: linear-gradient(to right, #e6e84e, #56ff7e);
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -ms-background-clip: text;
-  -o-background-clip: text;
-  background-clip: text; }
-
-@media (max-width: 850px) {
-  .concept-description .content,
-  #about .content {
-    margin: 35px 35px; }
-  #about .content h1,
-  .concept-description .content h1 {
-    margin: auto 15px; }
-  #about .content p,
-  .concept-description .content p {
-    margin: 15px 15px; }
-  #front h1 {
-    margin: auto 25px;
-    font-size: 2em; }
-  #about .content {
-    margin: 100px 25px; } }
 
 @media (max-width: 650px) {
   body {

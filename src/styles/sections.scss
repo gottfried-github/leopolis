@@ -5,9 +5,9 @@
   // display: flex;
 }
 
-.content-wrap_narrow {
-  margin: 0px 100px;
-}
+// .content-wrap_narrow {
+//   margin: 0px 100px;
+// }
 .concept .content {
   margin: auto 100px;
 }
@@ -15,6 +15,9 @@
 }
 #out .showcases {
   margin: 0px 100px;
+}
+#about .content {
+  margin: 100px 100px;
 }
 
 .concept .concept-description {
@@ -37,6 +40,13 @@
 }
 .concept h1 {
   // font-size: 3em;
+}
+#about {
+  // font-weight: 200;
+  font-size: 1.5em; // 24px
+}
+#about h1 {
+  font-size: 3em;
 }
 
 .concept .concept-description .background {
@@ -287,6 +297,33 @@
 }
 
 
+#front {
+  height: 500px;
+  line-height: 500px;
+  background-image: url('media/landing/11745430_951029561625565_2841622478972039919_n.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+#front h1 {
+  display: inline-block;
+  line-height: normal;
+  vertical-align: middle;
+  text-align: center;
+  // color: $saturated_green;
+  margin: auto 50px;
+  font-size: 2em;
+
+  color: transparent;
+  background-image: linear-gradient(to right, rgba(230, 232, 78, 1), rgba(86, 255, 126, 1));
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -ms-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+  // $saturated_yellow: rgba(230, 232, 78, 1);
+  // $saturated_purple: rgba(216, 93, 255, 1);
+}
 @media (max-width: 850px) {
   // .concept-description .ratio {
   //   padding-bottom: 0px;
@@ -298,6 +335,23 @@
 
     //
     width: 650%;
+  }
+
+  .concept .concept-description .content,
+  #about .content {
+    margin: 0px 35px;
+  }
+  #about .content {
+    margin: 100px 25px;
+  }
+
+  .concept .concept-description .content h1,
+  #about .content h1 {
+    margin: auto 15px;
+  }
+  .concept .concept-description .content p,
+  #about .content p {
+    margin: 15px 15px;
   }
 
   // .content-wrap_narrow {
@@ -356,6 +410,11 @@
   #out .showcase .clearleft {
     display: none;
   }
+
+  #front h1 {
+    margin: auto 25px;
+    font-size: 2em;
+  }
 }
 
 @media (max-width: 650px) {
@@ -370,7 +429,7 @@
 
   .concept .concept-description .content {
     overflow: hidden;
-    margin: 75px 10px;
+    margin: 0px 10px;
   }
 
   .concept .concept-description .content h1 {
