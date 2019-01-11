@@ -202,7 +202,8 @@ opacity: 1;
 .concept .concept-description .content,
 #out .showcases,
 #about .content,
-#contact .contact_content-wrap {
+#contact .contact_content-wrap,
+#staff {
   margin: 0px 100px;
   padding: 75px 0px; }
 
@@ -411,7 +412,8 @@ opacity: 1;
     width: 650%; }
   .concept .concept-description .content,
   #about .content,
-  #contact .contact-info_wrap {
+  #contact .contact-info_wrap,
+  #staff {
     margin: 0px 35px;
     padding: 50px 0px; }
   #contact .contact_content-wrap {
@@ -450,7 +452,8 @@ opacity: 1;
   .concept .concept-description .background svg {
     width: 550%; }
   .concept .concept-description .content,
-  #about .content {
+  #about .content,
+  #staff {
     overflow: hidden;
     margin: 0px 10px; }
   .concept .concept-description .background svg.widescreen {
@@ -541,9 +544,6 @@ h1 {
 #contact p {
   margin: 50px auto 50px auto; }
 
-#staff {
-  margin: 25px 100px 15px 100px; }
-
 #staff .members-wrap {
   margin: 0px 5px 0px 5px; }
 
@@ -579,8 +579,6 @@ h1 {
   background-size: cover; }
 
 @media (max-width: 850px) {
-  #staff {
-    margin: 75px auto 15px auto; }
   #staff .member {
     text-align: center;
     padding-bottom: 50px; } }

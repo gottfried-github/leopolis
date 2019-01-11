@@ -1,10 +1,4 @@
-#staff {
-  margin: 25px 100px 15px 100px;
-  // margin: auto 100px;
 
-  // display: flex;
-  // justify-content: center;
-}
 
 #staff .members-wrap {
   margin: 0px 5px 0px 5px;
@@ -54,10 +48,7 @@
 
 @media (max-width: 850px) {
 
-  #staff {
-    margin: 75px auto 15px auto;
-    // margin: 25px 100px 15px 100px;
-  }
+
 
   #staff .member {
     // width: 250px;
