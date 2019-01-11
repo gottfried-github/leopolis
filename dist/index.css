@@ -168,29 +168,28 @@ opacity: 1;
     width: 100%;
     height: 100%; } }
 
-.concept .content {
-  margin: auto 100px; }
-
-#out .showcases {
-  margin: 0px 100px; }
-
-#about .content {
-  margin: 100px 100px; }
-
 .concept .concept-description {
   position: relative; }
 
-.concept .concept-description .ratio {
-  padding-bottom: 0px; }
-
-.concept h1 {
-  font-size: 3em; }
-
+.concept .concept-description,
 #about {
   font-size: 1.5em; }
 
+.concept .concept-description h1,
 #about h1 {
   font-size: 3em; }
+
+.concept .concept-description .content-wrap {
+  position: relative; }
+
+.concept .concept-description .content,
+#out .showcases,
+#about .content {
+  margin: 0px 100px;
+  padding: 75px 0px; }
+
+.concept .concept-description .ratio {
+  padding-bottom: 0px; }
 
 .concept .concept-description .background {
   position: absolute;
@@ -219,16 +218,6 @@ opacity: 1;
 
 .concept .concept-description .background svg.mobile {
   display: none; }
-
-.concept .concept-description .content-wrap {
-  position: relative; }
-
-.concept .concept-description .content {
-  margin: 0px 100px;
-  padding: 75px 0px; }
-
-.concept .concept-description {
-  font-size: 1.5em; }
 
 #in .background {
   background: linear-gradient(to left, #5bc561, #e6e6e6); }
