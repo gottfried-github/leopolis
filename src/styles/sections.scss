@@ -11,12 +11,16 @@
 }
 
 .concept .concept-description .content,
-#out .showcases,
+#front .credo-wrap,
 #about .content,
+#out .showcases,
 #contact .contact_content-wrap,
 #staff {
   margin: 0px 100px;
   padding: 75px 0px;
+}
+#front .credo-wrap {
+  padding: 0px;
 }
 // #contact .contact_content-wrap {
 //   margin: auto 100px;
@@ -28,7 +32,6 @@
 //   // display: flex;
 //   // justify-content: center;
 // }
-
 .concept .concept-description .content,
 #about {
   // font-weight: 200;
@@ -284,10 +287,14 @@
 
 #front {
   height: 500px;
-  line-height: 500px;
   background-image: url('media/landing/11745430_951029561625565_2841622478972039919_n.jpg');
   background-position: center;
   background-size: cover;
+}
+
+#front .credo-wrap {
+  height: 500px;
+  line-height: 500px;
 }
 
 #front h1 {
@@ -296,7 +303,7 @@
   vertical-align: middle;
   text-align: center;
   // color: $saturated_green;
-  margin: auto 50px;
+  // margin: auto 50px;
   font-size: 2em;
 
   color: transparent;
@@ -323,6 +330,7 @@
   }
 
   .concept .concept-description .content,
+  #front .credo-wrap,
   #about .content,
   #contact .contact-info_wrap,
   #staff {
@@ -331,6 +339,9 @@
   }
   #contact .contact_content-wrap {
     margin: 0px 0px;
+  }
+  #front .credo-wrap {
+    padding: 0px;
   }
   // #about .content {
   //   margin: 100px 25px;
@@ -428,6 +439,7 @@
   }
 
   .concept .concept-description .content,
+  #front .credo-wrap,
   #about .content,
   #staff {
     overflow: hidden;
