@@ -1,299 +1,4 @@
-$margin_horizontal: 15px;
 
-.sections-container {
-  font-size: 1rem;
-  font-weight: 300;
-}
-
-.sections-container p {
-  margin: 1rem $margin_horizontal;
-}
-
-.sections-container h1 {
-  font-weight: 800;
-
-  font-size: 2rem;
-  margin: 2rem $margin_horizontal;
-}
-
-.concept .concept-description .content,
-#about .content,
-{
-  // font-weight: 200;
-  font-size: 1.5rem; // 24px
-  margin: 1.5rem $margin_horizontal;
-}
-
-.concept .concept-description .content h1,
-#about .content h1
-{
-  margin: 3rem $margin_horizontal;
-  font-size: 4.5rem;
-}
-
-@import './contact.scss';
-
-.concept .concept-description {
-  position: relative;
-  // margin-top: 500px;
-}
-
-.concept .concept-description .content-wrap {
-  // display: flex;
-  position: relative;
-}
-
-.concept .concept-description .content,
-#front .credo-wrap,
-#about .content,
-#out .showcases,
-#contact .contact_content-wrap,
-#staff {
-  margin: 0px 100px;
-  padding: 75px 0px;
-}
-#front .credo-wrap {
-  padding: 0px;
-}
-
-
-.concept .concept-description .ratio {
-  padding-bottom: 0px;
-}
-
-.concept .concept-description .background {
-  position: absolute;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  overflow: hidden;
-
-  // background-image: url('out-bckd_01-01plain.svg');
-  // background-size: cover;
-  // background-position: center;
-
-  width: 100%;
-  height: 100%;
-  // background-color: grey;
-}
-
-.concept .concept-description .background svg {
-  flex-grow: 0;
-  flex-shrink: 0;
-
-  //
-  width: 430%;
-}
-
-.concept .concept-description .background svg path {
-  display: inline;
-  fill: none;
-  stroke: white; // #dcd8de
-  stroke-width: 25px;
-  // stroke-width: 13.22916698;
-  stroke-linecap: round;
-  stroke-linejoin: miter;
-  stroke-miterlimit: 4;
-  stroke-dasharray: none;
-  stroke-opacity: 1;
-}
-
-.concept .concept-description .background svg.mobile {
-  display: none;
-}
-
-
-
-
-
-#in .background {
-  background: linear-gradient(to left, $light_green, $whitish);
-  // background: linear-gradient(to left, $primary_green, $darkish_green);
-  // background: linear-gradient(to right, $saturated_yellow, $saturated_yellow_alpha);
-}
-/*
-#in .background svg path {\
-  // stroke: linear-gradient(to left, $saturated-green, white);\
-  stroke: $light_green_alpha;
-}
-*/
-
-// This is a gradient for svg path's stroke
-#in .background svg path {
-  stroke: url('#in-gradient-widescreen');
-}
-
-#in .concept-description .background svg.widescreen stop.left,
-#in .concept-description .background svg.mobile stop.left {
-  stop-color: $white; // $shade_green; // $saturated_green_alpha;
-}
-#in .concept-description .background svg.widescreen stop.right,
-#in .concept-description .background svg.mobile stop.right {
-  stop-color: $whitish_alpha;
-}
-// #in .concept-description .background svg.widescreen stop.leftish,
-// #in .concept-description .background svg.mobile stop.leftish {
-//   stop-color: $saturated_yellow;
-// }
-
-
-#up .background {
-  background: linear-gradient(to left, $light_green, $whitish);
-  // background: linear-gradient(to left, $primary_green, $darkish_green);
-}
-/*
-#up .background svg path {
-  stroke: $light_green_alpha;
-}
-*/
-
-#up .background svg path {
-  stroke: url('#up-gradient-widescreen');
-}
-
-// This is a gradient for svg path's stroke
-#up .concept-description .background svg.widescreen stop.left,
-#up .concept-description .background svg.mobile stop.left {
-  stop-color: $white; // $shade_green;
-}
-#up .concept-description .background svg.widescreen stop.right,
-#up .concept-description .background svg.mobile stop.right {
-  stop-color: $whitish_alpha; // $saturated_green_alpha;
-}
-/*
-#up .concept-description .background svg.widescreen stop.leftish,
-#up .concept-description .background svg.mobile stop.leftish {
-  stop-color: $saturated_green;
-}
-*/
-
-#up .photo {
-  background-size: cover;
-  background-position: center;
-  height: 500px;
-  margin: 1px auto;
-}
-
-#up .photo#audience {
-  background-image: url('media/up/21688306_1596531477075367_2999301465771200079_o.jpg');
-}
-#up .photo#lecturer {
-  background-image: url('media/up/23551059_1648234865238361_2582291400729201502_o.jpg');
-}
-#up .photo#group {
-  background-image: url('media/up/21552067_1585036934891488_5713564960741055310_o.jpg');
-}
-
-
-
-#out .background {
-  // rgba(86, 255, 126, 0.8)
-  background: linear-gradient(to right, $light_green, $whitish);
-  // background: linear-gradient(to left, $primary_green, $darkish_green);
-
-  // background-color: rgba(86, 255, 126, 0.5); // $saturated_green;
-}
-/*
-#out .background svg path {
-  // stroke: linear-gradient(to left, $saturated-green, white);
-  stroke: $light_green_alpha;
-}
-*/
-#out .background svg path {
-  stroke: url('#out-gradient-widescreen');
-}
-
-// This is a gradient for svg path's stroke
-#out .concept-description .background svg.widescreen stop.left,
-#out .concept-description .background svg.mobile stop.left {
-  stop-color: $whitish_alpha;
-}
-#out .concept-description .background svg.widescreen stop.right,
-#out .concept-description .background svg.mobile stop.right {
-  stop-color: $white; // $shade_green; // $saturated_green_alpha;
-}
-// #out .concept-description .background svg.widescreen stop.leftish,
-// #out .concept-description .background svg.mobile stop.leftish {
-//   stop-color: $saturated_green;
-// }
-
-#out .showcase {
-  // flex-shrink: 0;
-  // flex-grow: 0;
-
-  // width: 700px;
-  margin: 0px auto;
-  padding-bottom: 18px;
-}
-
-#out .showcase .image-thumb {
-  float: left;
-  width: 450px;
-  height: 250px;
-
-  background-position: center;
-  background-size: cover;
-}
-
-#out .showcase#trash .image-thumb {
-  background-image: url('media/out/bRKZ2X7P_T4.jpg');
-}
-#out .showcase#playground .image-thumb {
-  background-image: url('media/out/22219946_1606186132776568_2916948056513412695_o.jpg');
-}
-#out .showcase#gifts .image-thumb {
-  background-image: url('media/out/25440299_1682244401837407_1959189880887880611_o.jpg');
-}
-
-#out .showcase .description-wrap {
-  float: left;
-  width: 150px;
-  height: 250px;
-
-  // margin-left: 15px;
-  line-height: 250px;
-}
-
-#out .showcase .description-wrap p {
-  display: inline-block;
-  line-height: normal;
-  vertical-align: middle;
-  margin-left: 15px;
-}
-
-#out .description-container {
-  display: inline-block;
-}
-
-#in .gallery-wrap {
-  position: relative;
-}
-
-#in .gallery-wrap .icon {
-  position: absolute;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  top: 0px;
-
-  box-sizing: border-box;
-  padding: 75px;
-}
-
-#in .gallery-wrap .icon svg {
-  flex-shrink: 0;
-  flex-grow: 0;
-}
-
-#in .gallery-wrap .icon#fwd {
-  right: 0px;
-}
-
-#in .gallery-wrap .icon#bwd {
-  left: 0px;
-}
 
 
 #front {
@@ -327,146 +32,125 @@ $margin_horizontal: 15px;
   // $saturated_yellow: rgba(230, 232, 78, 1);
   // $saturated_purple: rgba(216, 93, 255, 1);
 }
+
+#contact .location-wrap {
+  // display: flex;
+  // justify-content: center;
+}
+
+#contact .street-view {
+  float: left;
+  box-sizing: border-box;
+  padding: 5px;
+  // margin: 0px 5px 0px 0px;
+  // flex-grow: 1;
+  // width: 50%;
+  width: 50%;
+  // width: 250px;
+  height: 300px;
+  background-image: url('media/locationStreetView.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+#contact .map {
+  float: left;
+  position: relative;
+  box-sizing: border-box;
+  padding: 5px;
+  width: 50%;
+  height: 300px;
+}
+
+#contact iframe {
+  // margin: 0px 0px 0px 5px;
+  // flex-grow: 1;
+  // width: 400px;
+  width: 100%;
+  height: 100%;
+}
+
+
+#staff .members-wrap {
+  margin: 0px 5px 0px 5px;
+}
+
+#staff .member {
+  box-sizing: border-box;
+  float: left;
+  width: 33.3%;
+  // width: 250px;
+  text-align: center;
+  padding: 0px 2px 50px 2px;
+  // padding-bottom: 50px;
+  // margin: auto 5px;
+}
+
+#staff .ratio {
+  padding-bottom: 100%;
+}
+
+#staff .member .avatar {
+  width: 100%;
+  height: 100%;
+  // width: 250px;
+  // height: 250px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+#staff .member#norris .avatar {
+  background-image: url('media/staff/norris.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+#staff .member#powell .avatar {
+  background-image: url('media/staff/powell.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+#staff .member#ball .avatar {
+  background-image: url('media/staff/laura.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
 @media (max-width: 850px) {
-  // .concept-description .ratio {
-  //   padding-bottom: 0px;
-  // }
 
-  .concept .concept-description .background svg {
-    flex-grow: 0;
-    flex-shrink: 0;
-
-    //
-    width: 650%;
-  }
-
-  .concept .concept-description .content,
-  #front .credo-wrap,
-  #about .content,
-  #contact .contact-info_wrap,
-  #staff {
-    margin: 0px 35px;
-    padding: 50px 0px;
-  }
-  #contact .contact_content-wrap {
-    margin: 0px 0px;
-  }
-  #front .credo-wrap {
-    padding: 0px;
-  }
-
-  #out .showcases {
-    margin: 0px 0px;
-    padding: 0px 0px;
-  }
-
-  #out .showcase {
-    // width: 80%;
-    width: auto;
-  }
-
-  #out .showcase .image-thumb {
-    float: none;
-    width: 100%;
-    height: 350px;
-    // width: 450px;
-    // height: 250px;
-    //
-    // background-image: url('media/out/22219946_1606186132776568_2916948056513412695_o.jpg');
-    // background-position: center;
-    // background-size: cover;
-  }
-
-  #out .showcase .description-wrap {
-    float: none;
-
-    width: auto;
-    height: auto;
-    margin: 10px 75px 10px 75px;
-
-    line-height: normal;
-
-    // width: 150px;
-    // height: 250px;
-    //
-    // margin-left: 15px;
-    // line-height: 250px;
-  }
-
-  #out .showcase .description-wrap p {
-    display: inline-block;
-    margin: 15px 15px 15px 15px;
-    // margin: 15px 15px 15px 75px;
-
-    // display: inline-block;
-    // line-height: normal;
-    // vertical-align: middle;
-  }
-
-  #out .showcase .clearleft {
-    display: none;
-  }
 
   #front h1 {
     margin: auto 25px;
     font-size: 2em;
   }
+  #staff .member {
+    // width: 250px;
+    text-align: center;
+    padding-bottom: 50px;
+    // margin: auto 5px;
+  }
+
+  #staff .member .avatar {
+    // width: 250px;
+    // height: 250px;
+    // border-radius: 50%;
+  }
 }
 
 @media (max-width: 650px) {
-  .concept .concept-description .background svg {
-    // flex-grow: 0;
-    // flex-shrink: 0;
-    //
-    // //
-    width: 550%;
-    // stroke-width: 15px;
-  }
 
-  .concept .concept-description .content,
-  #front .credo-wrap,
-  #about .content,
-  #contact .contact-info_wrap,
-  #staff {
-    overflow: hidden;
-    margin: 0px 10px;
-  }
-
-  .concept .concept-description .background svg.widescreen {
-    display: none;
-  }
-  .concept .concept-description .background svg.mobile {
-    display: block;
-  }
-
-  #up .background svg path {
-    // background: linear-gradient(to left, $saturated-green, white);
-    // stroke: linear-gradient(to left, $saturated-green, white);
-    stroke: url('#up-gradient-mobile');
-  }
-
-  #out .background svg path {
-    // background: linear-gradient(to left, $saturated-green, white);
-    // stroke: linear-gradient(to left, $saturated-green, white);
-    stroke: url('#out-gradient-mobile');
-  }
-
-  #in .background svg path {
-    // background: linear-gradient(to left, $saturated-green, white);
-    // stroke: linear-gradient(to left, $saturated-green, white);
-    stroke: url('#in-gradient-mobile');
-  }
-
-  #contact .location-wrap .street-view,
-  #contact .location-wrap .map {
+  #staff .member {
     float: none;
     width: 100%;
-    // height: 300px;
-    // margin: auto 0px;
+    padding: 0px 15px 75px 15px;
   }
 
-  #contact .location-wrap .clearleft {
+  #staff .member .info-wrap {
+    margin: 50px auto 15px auto;
+  }
+
+  #staff .members-wrap .clearleft {
     display: none;
-    // margin: auto 0px;
   }
 }

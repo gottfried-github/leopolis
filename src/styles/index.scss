@@ -9,7 +9,6 @@
 @import './colors.scss';
 @import './slide.scss';
 @import './gallery.scss';
-@import './sections.scss';
 
 span.highlight {
   font-weight: 800;
@@ -91,11 +90,11 @@ h1, h2 {
 }
 
 
-@import './out.scss';
+// @import './out.scss';
 
 
-@import './contact.scss';
-@import './staff.scss';
+// @import './contact.scss';
+// @import './staff.scss';
 
 // #staff .member h2, #staff .member span {
 //
@@ -109,7 +108,9 @@ h1, h2 {
 //   background-image: url('22219946_1606186132776568_2916948056513412695_o.jpg');
 // }
 
-
+@import './sections-common.scss';
+@import './sections.scss';
+@import './concepts.scss';
 
 @media (max-width: 850px) {
 

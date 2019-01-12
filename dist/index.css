@@ -168,6 +168,52 @@ opacity: 1;
     width: 100%;
     height: 100%; } }
 
+span.highlight {
+  font-weight: 800; }
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Montserrat;
+  font-size: 16px;
+  background-color: #e6e6e6;
+  color: black;
+  font-weight: 300; }
+
+.large-view_wrap {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 99;
+  width: 100%;
+  height: 100%; }
+
+.large-view_wrap.noned {
+  display: none; }
+
+.large-view_wrap .icon#cross {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  margin: 50px; }
+
+.icon svg {
+  width: 64px;
+  height: 64px; }
+
+.icon svg path {
+  fill: none;
+  stroke: #00d264;
+  stroke-width: 1.05833328;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  stroke-miterlimit: 4;
+  stroke-dasharray: none;
+  stroke-opacity: 0.57438013; }
+
+.clearleft {
+  clear: left; }
+
 .sections-container {
   font-size: 1rem;
   font-weight: 300; }
@@ -189,6 +235,71 @@ opacity: 1;
 #about .content h1 {
   margin: 3rem 15px;
   font-size: 4.5rem; }
+
+.concept .concept-description .content,
+#front .credo-wrap,
+#about .content,
+#out .showcases,
+#contact .contact_content-wrap,
+#staff {
+  margin: 0px 100px;
+  padding: 75px 0px; }
+
+#front .credo-wrap {
+  padding: 0px; }
+
+@media (max-width: 850px) {
+  .concept .concept-description .background svg {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 650%; }
+  .concept .concept-description .content,
+  #front .credo-wrap,
+  #about .content,
+  #contact .contact-info_wrap,
+  #staff {
+    margin: 0px 35px;
+    padding: 50px 0px; }
+  #contact .contact_content-wrap {
+    margin: 0px 0px; }
+  #front .credo-wrap {
+    padding: 0px; }
+  #out .showcases {
+    margin: 0px 0px;
+    padding: 0px 0px; } }
+
+@media (max-width: 650px) {
+  .concept .concept-description .content,
+  #front .credo-wrap,
+  #about .content,
+  #contact .contact-info_wrap,
+  #staff {
+    overflow: hidden;
+    margin: 0px 10px; } }
+
+#front {
+  height: 500px;
+  background-image: url("media/landing/11745430_951029561625565_2841622478972039919_n.jpg");
+  background-position: center;
+  background-size: cover; }
+
+#front .credo-wrap {
+  height: 500px;
+  line-height: 500px; }
+
+#front .credo-wrap h1 {
+  display: inline-block;
+  line-height: normal;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 2em;
+  color: transparent;
+  background-image: linear-gradient(to right, #e6e84e, #56ff7e);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -ms-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text; }
 
 #contact .street-view {
   float: left;
@@ -212,23 +323,63 @@ opacity: 1;
   width: 100%;
   height: 100%; }
 
+#staff .members-wrap {
+  margin: 0px 5px 0px 5px; }
+
+#staff .member {
+  box-sizing: border-box;
+  float: left;
+  width: 33.3%;
+  text-align: center;
+  padding: 0px 2px 50px 2px; }
+
+#staff .ratio {
+  padding-bottom: 100%; }
+
+#staff .member .avatar {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 50%; }
+
+#staff .member#norris .avatar {
+  background-image: url("media/staff/norris.jpg");
+  background-position: center;
+  background-size: cover; }
+
+#staff .member#powell .avatar {
+  background-image: url("media/staff/powell.jpg");
+  background-position: center;
+  background-size: cover; }
+
+#staff .member#ball .avatar {
+  background-image: url("media/staff/laura.jpg");
+  background-position: center;
+  background-size: cover; }
+
+@media (max-width: 850px) {
+  #front h1 {
+    margin: auto 25px;
+    font-size: 2em; }
+  #staff .member {
+    text-align: center;
+    padding-bottom: 50px; } }
+
+@media (max-width: 650px) {
+  #staff .member {
+    float: none;
+    width: 100%;
+    padding: 0px 15px 75px 15px; }
+  #staff .member .info-wrap {
+    margin: 50px auto 15px auto; }
+  #staff .members-wrap .clearleft {
+    display: none; } }
+
 .concept .concept-description {
   position: relative; }
 
 .concept .concept-description .content-wrap {
   position: relative; }
-
-.concept .concept-description .content,
-#front .credo-wrap,
-#about .content,
-#out .showcases,
-#contact .contact_content-wrap,
-#staff {
-  margin: 0px 100px;
-  padding: 75px 0px; }
-
-#front .credo-wrap {
-  padding: 0px; }
 
 .concept .concept-description .ratio {
   padding-bottom: 0px; }
@@ -398,49 +549,7 @@ opacity: 1;
 #in .gallery-wrap .icon#bwd {
   left: 0px; }
 
-#front {
-  height: 500px;
-  background-image: url("media/landing/11745430_951029561625565_2841622478972039919_n.jpg");
-  background-position: center;
-  background-size: cover; }
-
-#front .credo-wrap {
-  height: 500px;
-  line-height: 500px; }
-
-#front .credo-wrap h1 {
-  display: inline-block;
-  line-height: normal;
-  vertical-align: middle;
-  text-align: center;
-  font-size: 2em;
-  color: transparent;
-  background-image: linear-gradient(to right, #e6e84e, #56ff7e);
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -ms-background-clip: text;
-  -o-background-clip: text;
-  background-clip: text; }
-
 @media (max-width: 850px) {
-  .concept .concept-description .background svg {
-    flex-grow: 0;
-    flex-shrink: 0;
-    width: 650%; }
-  .concept .concept-description .content,
-  #front .credo-wrap,
-  #about .content,
-  #contact .contact-info_wrap,
-  #staff {
-    margin: 0px 35px;
-    padding: 50px 0px; }
-  #contact .contact_content-wrap {
-    margin: 0px 0px; }
-  #front .credo-wrap {
-    padding: 0px; }
-  #out .showcases {
-    margin: 0px 0px;
-    padding: 0px 0px; }
   #out .showcase {
     width: auto; }
   #out .showcase .image-thumb {
@@ -457,21 +566,11 @@ opacity: 1;
     display: inline-block;
     margin: 15px 15px 15px 15px; }
   #out .showcase .clearleft {
-    display: none; }
-  #front h1 {
-    margin: auto 25px;
-    font-size: 2em; } }
+    display: none; } }
 
 @media (max-width: 650px) {
   .concept .concept-description .background svg {
     width: 550%; }
-  .concept .concept-description .content,
-  #front .credo-wrap,
-  #about .content,
-  #contact .contact-info_wrap,
-  #staff {
-    overflow: hidden;
-    margin: 0px 10px; }
   .concept .concept-description .background svg.widescreen {
     display: none; }
   .concept .concept-description .background svg.mobile {
@@ -488,123 +587,6 @@ opacity: 1;
     width: 100%; }
   #contact .location-wrap .clearleft {
     display: none; } }
-
-span.highlight {
-  font-weight: 800; }
-
-html, body {
-  margin: 0px;
-  padding: 0px;
-  font-family: Montserrat;
-  font-size: 16px;
-  background-color: #e6e6e6;
-  color: black;
-  font-weight: 300; }
-
-.large-view_wrap {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  z-index: 99;
-  width: 100%;
-  height: 100%; }
-
-.large-view_wrap.noned {
-  display: none; }
-
-.large-view_wrap .icon#cross {
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  margin: 50px; }
-
-.icon svg {
-  width: 64px;
-  height: 64px; }
-
-.icon svg path {
-  fill: none;
-  stroke: #00d264;
-  stroke-width: 1.05833328;
-  stroke-linecap: butt;
-  stroke-linejoin: miter;
-  stroke-miterlimit: 4;
-  stroke-dasharray: none;
-  stroke-opacity: 0.57438013; }
-
-#contact .street-view {
-  float: left;
-  box-sizing: border-box;
-  padding: 5px;
-  width: 50%;
-  height: 300px;
-  background-image: url("media/locationStreetView.jpeg");
-  background-size: cover;
-  background-position: center; }
-
-#contact .map {
-  float: left;
-  position: relative;
-  box-sizing: border-box;
-  padding: 5px;
-  width: 50%;
-  height: 300px; }
-
-#contact iframe {
-  width: 100%;
-  height: 100%; }
-
-#staff .members-wrap {
-  margin: 0px 5px 0px 5px; }
-
-#staff .member {
-  box-sizing: border-box;
-  float: left;
-  width: 33.3%;
-  text-align: center;
-  padding: 0px 2px 50px 2px; }
-
-#staff .ratio {
-  padding-bottom: 100%; }
-
-#staff .member .avatar {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  border-radius: 50%; }
-
-#staff .member#norris .avatar {
-  background-image: url("media/staff/norris.jpg");
-  background-position: center;
-  background-size: cover; }
-
-#staff .member#powell .avatar {
-  background-image: url("media/staff/powell.jpg");
-  background-position: center;
-  background-size: cover; }
-
-#staff .member#ball .avatar {
-  background-image: url("media/staff/laura.jpg");
-  background-position: center;
-  background-size: cover; }
-
-@media (max-width: 850px) {
-  #staff .member {
-    text-align: center;
-    padding-bottom: 50px; } }
-
-@media (max-width: 650px) {
-  #staff .member {
-    float: none;
-    width: 100%;
-    padding: 0px 15px 75px 15px; }
-  #staff .member .info-wrap {
-    margin: 50px auto 15px auto; }
-  #staff .members-wrap .clearleft {
-    display: none; } }
-
-.clearleft {
-  clear: left; }
 
 @media (max-width: 650px) {
   body {
