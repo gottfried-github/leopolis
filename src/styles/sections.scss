@@ -17,11 +17,7 @@ $margin_horizontal: 15px;
 }
 
 .concept .concept-description .content,
-// #front .credo-wrap,
 #about .content,
-// #out .showcases,
-// #contact .contact_content-wrap,
-// #staff
 {
   // font-weight: 200;
   font-size: 1.5rem; // 24px
@@ -29,39 +25,11 @@ $margin_horizontal: 15px;
 }
 
 .concept .concept-description .content h1,
-// #front .credo-wrap h1,
-#about .content h1,
-// #out .showcases h1,
-#contact .contact-info_wrap h1
-// #staff h1
-{
-  // margin-left: 15px;
-  // margin-right: 15px;
-  // font-weight: 800;
-}
-.concept .concept-description .content h1,
-// #front .credo-wrap h1,
 #about .content h1
-// #out .showcases h1,
-// #contact .contact-info_wrap h1
-// #staff h1
 {
   margin: 3rem $margin_horizontal;
   font-size: 4.5rem;
 }
-// .concept .concept-description .content h1,
-// #about .content h1 {
-//   margin: 3em 15px;
-// }
-// .concept .concept-description .content p,
-// #about .content p,
-// #contact p {
-//   margin: 15px $margin_horizontal;
-//   // margin: 15px 15px;
-// }
-// #contact p {
-//   margin: 50px auto 50px auto;
-// }
 
 @import './contact.scss';
 
@@ -87,17 +55,6 @@ $margin_horizontal: 15px;
 #front .credo-wrap {
   padding: 0px;
 }
-// #contact .contact_content-wrap {
-//   margin: auto 100px;
-// }
-// #staff {
-//   margin: 25px 100px 15px 100px;
-//   // margin: auto 100px;
-//
-//   // display: flex;
-//   // justify-content: center;
-// }
-
 
 
 .concept .concept-description .ratio {
@@ -397,27 +354,11 @@ $margin_horizontal: 15px;
   #front .credo-wrap {
     padding: 0px;
   }
-  // #about .content {
-  //   margin: 100px 25px;
-  // }
-  // #contact .contact_content-wrap {
-  //   margin: auto 0px;
-  // }
-  // #staff {
-  //   margin: 75px auto 15px auto;
-  //   // margin: 25px 100px 15px 100px;
-  // }
+
   #out .showcases {
     margin: 0px 0px;
     padding: 0px 0px;
   }
-
-  // .content-wrap_narrow {
-  //   margin: 0px 0px;
-  // }
-  // #out .showcases-wrap {
-  //   margin: 0px auto;
-  // }
 
   #out .showcase {
     // width: 80%;
@@ -490,17 +431,6 @@ $margin_horizontal: 15px;
     overflow: hidden;
     margin: 0px 10px;
   }
-
-
-  // this should be already applied, by the 850px media query
-  // .concept .concept-description .content h1 {
-  //   margin: auto 15px;
-  // }
-  // .concept .concept-description .content p {
-  //   // text-align: justify;
-  //   margin: auto 15px;
-  //   // margin: 15px 15px;
-  // }
 
   .concept .concept-description .background svg.widescreen {
     display: none;
