@@ -1,0 +1,43 @@
+
+$whitish: rgba(230, 230, 230, 1);
+$whitish_alpha: rgba(230, 230, 230, 0.3);
+$white: white;
+$white_alpha: rgba(255, 255, 255, 0.3);
+
+// saturated colors
+$saturated_green: rgba(86, 255, 126, 1);
+$saturated_green_alpha: rgba(86, 255, 126, 0);
+$saturated_yellow: rgba(230, 232, 78, 1);
+$saturated_yellow_alpha: rgba(230, 232, 78, 0);
+$saturated_orange: rgba(255, 197, 98, 1);
+$saturated_red: rgba(232, 96, 78, 1);
+$saturated_purple: rgba(216, 93, 255, 1);
+$saturated_purple_alpha: rgba(216, 93, 255, 0);
+
+// cold colors:
+$cold_blue: rgba(25, 255, 216, 1);
+$cold_greenish: rgba(95, 232, 159, 1);
+$cold_green: rgba(117, 255, 131, 1);
+$cold_greener: rgba(140, 232, 95, 1);
+$cold_yellow: rgba(225, 255, 118, 1);
+
+// colder colors:
+$colder_blue: rgba(131, 255, 231, 1);
+$colder_greenish: rgba(95, 232, 159, 1);
+$colder_green: rgba(117, 255, 131, 1);
+$colder_greener: rgba(140, 232, 95, 1);
+$colder_yellow: rgba(225, 255, 118, 1);
+
+// monochromatic colors (colors_02):
+$darkish_green: rgba(10, 65, 14, 1);
+$light_green: rgba(91, 197, 97, 1);
+$light_green_alpha: rgba(91, 197, 97, 0.5);
+// $light_green_alpha_bckd: rgba(91, 197, 97, 0.5);
+$primary_green: rgba(30, 185, 39, 1);
+$dark_green: rgba(26, 57, 28, 1);
+$shade_green: rgba(22, 134, 28, 1);
+$shade_green_alpha: rgba(22, 134, 28, 0.2);
+
+// complement to colors_02
+$dark_purple: rgba(89, 0, 35, 1);
+$light_purple: rgba(166, 27, 81, 1);

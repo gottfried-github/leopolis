@@ -1,5 +1,6 @@
 const gulp = require('gulp')
 // const watch = require('gulp-watch')
+const rename = require('gulp-rename')
 const sass = require('gulp-sass')
 
 gulp.task('scss', function(done) {
@@ -8,6 +9,9 @@ gulp.task('scss', function(done) {
     // .pipe(() => {
     //   console.log('sass piped in this')
     // })
+    .pipe(rename((path) => {
+      path.dirname = ''
+    }))
     .pipe(gulp.dest('./dist'))
     .on('end', () => {
       console.log('dest end');
