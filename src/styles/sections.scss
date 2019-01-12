@@ -1,3 +1,68 @@
+$margin_horizontal: 15px;
+
+.sections-container {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.sections-container p {
+  margin: 1rem $margin_horizontal;
+}
+
+.sections-container h1 {
+  font-weight: 800;
+
+  font-size: 2rem;
+  margin: 2rem $margin_horizontal;
+}
+
+.concept .concept-description .content,
+// #front .credo-wrap,
+#about .content,
+// #out .showcases,
+// #contact .contact_content-wrap,
+// #staff
+{
+  // font-weight: 200;
+  font-size: 1.5rem; // 24px
+  margin: 1.5rem $margin_horizontal;
+}
+
+.concept .concept-description .content h1,
+// #front .credo-wrap h1,
+#about .content h1,
+// #out .showcases h1,
+#contact .contact-info_wrap h1
+// #staff h1
+{
+  // margin-left: 15px;
+  // margin-right: 15px;
+  // font-weight: 800;
+}
+.concept .concept-description .content h1,
+// #front .credo-wrap h1,
+#about .content h1
+// #out .showcases h1,
+// #contact .contact-info_wrap h1
+// #staff h1
+{
+  margin: 3rem $margin_horizontal;
+  font-size: 4.5rem;
+}
+// .concept .concept-description .content h1,
+// #about .content h1 {
+//   margin: 3em 15px;
+// }
+// .concept .concept-description .content p,
+// #about .content p,
+// #contact p {
+//   margin: 15px $margin_horizontal;
+//   // margin: 15px 15px;
+// }
+// #contact p {
+//   margin: 50px auto 50px auto;
+// }
+
 @import './contact.scss';
 
 .concept .concept-description {
@@ -32,17 +97,6 @@
 //   // display: flex;
 //   // justify-content: center;
 // }
-.concept .concept-description .content,
-#about {
-  // font-weight: 200;
-  font-size: 1.5em; // 24px
-}
-.concept .concept-description .content h1,
-#about h1 {
-  font-size: 3em;
-  // font-size: 3.3em;
-  // font-weight: bold;
-}
 
 
 
@@ -297,7 +351,7 @@
   line-height: 500px;
 }
 
-#front h1 {
+#front .credo-wrap h1 {
   display: inline-block;
   line-height: normal;
   vertical-align: middle;
@@ -356,16 +410,6 @@
   #out .showcases {
     margin: 0px 0px;
     padding: 0px 0px;
-  }
-
-  .concept .concept-description .content h1,
-  #about .content h1 {
-    margin: auto 15px;
-  }
-  .concept .concept-description .content p,
-  #about .content p {
-    margin: auto 15px;
-    // margin: 15px 15px;
   }
 
   // .content-wrap_narrow {
@@ -441,6 +485,7 @@
   .concept .concept-description .content,
   #front .credo-wrap,
   #about .content,
+  #contact .contact-info_wrap,
   #staff {
     overflow: hidden;
     margin: 0px 10px;

@@ -168,6 +168,28 @@ opacity: 1;
     width: 100%;
     height: 100%; } }
 
+.sections-container {
+  font-size: 1rem;
+  font-weight: 300; }
+
+.sections-container p {
+  margin: 1rem 15px; }
+
+.sections-container h1 {
+  font-weight: 800;
+  font-size: 2rem;
+  margin: 2rem 15px; }
+
+.concept .concept-description .content,
+#about .content {
+  font-size: 1.5rem;
+  margin: 1.5rem 15px; }
+
+.concept .concept-description .content h1,
+#about .content h1 {
+  margin: 3rem 15px;
+  font-size: 4.5rem; }
+
 #contact .street-view {
   float: left;
   box-sizing: border-box;
@@ -190,9 +212,6 @@ opacity: 1;
   width: 100%;
   height: 100%; }
 
-#contact p {
-  margin: 50px auto 50px auto; }
-
 .concept .concept-description {
   position: relative; }
 
@@ -210,14 +229,6 @@ opacity: 1;
 
 #front .credo-wrap {
   padding: 0px; }
-
-.concept .concept-description .content,
-#about {
-  font-size: 1.5em; }
-
-.concept .concept-description .content h1,
-#about h1 {
-  font-size: 3em; }
 
 .concept .concept-description .ratio {
   padding-bottom: 0px; }
@@ -397,7 +408,7 @@ opacity: 1;
   height: 500px;
   line-height: 500px; }
 
-#front h1 {
+#front .credo-wrap h1 {
   display: inline-block;
   line-height: normal;
   vertical-align: middle;
@@ -430,12 +441,6 @@ opacity: 1;
   #out .showcases {
     margin: 0px 0px;
     padding: 0px 0px; }
-  .concept .concept-description .content h1,
-  #about .content h1 {
-    margin: auto 15px; }
-  .concept .concept-description .content p,
-  #about .content p {
-    margin: auto 15px; }
   #out .showcase {
     width: auto; }
   #out .showcase .image-thumb {
@@ -463,6 +468,7 @@ opacity: 1;
   .concept .concept-description .content,
   #front .credo-wrap,
   #about .content,
+  #contact .contact-info_wrap,
   #staff {
     overflow: hidden;
     margin: 0px 10px; }
@@ -494,9 +500,6 @@ html, body {
   background-color: #e6e6e6;
   color: black;
   font-weight: 300; }
-
-h1 {
-  font-weight: 800; }
 
 .large-view_wrap {
   position: fixed;
@@ -550,9 +553,6 @@ h1 {
 #contact iframe {
   width: 100%;
   height: 100%; }
-
-#contact p {
-  margin: 50px auto 50px auto; }
 
 #staff .members-wrap {
   margin: 0px 5px 0px 5px; }
