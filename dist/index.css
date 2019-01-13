@@ -366,7 +366,7 @@ html, body {
   z-index: 1; }
 
 #about .logo-background {
-  margin: 350px 50px 0px 0px; }
+  margin: 450px 50px 0px 0px; }
 
 #contact .street-view {
   float: left;
@@ -503,6 +503,7 @@ html, body {
   position: relative; }
 
 #up .content-wrap {
+  padding-top: 100px;
   z-index: 1; }
 
 /*
@@ -549,10 +550,10 @@ html, body {
   position: relative; }
 
 #out .logo-background {
-  margin: -150px 50px 0px 0px; }
+  margin: 50px 50px 0px 0px; }
 
 #out .content-wrap {
-  padding-top: 200px; }
+  padding-top: 250px; }
 
 /*
 #out .background svg path {
@@ -614,7 +615,10 @@ html, body {
   position: relative; }
 
 #in .logo-background {
-  margin: -350px 50px 0px 0px; }
+  margin: -25px 50px 0px 0px; }
+
+#in .content-wrap {
+  padding-top: 195px; }
 
 #in .gallery-wrap {
   position: relative; }
