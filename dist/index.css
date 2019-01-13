@@ -292,7 +292,7 @@ span.highlight {
 #out .showcases,
 #contact .contact_content-wrap,
 #staff {
-  margin: 0px 100px;
+  margin: 0px 250px;
   padding: 75px 0px; }
 
 #front .credo-wrap {
@@ -311,6 +311,18 @@ span.highlight {
 
 .concept .logo-background path {
   fill: rgba(91, 197, 97, 0.2); }
+
+@media (max-width: 1300px) {
+  .concept .concept-description .content,
+  #front .credo-wrap,
+  #about .content,
+  #out .showcases,
+  #contact .contact_content-wrap,
+  #staff {
+    margin: 0px 100px;
+    padding: 75px 0px; }
+  #front .credo-wrap {
+    padding: 0px; } }
 
 @media (max-width: 850px) {
   .concept .concept-description .background svg {
