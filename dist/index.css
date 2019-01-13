@@ -366,7 +366,7 @@ html, body {
   z-index: 1; }
 
 #about .logo-background {
-  margin: 350px 0px 0px 100px; }
+  margin: 350px 50px 0px 0px; }
 
 #contact .street-view {
   float: left;
@@ -552,7 +552,7 @@ html, body {
   margin: -150px 50px 0px 0px; }
 
 #out .content-wrap {
-  padding-top: 15px; }
+  padding-top: 200px; }
 
 /*
 #out .background svg path {
