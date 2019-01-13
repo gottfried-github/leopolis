@@ -52,7 +52,7 @@ $margin_horizontal: 15px;
   // margin: 0px 200px;
 }
 
-.logo-background {
+.concept .logo-background {
   position: absolute;
   top: 0px;
   right: 0px;
@@ -62,8 +62,9 @@ $margin_horizontal: 15px;
   height: 600px;
 }
 
-.logo-background path {
-  fill: rgba(50, 255, 50, 1);
+.concept .logo-background path {
+  fill: $dark_green;
+  // fill: rgba(50, 255, 50, 1);
 }
 
 @media (max-width: 850px) {

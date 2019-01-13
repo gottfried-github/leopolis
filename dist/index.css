@@ -191,7 +191,7 @@ opacity: 1;
 .logo svg path {
   display: inline;
   opacity: 1;
-  fill: #ffffff;
+  fill: #5bc561;
   fill-opacity: 1;
   stroke: none;
   stroke-width: 5.29166651;
@@ -204,8 +204,7 @@ opacity: 1;
 .logo svg rect {
   display: inline;
   opacity: 1;
-  fill: #000000;
-  fill-opacity: 0.94098361;
+  fill: #1a391c;
   stroke: none;
   stroke-width: 5.29166651;
   stroke-linecap: square;
@@ -300,7 +299,7 @@ html, body {
 #about .content {
   padding-right: 100px; }
 
-.logo-background {
+.concept .logo-background {
   position: absolute;
   top: 0px;
   right: 0px;
@@ -308,8 +307,8 @@ html, body {
   width: 600px;
   height: 600px; }
 
-.logo-background path {
-  fill: #32ff32; }
+.concept .logo-background path {
+  fill: #1a391c; }
 
 @media (max-width: 850px) {
   .concept .concept-description .background svg {
@@ -367,9 +366,6 @@ html, body {
 #about {
   position: relative;
   z-index: 1; }
-
-#about .logo-background {
-  margin: 525px 100px 0px 0px; }
 
 #contact .street-view {
   float: left;
@@ -504,6 +500,9 @@ html, body {
 
 #up {
   position: relative; }
+
+#up .logo-background {
+  margin: 0px 100px 0px 0px; }
 
 #up .content-wrap {
   padding-top: 125px;
