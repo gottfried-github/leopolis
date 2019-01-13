@@ -350,6 +350,21 @@ html, body {
   -o-background-clip: text;
   background-clip: text; }
 
+#about {
+  position: relative; }
+
+#about .logo-background {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 350px 0px 0px 100px;
+  width: 600px;
+  height: 600px;
+  z-index: 1; }
+
+#about .logo-background path {
+  fill: rgba(0, 0, 0, 0.4); }
+
 #contact .street-view {
   float: left;
   box-sizing: border-box;
