@@ -35,21 +35,15 @@
 
 #about {
   position: relative;
-}
-
-#about .logo-background {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  margin: 350px 0px 0px 100px;
-
-  width: 600px;
-  height: 600px;
   z-index: 1;
 }
 
+#about .logo-background {
+  margin: 350px 50px 0px 0px;
+}
+
 #about .logo-background path {
-  fill: rgba(0, 0, 0, 0.4);
+  // fill: green; // rgba(0, 0, 0, 0.4);
 }
 
 #contact .location-wrap {

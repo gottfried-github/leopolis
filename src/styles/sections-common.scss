@@ -45,6 +45,20 @@ $margin_horizontal: 15px;
   padding: 0px;
 }
 
+.logo-background {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 0px 0px 0px 100px;
+
+  width: 600px;
+  height: 600px;
+}
+
+.logo-background path {
+  fill: rgba(50, 255, 50, 1);
+}
+
 @media (max-width: 850px) {
   // .concept-description .ratio {
   //   padding-bottom: 0px;
