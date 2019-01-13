@@ -3,6 +3,7 @@ $margin_horizontal: 15px;
 .sections-container {
   font-size: 1rem;
   font-weight: 300;
+  // color: $light_green;
 }
 
 .sections-container p {
@@ -45,10 +46,10 @@ $margin_horizontal: 15px;
   padding: 0px;
 }
 
-// .concept .concept-description .content,
+.concept .concept-description .content,
 #about .content {
 // {
-  padding-right: 100px;
+  // padding-right: 50px;
   // margin: 0px 200px;
 }
 
@@ -56,10 +57,10 @@ $margin_horizontal: 15px;
   position: absolute;
   top: 0px;
   right: 0px;
-  margin: 0px 0px 0px 100px;
+  margin: 0px -200px 0px 0px;
 
-  width: 600px;
-  height: 600px;
+  width: 800px;
+  height: 800px;
 }
 
 .concept .logo-background path {
