@@ -93,9 +93,9 @@
 }
 
 #up .content-wrap {
-  padding-top: 100px;
+  padding-top: 125px;
+  // padding-top: 100px;
   // padding-top: 175px;
-  // padding-top: 125px; <<
   z-index: 1;
 }
 
@@ -156,8 +156,8 @@
 }
 
 #out .logo-background {
-  margin: 50px 50px 0px 0px;
-  // margin: 50px 100px 0px 0px; <<
+  margin: 50px 100px 0px 0px;
+  // margin: 50px 50px 0px 0px;
   // margin: -150px 100px 0px 0px;
 }
 
@@ -256,14 +256,14 @@
 }
 
 #in .logo-background {
-  margin: -25px 50px 0px 0px;
-  // margin: -25px 100px 0px 0px; <<
+  margin: -25px 100px 0px 0px;
+  // margin: -25px 50px 0px 0px;
   // margin: -350px 100px 0px 0px;
 }
 
 #in .content-wrap {
-  padding-top: 195px;
-  // padding-top: 270px; <<
+  // padding-top: 195px;
+  padding-top: 270px;
 }
 
 #in .gallery-wrap {

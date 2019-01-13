@@ -297,6 +297,9 @@ html, body {
 #front .credo-wrap {
   padding: 0px; }
 
+#about .content {
+  padding-right: 100px; }
+
 .logo-background {
   position: absolute;
   top: 0px;
@@ -366,7 +369,7 @@ html, body {
   z-index: 1; }
 
 #about .logo-background {
-  margin: 450px 50px 0px 0px; }
+  margin: 525px 100px 0px 0px; }
 
 #contact .street-view {
   float: left;
@@ -503,7 +506,7 @@ html, body {
   position: relative; }
 
 #up .content-wrap {
-  padding-top: 100px;
+  padding-top: 125px;
   z-index: 1; }
 
 /*
@@ -550,7 +553,7 @@ html, body {
   position: relative; }
 
 #out .logo-background {
-  margin: 50px 50px 0px 0px; }
+  margin: 50px 100px 0px 0px; }
 
 #out .content-wrap {
   padding-top: 250px; }
@@ -615,10 +618,10 @@ html, body {
   position: relative; }
 
 #in .logo-background {
-  margin: -25px 50px 0px 0px; }
+  margin: -25px 100px 0px 0px; }
 
 #in .content-wrap {
-  padding-top: 195px; }
+  padding-top: 270px; }
 
 #in .gallery-wrap {
   position: relative; }
