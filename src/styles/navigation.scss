@@ -1,0 +1,53 @@
+.navigation {
+  z-index: 99;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 64px;
+}
+
+.logo_wrap {
+  margin: 0px 100px;
+}
+
+.logo {
+  margin: 15px 15px 15px 0px;
+  float: right;
+}
+
+.logo svg {
+  width: 64px;
+  height: 64px;
+  margin: 0px 1px;
+}
+
+.logo svg path {
+  display: inline;
+  opacity: 1;
+  fill: $light_green;
+  // fill: #ffffff;
+  fill-opacity: 1;
+  stroke: none;
+  stroke-width: 5.29166651;
+  stroke-linecap: square;
+  stroke-linejoin: round;
+  stroke-miterlimit: 4;
+  stroke-dasharray: none;
+  stroke-opacity: 1;
+}
+
+.logo svg rect {
+  display: inline;
+  opacity: 1;
+  fill: $dark_green;
+  // fill: #000000;
+  // fill-opacity: 0.94098361;
+  stroke: none;
+  stroke-width: 5.29166651;
+  stroke-linecap: square;
+  stroke-linejoin: round;
+  stroke-miterlimit: 4;
+  stroke-dasharray: none;
+  stroke-opacity: 1;
+}

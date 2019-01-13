@@ -33,6 +33,20 @@
   // $saturated_purple: rgba(216, 93, 255, 1);
 }
 
+#about {
+  position: relative;
+  z-index: 1;
+}
+
+// #about .logo-background {
+//   margin: 525px 100px 0px 0px;
+//   // margin: 450px 50px 0px 0px;
+// }
+
+// #about .logo-background path {
+//   // fill: green; // rgba(0, 0, 0, 0.4);
+// }
+
 #contact .location-wrap {
   // display: flex;
   // justify-content: center;
