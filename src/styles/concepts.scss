@@ -1,3 +1,4 @@
+
 .concept .concept-description {
   position: relative;
   // margin-top: 500px;
@@ -92,7 +93,14 @@
   position: relative;
 }
 
+#up .logo-background {
+  // margin: 0px 100px 0px 0px;
+}
+
 #up .content-wrap {
+  // padding-top: 125px;
+  // padding-top: 100px;
+  // padding-top: 175px;
   z-index: 1;
 }
 
@@ -153,11 +161,15 @@
 }
 
 #out .logo-background {
-  margin: -150px 50px 0px 0px;
+  // margin: 50px 100px 0px 0px;
+  // margin: 50px 50px 0px 0px;
+  // margin: -150px 100px 0px 0px;
 }
 
 #out .content-wrap {
-  padding-top: 200px;
+  // padding-top: 250px;
+  // padding-top: 325px;
+  // padding-top: 200px;
 }
 
 #out .background {
@@ -249,7 +261,14 @@
 }
 
 #in .logo-background {
-  margin: -350px 50px 0px 0px;
+  // margin: -25px 100px 0px 0px;
+  // margin: -25px 50px 0px 0px;
+  // margin: -350px 100px 0px 0px;
+}
+
+#in .content-wrap {
+  // padding-top: 195px;
+  // padding-top: 270px;
 }
 
 #in .gallery-wrap {

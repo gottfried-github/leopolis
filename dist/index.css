@@ -191,7 +191,7 @@ opacity: 1;
 .logo svg path {
   display: inline;
   opacity: 1;
-  fill: #ffffff;
+  fill: #5bc561;
   fill-opacity: 1;
   stroke: none;
   stroke-width: 5.29166651;
@@ -204,8 +204,7 @@ opacity: 1;
 .logo svg rect {
   display: inline;
   opacity: 1;
-  fill: #000000;
-  fill-opacity: 0.94098361;
+  fill: #1a391c;
   stroke: none;
   stroke-width: 5.29166651;
   stroke-linecap: square;
@@ -213,9 +212,6 @@ opacity: 1;
   stroke-miterlimit: 4;
   stroke-dasharray: none;
   stroke-opacity: 1; }
-
-span.highlight {
-  font-weight: 800; }
 
 html, body {
   margin: 0px;
@@ -265,7 +261,8 @@ html, body {
 
 .sections-container {
   font-size: 1rem;
-  font-weight: 300; }
+  font-weight: 300;
+  color: #1a391c; }
 
 .sections-container p {
   margin: 1rem 15px; }
@@ -274,6 +271,10 @@ html, body {
   font-weight: 800;
   font-size: 2rem;
   margin: 2rem 15px; }
+
+span.highlight {
+  font-weight: 800;
+  color: #5bc561; }
 
 .concept .concept-description .content,
 #about .content {
@@ -291,22 +292,37 @@ html, body {
 #out .showcases,
 #contact .contact_content-wrap,
 #staff {
-  margin: 0px 100px;
+  margin: 0px 250px;
   padding: 75px 0px; }
 
 #front .credo-wrap {
   padding: 0px; }
 
-.logo-background {
+.concept {
+  overflow: hidden; }
+
+.concept .logo-background {
   position: absolute;
   top: 0px;
   right: 0px;
-  margin: 0px 0px 0px 100px;
-  width: 600px;
-  height: 600px; }
+  margin: 0px -200px 0px 0px;
+  width: 800px;
+  height: 800px; }
 
-.logo-background path {
-  fill: #32ff32; }
+.concept .logo-background path {
+  fill: rgba(91, 197, 97, 0.2); }
+
+@media (max-width: 1300px) {
+  .concept .concept-description .content,
+  #front .credo-wrap,
+  #about .content,
+  #out .showcases,
+  #contact .contact_content-wrap,
+  #staff {
+    margin: 0px 100px;
+    padding: 75px 0px; }
+  #front .credo-wrap {
+    padding: 0px; } }
 
 @media (max-width: 850px) {
   .concept .concept-description .background svg {
@@ -364,9 +380,6 @@ html, body {
 #about {
   position: relative;
   z-index: 1; }
-
-#about .logo-background {
-  margin: 350px 50px 0px 0px; }
 
 #contact .street-view {
   float: left;
@@ -548,12 +561,6 @@ html, body {
 #out {
   position: relative; }
 
-#out .logo-background {
-  margin: -150px 50px 0px 0px; }
-
-#out .content-wrap {
-  padding-top: 200px; }
-
 /*
 #out .background svg path {
   // stroke: linear-gradient(to left, $saturated-green, white);
@@ -612,9 +619,6 @@ html, body {
 
 #in {
   position: relative; }
-
-#in .logo-background {
-  margin: -350px 50px 0px 0px; }
 
 #in .gallery-wrap {
   position: relative; }
