@@ -306,7 +306,7 @@ html, body {
   height: 600px; }
 
 .logo-background path {
-  fill: rgba(0, 0, 0, 0.4); }
+  fill: #32ff32; }
 
 @media (max-width: 850px) {
   .concept .concept-description .background svg {
@@ -549,7 +549,7 @@ html, body {
   position: relative; }
 
 #out .logo-background {
-  margin: -350px 100px 0px 0px; }
+  margin: -150px 50px 0px 0px; }
 
 #out .content-wrap {
   padding-top: 15px; }
@@ -591,6 +591,10 @@ html, body {
 #out .showcase#gifts .image-thumb {
   background-image: url("media/out/25440299_1682244401837407_1959189880887880611_o.jpg"); }
 
+#out .showcase:nth-last-child(1) {
+  position: relative;
+  z-index: 1; }
+
 #out .showcase .description-wrap {
   float: left;
   width: 150px;
@@ -605,6 +609,12 @@ html, body {
 
 #out .description-container {
   display: inline-block; }
+
+#in {
+  position: relative; }
+
+#in .logo-background {
+  margin: -350px 50px 0px 0px; }
 
 #in .gallery-wrap {
   position: relative; }
