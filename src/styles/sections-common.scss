@@ -3,7 +3,10 @@ $margin_horizontal: 15px;
 .sections-container {
   font-size: 1rem;
   font-weight: 300;
-  // color: $light_green;
+  // background-color: $light_green;
+  color: $dark_green;
+  // color: $darkish_green;
+  // color: $primary_green;
 }
 
 .sections-container p {
@@ -64,7 +67,10 @@ $margin_horizontal: 15px;
 }
 
 .concept .logo-background path {
-  fill: $dark_green;
+  fill: $grey;
+  // fill: $darkish_green_alpha;
+  // fill: $darkish_green;
+  // fill: $dark_green;
   // fill: rgba(50, 255, 50, 1);
 }
 

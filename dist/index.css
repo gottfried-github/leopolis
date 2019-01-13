@@ -264,7 +264,8 @@ html, body {
 
 .sections-container {
   font-size: 1rem;
-  font-weight: 300; }
+  font-weight: 300;
+  color: #1a391c; }
 
 .sections-container p {
   margin: 1rem 15px; }
@@ -305,7 +306,7 @@ html, body {
   height: 800px; }
 
 .concept .logo-background path {
-  fill: #1a391c; }
+  fill: gainsboro; }
 
 @media (max-width: 850px) {
   .concept .concept-description .background svg {
