@@ -297,6 +297,17 @@ html, body {
 #front .credo-wrap {
   padding: 0px; }
 
+.logo-background {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 0px 0px 0px 100px;
+  width: 600px;
+  height: 600px; }
+
+.logo-background path {
+  fill: rgba(0, 0, 0, 0.4); }
+
 @media (max-width: 850px) {
   .concept .concept-description .background svg {
     flex-grow: 0;
@@ -351,19 +362,11 @@ html, body {
   background-clip: text; }
 
 #about {
-  position: relative; }
-
-#about .logo-background {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  margin: 350px 0px 0px 100px;
-  width: 600px;
-  height: 600px;
+  position: relative;
   z-index: 1; }
 
-#about .logo-background path {
-  fill: rgba(0, 0, 0, 0.4); }
+#about .logo-background {
+  margin: 350px 0px 0px 100px; }
 
 #contact .street-view {
   float: left;
@@ -496,8 +499,11 @@ html, body {
 #in .concept-description .background svg.mobile stop.right {
   stop-color: rgba(230, 230, 230, 0.3); }
 
-#up .background {
-  background: linear-gradient(to left, #5bc561, #e6e6e6); }
+#up {
+  position: relative; }
+
+#up .content-wrap {
+  z-index: 1; }
 
 /*
 #up .background svg path {
@@ -536,8 +542,17 @@ html, body {
 #up .photo#group {
   background-image: url("media/up/21552067_1585036934891488_5713564960741055310_o.jpg"); }
 
-#out .background {
-  background: linear-gradient(to right, #5bc561, #e6e6e6); }
+#up .photo:nth-last-child(1) {
+  position: relative; }
+
+#out {
+  position: relative; }
+
+#out .logo-background {
+  margin: -185px 100px 0px 0px; }
+
+#out .content-wrap {
+  padding-top: 95px; }
 
 /*
 #out .background svg path {
