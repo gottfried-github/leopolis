@@ -213,9 +213,6 @@ opacity: 1;
   stroke-dasharray: none;
   stroke-opacity: 1; }
 
-span.highlight {
-  font-weight: 800; }
-
 html, body {
   margin: 0px;
   padding: 0px;
@@ -275,6 +272,10 @@ html, body {
   font-size: 2rem;
   margin: 2rem 15px; }
 
+span.highlight {
+  font-weight: 800;
+  color: #5bc561; }
+
 .concept .concept-description .content,
 #about .content {
   font-size: 1.5rem;
@@ -297,6 +298,9 @@ html, body {
 #front .credo-wrap {
   padding: 0px; }
 
+.concept {
+  overflow: hidden; }
+
 .concept .logo-background {
   position: absolute;
   top: 0px;
@@ -306,7 +310,7 @@ html, body {
   height: 800px; }
 
 .concept .logo-background path {
-  fill: gainsboro; }
+  fill: rgba(91, 197, 97, 0.2); }
 
 @media (max-width: 850px) {
   .concept .concept-description .background svg {

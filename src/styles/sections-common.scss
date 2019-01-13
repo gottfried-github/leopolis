@@ -20,6 +20,14 @@ $margin_horizontal: 15px;
   margin: 2rem $margin_horizontal;
 }
 
+span.highlight {
+  font-weight: 800;
+  color: $light_green;
+  // color: $white;
+  // color: $colder_yellow;
+  // color: $saturated_yellow;
+}
+
 .concept .concept-description .content,
 #about .content,
 {
@@ -52,8 +60,13 @@ $margin_horizontal: 15px;
 .concept .concept-description .content,
 #about .content {
 // {
-  // padding-right: 50px;
+  // padding-right: 150px;
   // margin: 0px 200px;
+}
+
+.concept {
+  overflow: hidden;
+  // background-color: $light_green_alpha;
 }
 
 .concept .logo-background {
@@ -67,7 +80,9 @@ $margin_horizontal: 15px;
 }
 
 .concept .logo-background path {
-  fill: $grey;
+  fill: $light_green_alpha_alpha;
+  // margin: 2px;
+  // fill: $light_green_alpha;
   // fill: $darkish_green_alpha;
   // fill: $darkish_green;
   // fill: $dark_green;
