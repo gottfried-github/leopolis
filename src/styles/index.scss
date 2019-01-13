@@ -4,11 +4,13 @@
 // @import './openSans.scss';
 // @import './objective.scss';
 // @import './futura.scss';
-@import './montserrat.scss';
+@import './font-montserrat.scss';
 
 @import './colors.scss';
 @import './slide.scss';
 @import './gallery.scss';
+
+@import './navigation.scss';
 
 span.highlight {
   font-weight: 800;
@@ -102,6 +104,10 @@ h1, h2 {
 
 .clearleft {
   clear: left;
+}
+
+.clearright {
+  clear: right;
 }
 
 // #in .showcase:nth-child(1)  { // .image-thumb
