@@ -47,18 +47,31 @@ function initLangSwitch() {
   const contentUa = nodeListToArray('.content .ua')
 
   function switchToEn() {
-    contentUa.forEach(el => el.style.display = 'none')
-    contentEn.forEach(el => el.style.removeProperty('display'))
+    contentUa.forEach(el => el.classList.add('noned'))
+    contentEn.forEach(el => el.classList.remove('noned'))
   }
-  
+
   function switchToUa() {
-    contentEn.forEach(el => el.style.display = 'none')
-    contentUa.forEach(el => el.style.removeProperty('display'))
+    contentEn.forEach(el => el.classList.add('noned'))
+    contentUa.forEach(el => el.classList.remove('noned'))
   }
 
-  const en = document.querySelector('.lang-switch #en');
-  const ua = document.querySelector('.lang-switch #ua');
+  const enSwitch = document.querySelector('.lang-switch #en');
+  const uaSwitch = document.querySelector('.lang-switch #ua');
 
+  enSwitch.addEventListener('click', () => {
+    enSwitch.classList.add('noned')
+    uaSwitch.classList.remove('noned')
+
+    switchToEn()
+  })
+  
+  uaSwitch.addEventListener('click', () => {
+    uaSwitch.classList.add('noned')
+    enSwitch.classList.remove('noned')
+
+    switchToUa()
+  })
 }
 
 function boot(galleryUrls) {
