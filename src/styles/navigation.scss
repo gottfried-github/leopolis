@@ -16,6 +16,21 @@
   float: right;
 }
 
+.logo .lang-switch {
+  display: inline-block;
+}
+
+.logo .lang-switch #en,
+.logo .lang-switch #ua {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.logo .lang-switch #en.noned,
+.logo .lang-switch #ua.noned {
+  display: none;
+}
+
 .logo svg {
   width: 64px;
   height: 64px;
