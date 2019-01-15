@@ -9,21 +9,19 @@ class ShowcaseImage extends Enlargable {
     // this.image = new Enlargable()
   }
 }
-//
-// function initShowcases() {
-//   var els = document.querySelectorAll('#out .showcase .image-thumb')
-//   els = Array.prototype.slice.call(els, 0)
-//
-//   // console.log(els);
-//
-//   els.forEach(el => {new ShowcaseImage(el)})
-// }
+
+function nodeListToArray(selector) {
+  document.querySelectorAll(selector)
+  els = Array.prototype.slice.call(els, 0)
+  return els
+}
 
 function initEnlargables(selector) {
-  var els = document.querySelectorAll(selector)
-  els = Array.prototype.slice.call(els, 0)
+  // var els = document.querySelectorAll(selector)
+  // els = Array.prototype.slice.call(els, 0)
 
   // console.log(els);
+  var els = nodeListToArray(selector)
 
   els.forEach(el => {new ShowcaseImage(el)})
 }
@@ -41,6 +39,26 @@ function initGallery(photoUrls) {
     .addEventListener('click', gallery.goToNext.bind(gallery))
 
   console.log('gallery', gallery)
+}
+
+function initLangSwitch() {
+
+  const contentEn = nodeListToArray('.content .en')
+  const contentUa = nodeListToArray('.content .ua')
+
+  function switchToEn() {
+    contentUa.forEach(el => el.style.display = 'none')
+    contentEn.forEach(el => el.style.removeProperty('display'))
+  }
+  
+  function switchToUa() {
+    contentEn.forEach(el => el.style.display = 'none')
+    contentUa.forEach(el => el.style.removeProperty('display'))
+  }
+
+  const en = document.querySelector('.lang-switch #en');
+  const ua = document.querySelector('.lang-switch #ua');
+
 }
 
 function boot(galleryUrls) {
