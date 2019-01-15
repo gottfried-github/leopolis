@@ -43,8 +43,8 @@ function initGallery(photoUrls) {
 
 function initLangSwitch() {
 
-  const contentEn = nodeListToArray('.content .en')
-  const contentUa = nodeListToArray('.content .ua')
+  const contentEn = nodeListToArray('.text.en')
+  const contentUa = nodeListToArray('.text.ua')
 
   function switchToEn() {
     contentUa.forEach(el => el.classList.add('noned'))
@@ -65,7 +65,7 @@ function initLangSwitch() {
 
     switchToEn()
   })
-  
+
   uaSwitch.addEventListener('click', () => {
     uaSwitch.classList.add('noned')
     enSwitch.classList.remove('noned')
