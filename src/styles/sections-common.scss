@@ -3,6 +3,10 @@ $margin_horizontal: 15px;
 .sections-container {
   font-size: 1rem;
   font-weight: 300;
+  // background-color: $light_green;
+  color: $dark_green;
+  // color: $darkish_green;
+  // color: $primary_green;
 }
 
 .sections-container p {
@@ -14,6 +18,14 @@ $margin_horizontal: 15px;
 
   font-size: 2rem;
   margin: 2rem $margin_horizontal;
+}
+
+span.highlight {
+  font-weight: 800;
+  color: $light_green;
+  // color: $white;
+  // color: $colder_yellow;
+  // color: $saturated_yellow;
 }
 
 .concept .concept-description .content,
@@ -38,25 +50,58 @@ $margin_horizontal: 15px;
 #out .showcases,
 #contact .contact_content-wrap,
 #staff {
-  margin: 0px 100px;
+  margin: 0px 250px;
   padding: 75px 0px;
 }
 #front .credo-wrap {
   padding: 0px;
 }
 
-.logo-background {
+.concept .concept-description .content,
+#about .content {
+// {
+  // padding-right: 150px;
+  // margin: 0px 200px;
+}
+
+.concept {
+  overflow: hidden;
+  // background-color: $light_green_alpha;
+}
+
+.concept .logo-background {
   position: absolute;
   top: 0px;
   right: 0px;
-  margin: 0px 0px 0px 100px;
+  margin: 0px -200px 0px 0px;
 
-  width: 600px;
-  height: 600px;
+  width: 800px;
+  height: 800px;
 }
 
-.logo-background path {
-  fill: rgba(50, 255, 50, 1);
+.concept .logo-background path {
+  fill: $light_green_alpha_alpha;
+  // margin: 2px;
+  // fill: $light_green_alpha;
+  // fill: $darkish_green_alpha;
+  // fill: $darkish_green;
+  // fill: $dark_green;
+  // fill: rgba(50, 255, 50, 1);
+}
+
+@media (max-width: 1300px) {
+  .concept .concept-description .content,
+  #front .credo-wrap,
+  #about .content,
+  #out .showcases,
+  #contact .contact_content-wrap,
+  #staff {
+    margin: 0px 100px;
+    padding: 75px 0px;
+  }
+  #front .credo-wrap {
+    padding: 0px;
+  }
 }
 
 .text.noned,

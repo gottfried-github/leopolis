@@ -1,4 +1,6 @@
 
+$grey: rgba(220, 220, 220, 1);
+$grey_alpha: rgba(200, 200, 200, 1);
 $whitish: rgba(230, 230, 230, 1);
 $whitish_alpha: rgba(230, 230, 230, 0.3);
 $white: white;
@@ -30,11 +32,14 @@ $colder_yellow: rgba(225, 255, 118, 1);
 
 // monochromatic colors (colors_02):
 $darkish_green: rgba(10, 65, 14, 1);
+$darkish_green_alpha: rgba(10, 65, 14, 0.8);
 $light_green: rgba(91, 197, 97, 1);
 $light_green_alpha: rgba(91, 197, 97, 0.5);
+$light_green_alpha_alpha: rgba(91, 197, 97, 0.2);
 // $light_green_alpha_bckd: rgba(91, 197, 97, 0.5);
 $primary_green: rgba(30, 185, 39, 1);
 $dark_green: rgba(26, 57, 28, 1);
+$dark_green_alpha: rgba(26, 57, 28, 0.5);
 $shade_green: rgba(22, 134, 28, 1);
 $shade_green_alpha: rgba(22, 134, 28, 0.2);
 
