@@ -168,8 +168,75 @@ opacity: 1;
     width: 100%;
     height: 100%; } }
 
-span.highlight {
-  font-weight: 800; }
+.navigation {
+  z-index: 99;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 64px; }
+
+.logo_wrap {
+  margin: 0px 100px; }
+
+.logo {
+  margin: 15px 15px 15px 0px;
+  float: right; }
+
+.logo .lang-switch {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px; }
+
+.logo .lang-switch_inner-wrap {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  line-height: 64px;
+  text-align: center; }
+
+.logo .lang-switch span#en,
+.logo .lang-switch span#ua {
+  display: inline-block;
+  line-height: normal;
+  vertical-align: middle;
+  font-size: 1.250rem;
+  font-weight: 400; }
+
+.logo .lang-switch #en.noned,
+.logo .lang-switch #ua.noned {
+  display: none; }
+
+.logo svg {
+  width: 64px;
+  height: 64px;
+  margin: 0px 1px; }
+
+.logo svg path {
+  display: inline;
+  opacity: 1;
+  fill: #5bc561;
+  fill-opacity: 1;
+  stroke: none;
+  stroke-width: 5.29166651;
+  stroke-linecap: square;
+  stroke-linejoin: round;
+  stroke-miterlimit: 4;
+  stroke-dasharray: none;
+  stroke-opacity: 1; }
+
+.logo svg rect {
+  display: inline;
+  opacity: 1;
+  fill: #1a391c;
+  stroke: none;
+  stroke-width: 5.29166651;
+  stroke-linecap: square;
+  stroke-linejoin: round;
+  stroke-miterlimit: 4;
+  stroke-dasharray: none;
+  stroke-opacity: 1; }
 
 html, body {
   margin: 0px;
@@ -214,9 +281,13 @@ html, body {
 .clearleft {
   clear: left; }
 
+.clearright {
+  clear: right; }
+
 .sections-container {
   font-size: 1rem;
-  font-weight: 300; }
+  font-weight: 300;
+  color: #1a391c; }
 
 .sections-container p {
   margin: 1rem 15px; }
@@ -225,6 +296,10 @@ html, body {
   font-weight: 800;
   font-size: 2rem;
   margin: 2rem 15px; }
+
+span.highlight {
+  font-weight: 800;
+  color: #5bc561; }
 
 .concept .concept-description .content,
 #about .content {
@@ -242,11 +317,42 @@ html, body {
 #out .showcases,
 #contact .contact_content-wrap,
 #staff {
-  margin: 0px 100px;
+  margin: 0px 250px;
   padding: 75px 0px; }
 
 #front .credo-wrap {
   padding: 0px; }
+
+.concept {
+  overflow: hidden; }
+
+.concept .logo-background {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 0px -200px 0px 0px;
+  width: 800px;
+  height: 800px; }
+
+.concept .logo-background path {
+  fill: rgba(91, 197, 97, 0.2); }
+
+@media (max-width: 1300px) {
+  .concept .concept-description .content,
+  #front .credo-wrap,
+  #about .content,
+  #out .showcases,
+  #contact .contact_content-wrap,
+  #staff {
+    margin: 0px 100px;
+    padding: 75px 0px; }
+  #front .credo-wrap {
+    padding: 0px; } }
+
+.text.noned,
+#front .credo-wrap h1.text.noned,
+#out .showcase .description-wrap .text.noned {
+  display: none; }
 
 @media (max-width: 850px) {
   .concept .concept-description .background svg {
@@ -300,6 +406,10 @@ html, body {
   -ms-background-clip: text;
   -o-background-clip: text;
   background-clip: text; }
+
+#about {
+  position: relative;
+  z-index: 1; }
 
 #contact .street-view {
   float: left;
@@ -432,8 +542,11 @@ html, body {
 #in .concept-description .background svg.mobile stop.right {
   stop-color: rgba(230, 230, 230, 0.3); }
 
-#up .background {
-  background: linear-gradient(to left, #5bc561, #e6e6e6); }
+#up {
+  position: relative; }
+
+#up .content-wrap {
+  z-index: 1; }
 
 /*
 #up .background svg path {
@@ -472,8 +585,11 @@ html, body {
 #up .photo#group {
   background-image: url("media/up/21552067_1585036934891488_5713564960741055310_o.jpg"); }
 
-#out .background {
-  background: linear-gradient(to right, #5bc561, #e6e6e6); }
+#up .photo:nth-last-child(1) {
+  position: relative; }
+
+#out {
+  position: relative; }
 
 /*
 #out .background svg path {
@@ -512,6 +628,10 @@ html, body {
 #out .showcase#gifts .image-thumb {
   background-image: url("media/out/25440299_1682244401837407_1959189880887880611_o.jpg"); }
 
+#out .showcase:nth-last-child(1) {
+  position: relative;
+  z-index: 1; }
+
 #out .showcase .description-wrap {
   float: left;
   width: 150px;
@@ -526,6 +646,9 @@ html, body {
 
 #out .description-container {
   display: inline-block; }
+
+#in {
+  position: relative; }
 
 #in .gallery-wrap {
   position: relative; }

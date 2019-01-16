@@ -1,0 +1,162 @@
+$margin_horizontal: 15px;
+
+.sections-container {
+  font-size: 1rem;
+  font-weight: 300;
+  // background-color: $light_green;
+  color: $dark_green;
+  // color: $darkish_green;
+  // color: $primary_green;
+}
+
+.sections-container p {
+  margin: 1rem $margin_horizontal;
+}
+
+.sections-container h1 {
+  font-weight: 800;
+
+  font-size: 2rem;
+  margin: 2rem $margin_horizontal;
+}
+
+span.highlight {
+  font-weight: 800;
+  color: $light_green;
+  // color: $white;
+  // color: $colder_yellow;
+  // color: $saturated_yellow;
+}
+
+.concept .concept-description .content,
+#about .content,
+{
+  // font-weight: 200;
+  font-size: 1.5rem; // 24px
+  margin: 1.5rem $margin_horizontal;
+}
+
+.concept .concept-description .content h1,
+#about .content h1
+{
+  margin: 3rem $margin_horizontal;
+  font-size: 4.5rem;
+}
+
+
+.concept .concept-description .content,
+#front .credo-wrap,
+#about .content,
+#out .showcases,
+#contact .contact_content-wrap,
+#staff {
+  margin: 0px 250px;
+  padding: 75px 0px;
+}
+#front .credo-wrap {
+  padding: 0px;
+}
+
+.concept .concept-description .content,
+#about .content {
+// {
+  // padding-right: 150px;
+  // margin: 0px 200px;
+}
+
+.concept {
+  overflow: hidden;
+  // background-color: $light_green_alpha;
+}
+
+.concept .logo-background {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 0px -200px 0px 0px;
+
+  width: 800px;
+  height: 800px;
+}
+
+.concept .logo-background path {
+  fill: $light_green_alpha_alpha;
+  // margin: 2px;
+  // fill: $light_green_alpha;
+  // fill: $darkish_green_alpha;
+  // fill: $darkish_green;
+  // fill: $dark_green;
+  // fill: rgba(50, 255, 50, 1);
+}
+
+@media (max-width: 1300px) {
+  .concept .concept-description .content,
+  #front .credo-wrap,
+  #about .content,
+  #out .showcases,
+  #contact .contact_content-wrap,
+  #staff {
+    margin: 0px 100px;
+    padding: 75px 0px;
+  }
+  #front .credo-wrap {
+    padding: 0px;
+  }
+}
+
+.text.noned,
+#front .credo-wrap h1.text.noned,
+#out .showcase .description-wrap .text.noned {
+  display: none;
+}
+
+@media (max-width: 850px) {
+  // .concept-description .ratio {
+  //   padding-bottom: 0px;
+  // }
+
+  .concept .concept-description .background svg {
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    //
+    width: 650%;
+  }
+
+  .concept .concept-description .content,
+  #front .credo-wrap,
+  #about .content,
+  #contact .contact-info_wrap,
+  #staff {
+    margin: 0px 35px;
+    padding: 50px 0px;
+  }
+  #contact .contact_content-wrap {
+    margin: 0px 0px;
+  }
+  #front .credo-wrap {
+    padding: 0px;
+  }
+
+  #out .showcases {
+    margin: 0px 0px;
+    padding: 0px 0px;
+  }
+
+
+}
+
+@media (max-width: 650px) {
+
+
+  .concept .concept-description .content,
+  #front .credo-wrap,
+  #about .content,
+  #contact .contact-info_wrap,
+  #staff {
+    overflow: hidden;
+    margin: 0px 10px;
+  }
+
+
+}
