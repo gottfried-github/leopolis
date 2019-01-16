@@ -11,7 +11,7 @@ class ShowcaseImage extends Enlargable {
 }
 
 function nodeListToArray(selector) {
-  document.querySelectorAll(selector)
+  var els = document.querySelectorAll(selector)
   els = Array.prototype.slice.call(els, 0)
   return els
 }
@@ -75,6 +75,8 @@ function initLangSwitch() {
 }
 
 function boot(galleryUrls) {
+  initLangSwitch()
+
   const largeViewWrap = document.querySelector('.large-view_wrap')
   LargeView.init({
     transition: 'opacity 0.4s',
