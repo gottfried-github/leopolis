@@ -333,9 +333,9 @@ html, body {
 .logo-background path {
   fill: #32ff32; }
 
-.text.en.noned,
-#front .credo-wrap h1.text.en.noned,
-#out .showcase .description-wrap .text.en.noned {
+.text.noned,
+#front .credo-wrap h1.text.noned,
+#out .showcase .description-wrap .text.noned {
   display: none; }
 
 @media (max-width: 850px) {
