@@ -59,6 +59,12 @@ $margin_horizontal: 15px;
   fill: rgba(50, 255, 50, 1);
 }
 
+.text.noned,
+#front .credo-wrap h1.text.noned,
+#out .showcase .description-wrap .text.noned {
+  display: none;
+}
+
 @media (max-width: 850px) {
   // .concept-description .ratio {
   //   padding-bottom: 0px;

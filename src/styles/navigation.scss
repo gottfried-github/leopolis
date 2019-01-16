@@ -16,6 +16,38 @@
   float: right;
 }
 
+.logo .lang-switch {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+
+  height: 64px;
+}
+
+.logo .lang-switch_inner-wrap {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+
+  line-height: 64px;
+  text-align: center;
+}
+
+.logo .lang-switch span#en,
+.logo .lang-switch span#ua {
+  display: inline-block;
+  line-height: normal;
+  vertical-align: middle;
+
+  font-size: 1.250rem;
+  font-weight: 400;
+}
+
+.logo .lang-switch #en.noned,
+.logo .lang-switch #ua.noned {
+  display: none;
+}
+
 .logo svg {
   width: 64px;
   height: 64px;

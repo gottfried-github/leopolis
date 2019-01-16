@@ -9,21 +9,19 @@ class ShowcaseImage extends Enlargable {
     // this.image = new Enlargable()
   }
 }
-//
-// function initShowcases() {
-//   var els = document.querySelectorAll('#out .showcase .image-thumb')
-//   els = Array.prototype.slice.call(els, 0)
-//
-//   // console.log(els);
-//
-//   els.forEach(el => {new ShowcaseImage(el)})
-// }
 
-function initEnlargables(selector) {
+function nodeListToArray(selector) {
   var els = document.querySelectorAll(selector)
   els = Array.prototype.slice.call(els, 0)
+  return els
+}
+
+function initEnlargables(selector) {
+  // var els = document.querySelectorAll(selector)
+  // els = Array.prototype.slice.call(els, 0)
 
   // console.log(els);
+  var els = nodeListToArray(selector)
 
   els.forEach(el => {new ShowcaseImage(el)})
 }
@@ -43,7 +41,42 @@ function initGallery(photoUrls) {
   console.log('gallery', gallery)
 }
 
+function initLangSwitch() {
+
+  const contentEn = nodeListToArray('.text.en')
+  const contentUa = nodeListToArray('.text.ua')
+
+  function switchToEn() {
+    contentUa.forEach(el => el.classList.add('noned'))
+    contentEn.forEach(el => el.classList.remove('noned'))
+  }
+
+  function switchToUa() {
+    contentEn.forEach(el => el.classList.add('noned'))
+    contentUa.forEach(el => el.classList.remove('noned'))
+  }
+
+  const enSwitch = document.querySelector('.lang-switch #en');
+  const uaSwitch = document.querySelector('.lang-switch #ua');
+
+  enSwitch.addEventListener('click', () => {
+    enSwitch.classList.add('noned')
+    uaSwitch.classList.remove('noned')
+
+    switchToEn()
+  })
+
+  uaSwitch.addEventListener('click', () => {
+    uaSwitch.classList.add('noned')
+    enSwitch.classList.remove('noned')
+
+    switchToUa()
+  })
+}
+
 function boot(galleryUrls) {
+  initLangSwitch()
+
   const largeViewWrap = document.querySelector('.large-view_wrap')
   LargeView.init({
     transition: 'opacity 0.4s',

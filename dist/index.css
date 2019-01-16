@@ -183,6 +183,31 @@ opacity: 1;
   margin: 15px 15px 15px 0px;
   float: right; }
 
+.logo .lang-switch {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px; }
+
+.logo .lang-switch_inner-wrap {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  line-height: 64px;
+  text-align: center; }
+
+.logo .lang-switch span#en,
+.logo .lang-switch span#ua {
+  display: inline-block;
+  line-height: normal;
+  vertical-align: middle;
+  font-size: 1.250rem;
+  font-weight: 400; }
+
+.logo .lang-switch #en.noned,
+.logo .lang-switch #ua.noned {
+  display: none; }
+
 .logo svg {
   width: 64px;
   height: 64px;
@@ -307,6 +332,11 @@ html, body {
 
 .logo-background path {
   fill: #32ff32; }
+
+.text.noned,
+#front .credo-wrap h1.text.noned,
+#out .showcase .description-wrap .text.noned {
+  display: none; }
 
 @media (max-width: 850px) {
   .concept .concept-description .background svg {
