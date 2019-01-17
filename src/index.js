@@ -74,6 +74,25 @@ function initLangSwitch() {
   })
 }
 
+function initNavAnimation(navBreakpoint) {
+  const logo = document.querySelector('.logo .logo-itself')
+  const lang = document.querySelector('.logo .lang-switch')
+
+  var enlarged = true
+  window.addEventListener('scroll', (ev) => {
+    if (window.scrollY > navBreakpoint && enlarged) {
+      logo.classList.remove('logo-itself_larger')
+      lang.classList.remove('lang-switch_larger')
+      enlarged = false
+
+    } else if (window.scrollY < navBreakpoint && !enlarged) {
+      logo.classList.add('logo-itself_larger')
+      lang.classList.add('lang-switch_larger')
+      enlarged = true
+    }
+  })
+}
+
 function boot(galleryUrls) {
   initLangSwitch()
 
@@ -101,6 +120,7 @@ function boot(galleryUrls) {
   // els.forEach(el => {new ShowcaseImage(el)})
 
   // initShowcases()
+  initNavAnimation(25)
 }
 
 window.addEventListener('load', () => {

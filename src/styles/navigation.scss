@@ -20,28 +20,51 @@
 
 .logo-itself {
   display: inline-block;
-  width: 250px;
-  height: 96px;
   background-image: url("media/leo logo - transparent.png");
   background-size: cover;
   background-position: center;
+
+  width: 200px;
+  height: 64px;
+
+  transition: width 0.5s, height 0.5s;
+}
+
+.logo-itself.logo-itself_larger {
+  width: 250px;
+  height: 96px;
 }
 
 .logo .lang-switch {
   display: inline-block;
   position: relative;
   width: 64px;
+  height: 64px;
+
+  line-height: 64px;
+  text-align: center;
+
+  transition: width 0.5s, height 0.5s, line-height 0.5s;
+  // transition: width 0.5s, height 0.5s;
+}
+
+.logo .lang-switch.lang-switch_larger {
+  // width: 250px;
   height: 96px;
+  line-height: 96px;
 }
 
 .logo .lang-switch_inner-wrap {
   position: absolute;
   width: 64px;
-  height: 96px;
+  height: 100%;
 
-  line-height: 96px;
-  text-align: center;
+  transition: height 0.5s;
 }
+
+// .logo .lang-switch_inner-wrap.larger {
+//   line-height: 96px;
+// }
 
 .logo .lang-switch span#en,
 .logo .lang-switch span#ua {
