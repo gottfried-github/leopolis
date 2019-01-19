@@ -484,6 +484,9 @@ span.highlight {
   width: 100%;
   height: 100%; }
 
+#staff h1 {
+  margin-bottom: 5rem; }
+
 #staff .members-wrap {
   margin: 0px 5px 0px 5px; }
 
