@@ -296,6 +296,38 @@ html, body {
   stroke-dasharray: none;
   stroke-opacity: 0.57438013; }
 
+.social-links {
+  margin: 25px auto;
+  width: 272px; }
+
+.social-links a {
+  display: block;
+  float: left;
+  margin: 5px 2px;
+  border-radius: 18px;
+  background-color: #0a410e; }
+
+.social-links .icon-social svg {
+  display: block;
+  width: 64px;
+  height: 64px; }
+
+.icon-social#instagram svg path {
+  fill: #5bc561;
+  stroke-width: 0.5954231; }
+
+.icon-social#youtube svg path {
+  fill: #5bc561;
+  fill-opacity: 1;
+  fill-rule: nonzero;
+  stroke: none; }
+
+.icon-social#facebook svg path {
+  fill: #5bc561; }
+
+.icon-social#email svg path {
+  fill: #5bc561; }
+
 .clearleft {
   clear: left; }
 
