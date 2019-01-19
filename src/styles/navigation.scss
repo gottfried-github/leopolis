@@ -4,7 +4,9 @@
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 64px;
+  // height: 64px;
+
+  background-color: white;
 }
 
 .logo_wrap {
@@ -13,25 +15,56 @@
 
 .logo {
   margin: 15px 15px 15px 0px;
-  float: right;
+  // float: right;
+}
+
+.logo-itself {
+  display: inline-block;
+  background-image: url("media/leo logo - transparent.png");
+  background-size: cover;
+  background-position: center;
+
+  width: 175px;
+  height: 64px;
+
+  transition: width 0.5s, height 0.5s;
+}
+
+.logo-itself.logo-itself_larger {
+  width: 250px;
+  height: 96px;
 }
 
 .logo .lang-switch {
   display: inline-block;
   position: relative;
   width: 64px;
-
   height: 64px;
+
+  line-height: 64px;
+  text-align: center;
+
+  transition: width 0.5s, height 0.5s, line-height 0.5s;
+  // transition: width 0.5s, height 0.5s;
+}
+
+.logo .lang-switch.lang-switch_larger {
+  // width: 250px;
+  height: 96px;
+  line-height: 96px;
 }
 
 .logo .lang-switch_inner-wrap {
   position: absolute;
   width: 64px;
-  height: 64px;
+  height: 100%;
 
-  line-height: 64px;
-  text-align: center;
+  transition: height 0.5s;
 }
+
+// .logo .lang-switch_inner-wrap.larger {
+//   line-height: 96px;
+// }
 
 .logo .lang-switch span#en,
 .logo .lang-switch span#ua {
