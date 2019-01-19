@@ -86,7 +86,38 @@ h1, h2 {
   stroke-opacity:0.57438013;
 }
 
+.social-links {
+  margin: 25px auto;
+  width: 64px * 4;
+}
 
+.social-links .icon-social {
+  width: 64px;
+  height: 64px;
+}
+
+.icon-social#instagram {
+  fill: $light_green;
+  // fill:#cccccc;
+  stroke-width:0.5954231;
+}
+
+.icon-social#youtube {
+  fill: $light_green;
+  // fill:#ff0000;
+  fill-opacity:1;
+  fill-rule:nonzero;
+  stroke:none;
+}
+
+.icon-social#facebook {
+  fill: $light_green;
+  // fill:#e6e6e6;
+}
+
+.icon-social#email {
+  fill: $light_green;
+}
 // @import './out.scss';
 
 

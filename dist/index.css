@@ -296,6 +296,30 @@ html, body {
   stroke-dasharray: none;
   stroke-opacity: 0.57438013; }
 
+.social-links {
+  margin: 25px auto;
+  width: 256px; }
+
+.social-links .icon-social {
+  width: 64px;
+  height: 64px; }
+
+.icon-social#instagram {
+  fill: #5bc561;
+  stroke-width: 0.5954231; }
+
+.icon-social#youtube {
+  fill: #5bc561;
+  fill-opacity: 1;
+  fill-rule: nonzero;
+  stroke: none; }
+
+.icon-social#facebook {
+  fill: #5bc561; }
+
+.icon-social#email {
+  fill: #5bc561; }
+
 .clearleft {
   clear: left; }
 
