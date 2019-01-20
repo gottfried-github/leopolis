@@ -208,8 +208,10 @@
   // flex-grow: 0;
 
   // width: 700px;
+  position: relative;
   margin: 0px auto;
   padding-bottom: 18px;
+  z-index: 1;
 }
 
 #out .showcase .image-thumb {
@@ -233,7 +235,7 @@
 
 #out .showcase:nth-last-child(1) {
   position: relative;
-  z-index: 1;
+  // z-index: 1;
 }
 
 #out .showcase .description-wrap {
@@ -308,7 +310,7 @@
   #out .showcase .image-thumb {
     float: none;
     width: 100%;
-    height: 350px;
+    height: 450px;
     // width: 450px;
     // height: 250px;
     //
