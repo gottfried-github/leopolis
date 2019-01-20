@@ -445,7 +445,12 @@ span.highlight {
   #contact .contact-info_wrap,
   #staff {
     overflow: hidden;
-    margin: 0px 10px; } }
+    margin: 0px 10px; }
+  .concept .logo-background {
+    top: 300px;
+    margin: 0px -100px 0px 0px;
+    width: 400px;
+    height: 400px; } }
 
 @media (max-width: 350px) {
   #front .credo-wrap h1 {

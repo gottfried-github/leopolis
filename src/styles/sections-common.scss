@@ -167,7 +167,15 @@ span.highlight {
     margin: 0px 10px;
   }
 
+  .concept .logo-background {
+    // position: absolute;
+    top: 300px;
+    // right: 0px;
+    margin: 0px -100px 0px 0px;
 
+    width: 400px;
+    height: 400px;
+  }
 }
 
 @media (max-width: 350px) {
