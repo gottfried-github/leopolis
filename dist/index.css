@@ -176,13 +176,10 @@ opacity: 1;
   width: 100%;
   background-color: white; }
 
-.logo_wrap {
-  margin: 0px 100px; }
-
-.logo {
+.header_container {
   margin: 15px 15px 15px 0px; }
 
-.logo-itself {
+.logo {
   display: inline-block;
   background-image: url("media/leo logo - transparent.png");
   background-size: cover;
@@ -191,11 +188,11 @@ opacity: 1;
   height: 64px;
   transition: width 0.5s, height 0.5s; }
 
-.logo-itself.logo-itself_larger {
+.logo.larger {
   width: 250px;
   height: 96px; }
 
-.logo .lang-switch {
+.header_container .lang-switch {
   display: inline-block;
   position: relative;
   width: 64px;
@@ -204,34 +201,37 @@ opacity: 1;
   text-align: center;
   transition: width 0.5s, height 0.5s, line-height 0.5s; }
 
-.logo .lang-switch.lang-switch_larger {
+.header_container .lang-switch.larger {
   height: 96px;
   line-height: 96px; }
 
-.logo .lang-switch_inner-wrap {
+.header_container .clearleft {
+  display: none; }
+
+.header_container .lang-switch_inner-wrap {
   position: absolute;
   width: 64px;
   height: 100%;
   transition: height 0.5s; }
 
-.logo .lang-switch span#en,
-.logo .lang-switch span#ua {
+.header_container .lang-switch span#en,
+.header_container .lang-switch span#ua {
   display: inline-block;
   line-height: normal;
   vertical-align: middle;
   font-size: 1.250rem;
   font-weight: 400; }
 
-.logo .lang-switch #en.noned,
-.logo .lang-switch #ua.noned {
+.header_container .lang-switch #en.noned,
+.header_container .lang-switch #ua.noned {
   display: none; }
 
-.logo svg {
+.header_container svg {
   width: 64px;
   height: 64px;
   margin: 0px 1px; }
 
-.logo svg path {
+.header_container svg path {
   display: inline;
   opacity: 1;
   fill: #5bc561;
@@ -244,7 +244,7 @@ opacity: 1;
   stroke-dasharray: none;
   stroke-opacity: 1; }
 
-.logo svg rect {
+.header_container svg rect {
   display: inline;
   opacity: 1;
   fill: #1a391c;
@@ -255,6 +255,12 @@ opacity: 1;
   stroke-miterlimit: 4;
   stroke-dasharray: none;
   stroke-opacity: 1; }
+
+@media (max-width: 850px) {
+  .header_wrap {
+    display: flex; }
+  .header_container {
+    margin: 5px auto; } }
 
 html, body {
   margin: 0px;
@@ -366,11 +372,13 @@ span.highlight {
 #about .content,
 #out .showcases,
 #contact .contact_content-wrap,
-#staff {
+#staff,
+.navigation .header_wrap {
   margin: 0px 250px;
   padding: 75px 0px; }
 
-#front .credo-wrap {
+#front .credo-wrap,
+.navigation .header_wrap {
   padding: 0px; }
 
 .concept {
@@ -393,10 +401,12 @@ span.highlight {
   #about .content,
   #out .showcases,
   #contact .contact_content-wrap,
-  #staff {
+  #staff,
+  .navigation .header_wrap {
     margin: 0px 100px;
     padding: 75px 0px; }
-  #front .credo-wrap {
+  #front .credo-wrap,
+  .navigation .header_wrap {
     padding: 0px; } }
 
 .text.noned,
@@ -422,7 +432,9 @@ span.highlight {
     padding: 0px; }
   #out .showcases {
     margin: 0px 0px;
-    padding: 0px 0px; } }
+    padding: 0px 0px; }
+  .navigation .header_wrap {
+    margin: 0px; } }
 
 @media (max-width: 650px) {
   .concept .concept-description .content,
