@@ -75,19 +75,19 @@ function initLangSwitch() {
 }
 
 function initNavAnimation(navBreakpoint) {
-  const logo = document.querySelector('.logo .logo-itself')
-  const lang = document.querySelector('.logo .lang-switch')
+  const logo = document.querySelector('.header_container .logo')
+  const lang = document.querySelector('.header_container .lang-switch')
 
   var enlarged = true
   window.addEventListener('scroll', (ev) => {
     if (window.scrollY > navBreakpoint && enlarged) {
-      logo.classList.remove('logo-itself_larger')
-      lang.classList.remove('lang-switch_larger')
+      logo.classList.remove('larger')
+      lang.classList.remove('larger')
       enlarged = false
 
     } else if (window.scrollY < navBreakpoint && !enlarged) {
-      logo.classList.add('logo-itself_larger')
-      lang.classList.add('lang-switch_larger')
+      logo.classList.add('larger')
+      lang.classList.add('larger')
       enlarged = true
     }
   })
