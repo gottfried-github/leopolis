@@ -437,6 +437,8 @@ span.highlight {
     margin: 0px; } }
 
 @media (max-width: 650px) {
+  .sections-container {
+    margin-top: 64px; }
   .concept .concept-description .content,
   #front .credo-wrap,
   #about .content,
@@ -444,6 +446,10 @@ span.highlight {
   #staff {
     overflow: hidden;
     margin: 0px 10px; } }
+
+@media (max-width: 350px) {
+  #front .credo-wrap h1 {
+    margin: 0px; } }
 
 #front {
   height: 500px;
@@ -461,7 +467,6 @@ span.highlight {
   line-height: normal;
   vertical-align: middle;
   text-align: center;
-  font-size: 2em;
   color: transparent;
   background-image: linear-gradient(to right, #e6e84e, #56ff7e);
   -webkit-background-clip: text;
@@ -534,9 +539,6 @@ span.highlight {
   background-size: cover; }
 
 @media (max-width: 850px) {
-  #front h1 {
-    margin: auto 25px;
-    font-size: 2em; }
   #staff .member {
     text-align: center;
     padding-bottom: 50px; } }
@@ -770,6 +772,8 @@ span.highlight {
     stroke: url("#out-gradient-mobile"); }
   #in .background svg path {
     stroke: url("#in-gradient-mobile"); }
+  #in .gallery-wrap .icon {
+    padding: 15px; }
   #contact .location-wrap .street-view,
   #contact .location-wrap .map {
     float: none;

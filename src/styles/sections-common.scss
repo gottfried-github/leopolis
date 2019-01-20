@@ -154,7 +154,9 @@ span.highlight {
 }
 
 @media (max-width: 650px) {
-
+  .sections-container {
+    margin-top: 64px;
+  }
 
   .concept .concept-description .content,
   #front .credo-wrap,
@@ -166,4 +168,11 @@ span.highlight {
   }
 
 
+}
+
+@media (max-width: 350px) {
+  #front .credo-wrap h1 {
+    // font-size: 1.5rem;
+    margin: 0px;
+  }
 }
