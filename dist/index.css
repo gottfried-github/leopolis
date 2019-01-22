@@ -174,46 +174,64 @@ opacity: 1;
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 64px; }
+  background-color: white; }
 
-.logo_wrap {
-  margin: 0px 100px; }
+.header_container {
+  margin: 15px 15px 15px 0px; }
 
 .logo {
-  margin: 15px 15px 15px 0px;
-  float: right; }
+  display: inline-block;
+  background-image: url("media/leo logo - transparent.png");
+  background-size: cover;
+  background-position: center;
+  width: 175px;
+  height: 64px;
+  transition: width 0.5s, height 0.5s; }
 
-.logo .lang-switch {
+.logo.larger {
+  width: 250px;
+  height: 96px; }
+
+.header_container .lang-switch {
   display: inline-block;
   position: relative;
   width: 64px;
-  height: 64px; }
-
-.logo .lang-switch_inner-wrap {
-  position: absolute;
-  width: 64px;
   height: 64px;
   line-height: 64px;
-  text-align: center; }
+  text-align: center;
+  transition: width 0.5s, height 0.5s, line-height 0.5s; }
 
-.logo .lang-switch span#en,
-.logo .lang-switch span#ua {
+.header_container .lang-switch.larger {
+  height: 96px;
+  line-height: 96px; }
+
+.header_container .clearleft {
+  display: none; }
+
+.header_container .lang-switch_inner-wrap {
+  position: absolute;
+  width: 64px;
+  height: 100%;
+  transition: height 0.5s; }
+
+.header_container .lang-switch span#en,
+.header_container .lang-switch span#ua {
   display: inline-block;
   line-height: normal;
   vertical-align: middle;
   font-size: 1.250rem;
   font-weight: 400; }
 
-.logo .lang-switch #en.noned,
-.logo .lang-switch #ua.noned {
+.header_container .lang-switch #en.noned,
+.header_container .lang-switch #ua.noned {
   display: none; }
 
-.logo svg {
+.header_container svg {
   width: 64px;
   height: 64px;
   margin: 0px 1px; }
 
-.logo svg path {
+.header_container svg path {
   display: inline;
   opacity: 1;
   fill: #5bc561;
@@ -226,7 +244,7 @@ opacity: 1;
   stroke-dasharray: none;
   stroke-opacity: 1; }
 
-.logo svg rect {
+.header_container svg rect {
   display: inline;
   opacity: 1;
   fill: #1a391c;
@@ -237,6 +255,12 @@ opacity: 1;
   stroke-miterlimit: 4;
   stroke-dasharray: none;
   stroke-opacity: 1; }
+
+@media (max-width: 850px) {
+  .header_wrap {
+    display: flex; }
+  .header_container {
+    margin: 5px auto; } }
 
 html, body {
   margin: 0px;
@@ -278,6 +302,38 @@ html, body {
   stroke-dasharray: none;
   stroke-opacity: 0.57438013; }
 
+.social-links {
+  margin: 25px auto;
+  width: 272px; }
+
+.social-links a {
+  display: block;
+  float: left;
+  margin: 5px 2px;
+  border-radius: 18px;
+  background-color: rgba(91, 197, 97, 0.2); }
+
+.social-links .icon-social svg {
+  display: block;
+  width: 64px;
+  height: 64px; }
+
+.icon-social#instagram svg path {
+  fill: #5bc561;
+  stroke-width: 0.5954231; }
+
+.icon-social#youtube svg path {
+  fill: #5bc561;
+  fill-opacity: 1;
+  fill-rule: nonzero;
+  stroke: none; }
+
+.icon-social#facebook svg path {
+  fill: #5bc561; }
+
+.icon-social#email svg path {
+  fill: #5bc561; }
+
 .clearleft {
   clear: left; }
 
@@ -316,11 +372,13 @@ span.highlight {
 #about .content,
 #out .showcases,
 #contact .contact_content-wrap,
-#staff {
+#staff,
+.navigation .header_wrap {
   margin: 0px 250px;
   padding: 75px 0px; }
 
-#front .credo-wrap {
+#front .credo-wrap,
+.navigation .header_wrap {
   padding: 0px; }
 
 .concept {
@@ -343,10 +401,12 @@ span.highlight {
   #about .content,
   #out .showcases,
   #contact .contact_content-wrap,
-  #staff {
+  #staff,
+  .navigation .header_wrap {
     margin: 0px 100px;
     padding: 75px 0px; }
-  #front .credo-wrap {
+  #front .credo-wrap,
+  .navigation .header_wrap {
     padding: 0px; } }
 
 .text.noned,
@@ -372,20 +432,34 @@ span.highlight {
     padding: 0px; }
   #out .showcases {
     margin: 0px 0px;
-    padding: 0px 0px; } }
+    padding: 0px 0px; }
+  .navigation .header_wrap {
+    margin: 0px; } }
 
 @media (max-width: 650px) {
+  .sections-container {
+    margin-top: 64px; }
   .concept .concept-description .content,
   #front .credo-wrap,
   #about .content,
   #contact .contact-info_wrap,
   #staff {
     overflow: hidden;
-    margin: 0px 10px; } }
+    margin: 0px 10px; }
+  .concept .logo-background {
+    top: 300px;
+    margin: 0px -100px 0px 0px;
+    width: 400px;
+    height: 400px; } }
+
+@media (max-width: 350px) {
+  #front .credo-wrap h1 {
+    margin: 0px; } }
 
 #front {
   height: 500px;
   background-image: url("media/landing/11745430_951029561625565_2841622478972039919_n.jpg");
+  background-attachment: fixed;
   background-position: center;
   background-size: cover; }
 
@@ -398,7 +472,6 @@ span.highlight {
   line-height: normal;
   vertical-align: middle;
   text-align: center;
-  font-size: 2em;
   color: transparent;
   background-image: linear-gradient(to right, #e6e84e, #56ff7e);
   -webkit-background-clip: text;
@@ -408,8 +481,7 @@ span.highlight {
   background-clip: text; }
 
 #about {
-  position: relative;
-  z-index: 1; }
+  position: relative; }
 
 #contact .street-view {
   float: left;
@@ -432,6 +504,9 @@ span.highlight {
 #contact iframe {
   width: 100%;
   height: 100%; }
+
+#staff h1 {
+  margin-bottom: 5rem; }
 
 #staff .members-wrap {
   margin: 0px 5px 0px 5px; }
@@ -468,9 +543,6 @@ span.highlight {
   background-size: cover; }
 
 @media (max-width: 850px) {
-  #front h1 {
-    margin: auto 25px;
-    font-size: 2em; }
   #staff .member {
     text-align: center;
     padding-bottom: 50px; } }
@@ -609,8 +681,10 @@ span.highlight {
   stop-color: white; }
 
 #out .showcase {
+  position: relative;
   margin: 0px auto;
-  padding-bottom: 18px; }
+  padding-bottom: 18px;
+  z-index: 1; }
 
 #out .showcase .image-thumb {
   float: left;
@@ -629,8 +703,7 @@ span.highlight {
   background-image: url("media/out/25440299_1682244401837407_1959189880887880611_o.jpg"); }
 
 #out .showcase:nth-last-child(1) {
-  position: relative;
-  z-index: 1; }
+  position: relative; }
 
 #out .showcase .description-wrap {
   float: left;
@@ -678,7 +751,7 @@ span.highlight {
   #out .showcase .image-thumb {
     float: none;
     width: 100%;
-    height: 350px; }
+    height: 450px; }
   #out .showcase .description-wrap {
     float: none;
     width: auto;
@@ -704,6 +777,8 @@ span.highlight {
     stroke: url("#out-gradient-mobile"); }
   #in .background svg path {
     stroke: url("#in-gradient-mobile"); }
+  #in .gallery-wrap .icon {
+    padding: 15px; }
   #contact .location-wrap .street-view,
   #contact .location-wrap .map {
     float: none;

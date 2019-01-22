@@ -49,11 +49,13 @@ span.highlight {
 #about .content,
 #out .showcases,
 #contact .contact_content-wrap,
-#staff {
+#staff,
+.navigation .header_wrap {
   margin: 0px 250px;
   padding: 75px 0px;
 }
-#front .credo-wrap {
+#front .credo-wrap,
+.navigation .header_wrap {
   padding: 0px;
 }
 
@@ -95,11 +97,13 @@ span.highlight {
   #about .content,
   #out .showcases,
   #contact .contact_content-wrap,
-  #staff {
+  #staff,
+  .navigation .header_wrap {
     margin: 0px 100px;
     padding: 75px 0px;
   }
-  #front .credo-wrap {
+  #front .credo-wrap,
+  .navigation .header_wrap {
     padding: 0px;
   }
 }
@@ -143,11 +147,16 @@ span.highlight {
     padding: 0px 0px;
   }
 
-
+  .navigation .header_wrap {
+    margin: 0px;
+    // width: 400px;
+  }
 }
 
 @media (max-width: 650px) {
-
+  .sections-container {
+    margin-top: 64px;
+  }
 
   .concept .concept-description .content,
   #front .credo-wrap,
@@ -158,5 +167,20 @@ span.highlight {
     margin: 0px 10px;
   }
 
+  .concept .logo-background {
+    // position: absolute;
+    top: 300px;
+    // right: 0px;
+    margin: 0px -100px 0px 0px;
 
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 350px) {
+  #front .credo-wrap h1 {
+    // font-size: 1.5rem;
+    margin: 0px;
+  }
 }

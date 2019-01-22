@@ -4,6 +4,7 @@
 #front {
   height: 500px;
   background-image: url('media/landing/11745430_951029561625565_2841622478972039919_n.jpg');
+  background-attachment: fixed;
   background-position: center;
   background-size: cover;
 }
@@ -20,7 +21,7 @@
   text-align: center;
   // color: $saturated_green;
   // margin: auto 50px;
-  font-size: 2em;
+  // font-size: 2em;
 
   color: transparent;
   background-image: linear-gradient(to right, rgba(230, 232, 78, 1), rgba(86, 255, 126, 1));
@@ -35,7 +36,7 @@
 
 #about {
   position: relative;
-  z-index: 1;
+  // z-index: 1;
 }
 
 // #about .logo-background {
@@ -84,6 +85,9 @@
   height: 100%;
 }
 
+#staff h1 {
+  margin-bottom: 5rem;
+}
 
 #staff .members-wrap {
   margin: 0px 5px 0px 5px;
@@ -135,8 +139,8 @@
 
 
   #front h1 {
-    margin: auto 25px;
-    font-size: 2em;
+    // margin: auto 25px;
+    // font-size: 2em;
   }
   #staff .member {
     // width: 250px;
