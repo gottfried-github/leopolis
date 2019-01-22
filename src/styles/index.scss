@@ -86,7 +86,49 @@ h1, h2 {
   stroke-opacity:0.57438013;
 }
 
+.social-links {
+  margin: 25px auto;
+  width: 68px * 4;
+}
 
+.social-links a {
+  display: block;
+  float: left;
+  margin: 5px 2px;
+
+  border-radius: 18px;
+  background-color: $light_green_alpha_alpha;
+  // background-color: $darkish_green;
+}
+
+.social-links .icon-social svg {
+  display: block;
+  width: 64px;
+  height: 64px;
+}
+
+.icon-social#instagram svg path {
+  fill: $light_green;
+  // fill:#cccccc;
+  stroke-width:0.5954231;
+}
+
+.icon-social#youtube svg path {
+  fill: $light_green;
+  // fill:#ff0000;
+  fill-opacity:1;
+  fill-rule:nonzero;
+  stroke:none;
+}
+
+.icon-social#facebook svg path {
+  fill: $light_green;
+  // fill:#e6e6e6;
+}
+
+.icon-social#email svg path {
+  fill: $light_green;
+}
 // @import './out.scss';
 
 
