@@ -233,6 +233,9 @@ opacity: 1;
   font-size: 1.250rem;
   font-weight: 400; }
 
+.header_container .lang-switch {
+  cursor: pointer; }
+
 .header_container .lang-switch:hover {
   background-color: rgba(91, 197, 97, 0.2); }
 

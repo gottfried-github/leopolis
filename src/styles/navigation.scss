@@ -98,6 +98,10 @@
   font-weight: 400;
 }
 
+.header_container .lang-switch {
+  cursor: pointer;
+}
+
 .header_container .lang-switch:hover {
   background-color: $light_green_alpha_alpha;
 }
