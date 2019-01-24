@@ -6,59 +6,68 @@
   width: 100%;
   // height: 64px;
 
-  background-color: white;
+  background-color: $dark_green_semi_alpha;
+
+  transition: background-color 0.5s;
 }
 
-.header_wrap {
+.navigation.larger {
+  background-color: white;
+
+}
+
+.navigation .header_wrap {
   // margin: 0px 100px;
 }
 
-.header_container {
+.navigation .header_container {
   margin: 15px 15px 15px 0px;
   // float: right;
 }
 
-.logo {
+.navigation .logo {
   display: inline-block;
   background-image: url("media/leo logo - transparent.png");
   background-size: cover;
   background-position: center;
 
-  width: 175px;
-  height: 64px;
+  width: 135px;
+  height: 52px;
 
   transition: width 0.5s, height 0.5s;
 }
 
-.logo.larger {
+.navigation.larger .logo {
   width: 250px;
   height: 96px;
 }
 
-.header_container .lang-switch {
+.navigation .header_container .lang-switch {
   display: inline-block;
   position: relative;
   width: 64px;
-  height: 64px;
+  height: 52px;
+  color: white;
 
-  line-height: 64px;
+  line-height: 52px;
   text-align: center;
 
   transition: width 0.5s, height 0.5s, line-height 0.5s;
   // transition: width 0.5s, height 0.5s;
 }
 
-.header_container .lang-switch.larger {
+.navigation.larger .header_container .lang-switch {
   // width: 250px;
   height: 96px;
   line-height: 96px;
+  color: $dark_green;
 }
 
-.header_container .clearleft {
+.navigation .header_container .clearleft {
   display: none;
 }
 
-.header_container .lang-switch_inner-wrap {
+.navigation .header_container .lang-switch_inner-wrap {
   position: absolute;
   width: 64px;
   height: 100%;
@@ -126,11 +135,11 @@
 }
 
 @media (max-width: 850px) {
-  .header_wrap {
+  .navigation .header_wrap {
     display: flex;
   }
 
-  .header_container {
+  .navigation .header_container {
     // width: 350px;
     margin: 5px auto;
   }
