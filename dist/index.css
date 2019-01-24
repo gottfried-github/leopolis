@@ -197,6 +197,7 @@ opacity: 1;
   height: 96px; }
 
 .navigation .header_container .lang-switch {
+  float: right;
   display: inline-block;
   position: relative;
   width: 64px;
@@ -225,8 +226,15 @@ opacity: 1;
   display: inline-block;
   line-height: normal;
   vertical-align: middle;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   font-size: 1.250rem;
   font-weight: 400; }
+
+.header_container .lang-switch:hover {
+  background-color: rgba(91, 197, 97, 0.2); }
 
 .header_container .lang-switch #en.noned,
 .header_container .lang-switch #ua.noned {
@@ -262,11 +270,13 @@ opacity: 1;
   stroke-dasharray: none;
   stroke-opacity: 1; }
 
-@media (max-width: 850px) {
-  .navigation .header_wrap {
-    display: flex; }
-  .navigation .header_container {
-    margin: 5px auto; } }
+@media (max-width: 365px) {
+  .navigation.larger .logo {
+    width: 200px;
+    height: 80px; }
+  .navigation.larger .header_container .lang-switch {
+    height: 80px;
+    line-height: 80px; } }
 
 html, body {
   margin: 0px;
@@ -345,6 +355,9 @@ html, body {
 
 .clearright {
   clear: right; }
+
+.navigation .logo {
+  margin-left: 15px; }
 
 .sections-container {
   font-size: 1rem;
@@ -429,18 +442,18 @@ span.highlight {
   #front .credo-wrap,
   #about .content,
   #contact .contact-info_wrap,
-  #staff {
+  #staff,
+  .navigation .header_wrap {
     margin: 0px 35px;
     padding: 50px 0px; }
   #contact .contact_content-wrap {
     margin: 0px 0px; }
-  #front .credo-wrap {
+  #front .credo-wrap,
+  .navigation .header_wrap {
     padding: 0px; }
   #out .showcases {
     margin: 0px 0px;
-    padding: 0px 0px; }
-  .navigation .header_wrap {
-    margin: 0px; } }
+    padding: 0px 0px; } }
 
 @media (max-width: 650px) {
   .sections-container {
@@ -449,7 +462,8 @@ span.highlight {
   #front .credo-wrap,
   #about .content,
   #contact .contact-info_wrap,
-  #staff {
+  #staff,
+  .navigation .header_wrap {
     overflow: hidden;
     margin: 0px 10px; }
   .concept .logo-background {
