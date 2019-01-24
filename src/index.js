@@ -43,6 +43,8 @@ function initGallery(photoUrls) {
 
 function initLangSwitch() {
 
+  var en = false
+
   const contentEn = nodeListToArray('.text.en')
   const contentUa = nodeListToArray('.text.ua')
 
@@ -59,19 +61,37 @@ function initLangSwitch() {
   const enSwitch = document.querySelector('.lang-switch #en');
   const uaSwitch = document.querySelector('.lang-switch #ua');
 
-  enSwitch.addEventListener('click', () => {
-    enSwitch.classList.add('noned')
-    uaSwitch.classList.remove('noned')
+  const langSwitch = document.querySelector('.lang-switch');
 
-    switchToEn()
+  langSwitch.addEventListener('click', () => {
+    if (!en) {
+      enSwitch.classList.add('noned')
+      uaSwitch.classList.remove('noned')
+
+      switchToEn()
+      en = true
+    } else {
+      uaSwitch.classList.add('noned')
+      enSwitch.classList.remove('noned')
+
+      switchToUa()
+      en = false
+    }
   })
 
-  uaSwitch.addEventListener('click', () => {
-    uaSwitch.classList.add('noned')
-    enSwitch.classList.remove('noned')
+  // enSwitch.addEventListener('click', () => {
+  //   enSwitch.classList.add('noned')
+  //   uaSwitch.classList.remove('noned')
+  //
+  //   switchToEn()
+  // })
 
-    switchToUa()
-  })
+  // uaSwitch.addEventListener('click', () => {
+  //   uaSwitch.classList.add('noned')
+  //   enSwitch.classList.remove('noned')
+  //
+  //   switchToUa()
+  // })
 }
 
 function initNavAnimation(navBreakpoint) {
