@@ -5,7 +5,8 @@ import {LargeView, Enlargable} from './large-view.js'
 
 class ShowcaseImage extends Enlargable {
   constructor(el) {
-    super(el, getBackgroundImageUrl(el))
+    super(el, el.dataset.url)
+    // super(el, getBackgroundImageUrl(el))
     // this.image = new Enlargable()
   }
 }
