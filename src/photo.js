@@ -10,6 +10,8 @@ class Photo {
     // const img = document.createElement('img')
 
     return new Promise((resolve, reject) => {
+      
+      // maybe this doesnt work in safari mobile...
       this.el.onload = () => {
         resolve(this)
       }
@@ -62,26 +64,64 @@ class Photo {
   }
 
   fitByHeight(container) {
+    const imgDims = this.el.getBoundingClientRect()
+    const containerDims = container.getBoundingClientRect()
+
+    const imgDimsObj = {
+      width: imgDims.width,
+      height: imgDims.height,
+    }
+
+    const containerDimsObj = {
+      width: containerDims.width,
+      height: containerDims.height,
+    }
+
     this.dims = this.calculateFitByHeight(
-      this.el.getBoundingClientRect(),
-      container.getBoundingClientRect()
+      imgDimsObj,
+      containerDimsObj
     )
 
     // const imgDims = this.calculateFitByHeight(img, this.el)
-    this.el.style.width = this.dims.width
-    this.el.style.height = this.dims.height
+    this.el.style.width = Math.round(this.dims.width) + 'px'
+    this.el.style.height = Math.round(this.dims.height) + 'px'
 
     return this
   }
 
+  // in fitByHeight I didn't convert dims to string before setting them on
+  // width and height in inline styles.. However, I believe, on mobile the fitByBothSides
+  // should have been called, where there wasn't this typo. In the fitByBothSides I didn't
+  // convert the values to whole numbers, none the less.
+
+  // I fixed that, and I also decided to move the values of getBoundingClientRect output
+  // to a regular object literal, instead of using the output itself (which i believe is an instance
+  // of some special class), including adding new properties to it.
+
+  // Another thing I want to check is whether or not the width and height in getBoundingClientRect are
+  // basic implementation.. Also, maybe it makes sense to parseInt the values of getBoundingClientRect,
+  // or doing something in that spirit
   fitByBothSides(container) {
+    const imgDims = this.el.getBoundingClientRect()
+    const containerDims = container.getBoundingClientRect()
+
+    const imgDimsObj = {
+      width: imgDims.width,
+      height: imgDims.height,
+    }
+
+    const containerDimsObj = {
+      width: containerDims.width,
+      height: containerDims.height,
+    }
+
     this.dims = this.calculateFitByBothSides(
-      this.el.getBoundingClientRect(),
-      container.getBoundingClientRect()
+      imgDimsObj,
+      containerDims
     )
 
-    this.el.style.width = this.dims.width + 'px'
-    this.el.style.height = this.dims.height + 'px'
+    this.el.style.width = Math.round(this.dims.width) + 'px'
+    this.el.style.height = Math.round(this.dims.height) + 'px'
 
     return this
   }
