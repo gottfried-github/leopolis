@@ -168,196 +168,11 @@ opacity: 1;
     width: 100%;
     height: 100%; } }
 
-.navigation {
-  z-index: 99;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  background-color: rgba(26, 57, 28, 0.9);
-  transition: background-color 0.5s; }
-
-.navigation.larger {
-  background-color: white; }
-
-.navigation .header_container {
-  margin: 15px 15px 15px 0px; }
-
-.navigation .logo {
-  display: inline-block;
-  background-image: url("media/leo logo - transparent.png");
-  background-size: cover;
-  background-position: center;
-  width: 135px;
-  height: 52px;
-  transition: width 0.5s, height 0.5s; }
-
-.navigation.larger .logo {
-  width: 250px;
-  height: 96px; }
-
-.navigation .header_container .lang-switch {
-  float: right;
-  display: inline-block;
-  position: relative;
-  width: 64px;
-  height: 52px;
-  color: white;
-  line-height: 52px;
-  text-align: center;
-  transition: width 0.5s, height 0.5s, line-height 0.5s; }
-
-.navigation.larger .header_container .lang-switch {
-  height: 96px;
-  line-height: 96px;
-  color: #1a391c; }
-
-.navigation .header_container .clearleft {
-  display: none; }
-
-.navigation .header_container .lang-switch_inner-wrap {
-  position: absolute;
-  width: 64px;
-  height: 100%;
-  transition: height 0.5s; }
-
-.header_container .lang-switch span#en,
-.header_container .lang-switch span#ua {
-  display: inline-block;
-  line-height: normal;
-  vertical-align: middle;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  font-size: 1.250rem;
-  font-weight: 400; }
-
-.header_container .lang-switch {
-  cursor: pointer; }
-
-.header_container .lang-switch:hover {
-  background-color: rgba(91, 197, 97, 0.2); }
-
-.header_container .lang-switch #en.noned,
-.header_container .lang-switch #ua.noned {
-  display: none; }
-
-.header_container svg {
-  width: 64px;
-  height: 64px;
-  margin: 0px 1px; }
-
-.header_container svg path {
-  display: inline;
-  opacity: 1;
-  fill: #5bc561;
-  fill-opacity: 1;
-  stroke: none;
-  stroke-width: 5.29166651;
-  stroke-linecap: square;
-  stroke-linejoin: round;
-  stroke-miterlimit: 4;
-  stroke-dasharray: none;
-  stroke-opacity: 1; }
-
-.header_container svg rect {
-  display: inline;
-  opacity: 1;
-  fill: #1a391c;
-  stroke: none;
-  stroke-width: 5.29166651;
-  stroke-linecap: square;
-  stroke-linejoin: round;
-  stroke-miterlimit: 4;
-  stroke-dasharray: none;
-  stroke-opacity: 1; }
-
-@media (max-width: 365px) {
-  .navigation.larger .logo {
-    width: 200px;
-    height: 80px; }
-  .navigation.larger .header_container .lang-switch {
-    height: 80px;
-    line-height: 80px; } }
-
-html, body {
-  margin: 0px;
-  padding: 0px;
-  font-family: Montserrat;
-  font-size: 16px;
-  background-color: #e6e6e6;
-  color: black;
-  font-weight: 300; }
-
-.large-view_wrap {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  z-index: 99;
-  width: 100%;
-  height: 100%; }
-
-.large-view_wrap.noned {
-  display: none; }
-
-.large-view_wrap .icon#cross {
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  margin: 50px; }
-
-.icon svg {
-  width: 64px;
-  height: 64px; }
-
-.icon svg path {
-  fill: none;
-  stroke: #00d264;
-  stroke-width: 1.05833328;
-  stroke-linecap: butt;
-  stroke-linejoin: miter;
-  stroke-miterlimit: 4;
-  stroke-dasharray: none;
-  stroke-opacity: 0.57438013; }
-
-.social-links {
-  margin: 25px auto;
-  width: 272px; }
-
-.social-links a {
-  display: block;
-  float: left;
-  margin: 5px 2px;
-  border-radius: 18px;
-  background-color: rgba(91, 197, 97, 0.2); }
-
-.social-links .icon-social svg {
-  display: block;
-  width: 64px;
-  height: 64px; }
-
-.icon-social#instagram svg path {
-  fill: #5bc561;
-  stroke-width: 0.5954231; }
-
-.icon-social#youtube svg path {
-  fill: #5bc561;
-  fill-opacity: 1;
-  fill-rule: nonzero;
-  stroke: none; }
-
-.icon-social#facebook svg path {
-  fill: #5bc561; }
-
-.icon-social#email svg path {
-  fill: #5bc561; }
-
-.clearleft {
-  clear: left; }
-
-.clearright {
-  clear: right; }
+a, a:link, a:visited, a:hover, a:focus, a:active {
+  color: inherit;
+  text-decoration: none;
+  border-style: none;
+  all: unset; }
 
 .navigation .logo {
   margin-left: 15px; }
@@ -814,6 +629,198 @@ span.highlight {
     width: 100%; }
   #contact .location-wrap .clearleft {
     display: none; } }
+
+.navigation {
+  z-index: 99;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  background-color: rgba(26, 57, 28, 0.9);
+  transition: background-color 0.5s; }
+
+.navigation.larger {
+  background-color: white; }
+
+.navigation .header_container {
+  margin: 15px 15px 15px 0px; }
+
+.navigation .logo {
+  display: inline-block;
+  background-image: url("media/leo logo - transparent.png");
+  background-size: cover;
+  background-position: center;
+  width: 135px;
+  height: 52px;
+  transition: width 0.5s, height 0.5s; }
+
+.navigation.larger .logo {
+  width: 250px;
+  height: 96px; }
+
+.navigation .header_container .lang-switch {
+  float: right;
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 52px;
+  cursor: pointer;
+  color: white;
+  line-height: 52px;
+  text-align: center;
+  transition: width 0.5s, height 0.5s, line-height 0.5s; }
+
+.navigation.larger .header_container .lang-switch {
+  height: 96px;
+  line-height: 96px;
+  color: #1a391c; }
+
+.navigation .header_container .clearleft {
+  display: none; }
+
+.navigation .header_container .lang-switch_inner-wrap {
+  position: absolute;
+  width: 64px;
+  height: 100%;
+  transition: height 0.5s; }
+
+.header_container .lang-switch span#en,
+.header_container .lang-switch span#ua {
+  display: inline-block;
+  line-height: normal;
+  vertical-align: middle;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 1.250rem;
+  font-weight: 400; }
+
+.header_container .lang-switch {
+  cursor: pointer; }
+
+.header_container .lang-switch:hover {
+  background-color: rgba(91, 197, 97, 0.2); }
+
+.header_container .lang-switch #en.noned,
+.header_container .lang-switch #ua.noned {
+  display: none; }
+
+.header_container svg {
+  width: 64px;
+  height: 64px;
+  margin: 0px 1px; }
+
+.header_container svg path {
+  display: inline;
+  opacity: 1;
+  fill: #5bc561;
+  fill-opacity: 1;
+  stroke: none;
+  stroke-width: 5.29166651;
+  stroke-linecap: square;
+  stroke-linejoin: round;
+  stroke-miterlimit: 4;
+  stroke-dasharray: none;
+  stroke-opacity: 1; }
+
+.header_container svg rect {
+  display: inline;
+  opacity: 1;
+  fill: #1a391c;
+  stroke: none;
+  stroke-width: 5.29166651;
+  stroke-linecap: square;
+  stroke-linejoin: round;
+  stroke-miterlimit: 4;
+  stroke-dasharray: none;
+  stroke-opacity: 1; }
+
+@media (max-width: 365px) {
+  .navigation.larger .logo {
+    width: 200px;
+    height: 80px; }
+  .navigation.larger .header_container .lang-switch {
+    height: 80px;
+    line-height: 80px; } }
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Montserrat;
+  font-size: 16px;
+  background-color: #e6e6e6;
+  color: black;
+  font-weight: 300; }
+
+.large-view_wrap {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 99;
+  width: 100%;
+  height: 100%; }
+
+.large-view_wrap.noned {
+  display: none; }
+
+.large-view_wrap .icon#cross {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  margin: 50px; }
+
+.icon svg {
+  width: 64px;
+  height: 64px; }
+
+.icon svg path {
+  fill: none;
+  stroke: #00d264;
+  stroke-width: 1.05833328;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  stroke-miterlimit: 4;
+  stroke-dasharray: none;
+  stroke-opacity: 0.57438013; }
+
+.social-links {
+  margin: 25px auto;
+  width: 272px; }
+
+.social-links a {
+  display: block;
+  float: left;
+  margin: 5px 2px;
+  border-radius: 18px;
+  background-color: rgba(91, 197, 97, 0.2); }
+
+.social-links .icon-social svg {
+  display: block;
+  width: 64px;
+  height: 64px; }
+
+.icon-social#instagram svg path {
+  fill: #5bc561;
+  stroke-width: 0.5954231; }
+
+.icon-social#youtube svg path {
+  fill: #5bc561;
+  fill-opacity: 1;
+  fill-rule: nonzero;
+  stroke: none; }
+
+.icon-social#facebook svg path {
+  fill: #5bc561; }
+
+.icon-social#email svg path {
+  fill: #5bc561; }
+
+.clearleft {
+  clear: left; }
+
+.clearright {
+  clear: right; }
 
 @media (max-width: 650px) {
   body {

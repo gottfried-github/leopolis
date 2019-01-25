@@ -47,13 +47,14 @@
   display: inline-block;
   position: relative;
   // display: block;
-  // position: absolute;
+  // position: absolute; 
   // right: 0px;
 
   width: 64px;
   height: 52px;
-  color: white;
 
+  cursor: pointer;
+  color: white;
   line-height: 52px;
   text-align: center;
 

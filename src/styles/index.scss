@@ -10,6 +10,10 @@
 @import './slide.scss';
 @import './gallery.scss';
 
+@import './sections-common.scss';
+@import './sections.scss';
+@import './concepts.scss';
+
 @import './navigation.scss';
 
 
@@ -150,10 +154,6 @@ h1, h2 {
 // #in .showcase:nth-child(1)  { // .image-thumb
 //   background-image: url('22219946_1606186132776568_2916948056513412695_o.jpg');
 // }
-
-@import './sections-common.scss';
-@import './sections.scss';
-@import './concepts.scss';
 
 @media (max-width: 850px) {
 

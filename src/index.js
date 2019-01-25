@@ -63,7 +63,9 @@ function initLangSwitch() {
 
   const langSwitch = document.querySelector('.lang-switch');
 
-  langSwitch.addEventListener('click', () => {
+  langSwitch.addEventListener('click', (ev) => {
+    ev.preventDefault()
+    
     if (!en) {
       enSwitch.classList.add('noned')
       uaSwitch.classList.remove('noned')
