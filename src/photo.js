@@ -10,13 +10,27 @@ class Photo {
     // const img = document.createElement('img')
 
     return new Promise((resolve, reject) => {
-      
+
+      var loaded = false
       // maybe this doesnt work in safari mobile...
       this.el.onload = () => {
-        resolve(this)
+        if (!loaded)
+          resolve(this)
+      }
+
+      this.el.onerror = (err) => {
+        if (!loaded)
+          reject(err)
       }
 
       this.el.src = this.url
+      if (this.el.complete && this.el.naturalWidth > 0) {
+        console.log('photo.load, img.complete && naturalWidth > 0');
+        if (!loaded) {
+          loaded = true
+          resolve(this)
+        }
+      }
     })
   }
 
