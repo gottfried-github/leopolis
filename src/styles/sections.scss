@@ -1,10 +1,29 @@
+.ios-safari-click-fix {
+  position: relative;
+  z-index: 0;
+}
 
-
+.sections-container {
+  // position: relative;
+  background-color: $whitish;
+}
 
 #front {
+  position: relative;
+  height: 500px;
+  // background-image: url('media/landing/11745430_951029561625565_2841622478972039919_n.jpg');
+  // background-attachment: fixed;
+  // background-position: center;
+  // background-size: cover;
+}
+
+.front-background {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
   height: 500px;
   background-image: url('media/landing/11745430_951029561625565_2841622478972039919_n.jpg');
-  background-attachment: fixed;
+  // background-attachment: fixed;
   background-position: center;
   background-size: cover;
 }
