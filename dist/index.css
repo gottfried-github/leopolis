@@ -311,6 +311,7 @@ span.highlight {
   vertical-align: middle;
   text-align: center;
   color: transparent;
+  -webkit-text-fill-color: transparent;
   background-image: linear-gradient(to right, #e6e84e, #56ff7e);
   -webkit-background-clip: text;
   -moz-background-clip: text;

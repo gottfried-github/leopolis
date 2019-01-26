@@ -24,6 +24,8 @@
   // font-size: 2em;
 
   color: transparent;
+  -webkit-text-fill-color: transparent;
+  // text-fill-color: transparent;
   background-image: linear-gradient(to right, rgba(230, 232, 78, 1), rgba(86, 255, 126, 1));
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -70,7 +72,7 @@
 
 #contact .map {
   display: block;
-  
+
   float: left;
   position: relative;
   box-sizing: border-box;
