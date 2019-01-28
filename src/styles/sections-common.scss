@@ -168,9 +168,13 @@ span.highlight {
 }
 
 @media (max-width: 650px) {
-  .sections-container {
+  #front {
     margin-top: 64px;
   }
+  
+  // .sections-container {
+  //   margin-top: 64px;
+  // }
 
   .concept .concept-description .content,
   #front .credo-wrap,

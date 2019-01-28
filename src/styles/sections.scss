@@ -26,6 +26,7 @@
   // background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  top: 0px;
 }
 
 #front .credo-wrap {
@@ -188,6 +189,15 @@
 
 @media (max-width: 650px) {
 
+  #front,
+  .front-background,
+  #front .credo-wrap {
+    height: 700px;
+  }
+  #front .credo-wrap {
+    line-height: 700px;
+  }
+
   #staff .member {
     float: none;
     width: 100%;
@@ -200,5 +210,16 @@
 
   #staff .members-wrap .clearleft {
     display: none;
+  }
+}
+
+@media (max-width: 350px) {
+  #front,
+  .front-background,
+  #front .credo-wrap {
+    height: 450px;
+  }
+  #front .credo-wrap {
+    line-height: 450px;
   }
 }
