@@ -768,6 +768,12 @@ span.highlight {
   stroke-dasharray: none;
   stroke-opacity: 1; }
 
+@media (max-width: 650px) {
+  .header_container .lang-switch:hover {
+    background-color: transparent; }
+  .header_container .lang-switch:active {
+    background-color: rgba(91, 197, 97, 0.2); } }
+
 @media (max-width: 365px) {
   .navigation.larger .logo {
     width: 200px;

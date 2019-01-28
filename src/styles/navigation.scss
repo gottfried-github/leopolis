@@ -47,7 +47,7 @@
   display: inline-block;
   position: relative;
   // display: block;
-  // position: absolute; 
+  // position: absolute;
   // right: 0px;
 
   width: 64px;
@@ -189,6 +189,14 @@
 }
 
 @media (max-width: 650px) {
+
+  .header_container .lang-switch:hover {
+    background-color: transparent;
+  }
+
+  .header_container .lang-switch:active {
+    background-color: $light_green_alpha_alpha;
+  }
 
   // .navigation .lang-switch {
   //   margin-right: 5px;
