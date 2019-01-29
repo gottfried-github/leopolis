@@ -177,15 +177,26 @@ a, a:link, a:visited, a:hover, a:focus, a:active {
   border-style: none;
   all: unset; }
 
-.navigation .logo {
+.navigation .logo,
+footer .logo {
   margin-left: 15px; }
 
-.sections-container {
+.sections-container,
+.navigation .nav_box,
+header .front-wrap,
+header .front-wrap .front-background,
+footer .footer_inner-box {
+  max-width: 1600px;
+  margin: 0px auto; }
+
+.sections-container,
+footer {
   font-size: 1rem;
   font-weight: 300;
   color: #1a391c; }
 
-.sections-container p {
+.sections-container p,
+footer p {
   margin: 1rem 15px; }
 
 .sections-container h1 {
@@ -213,7 +224,8 @@ span.highlight {
 #out .showcases,
 #contact .contact_content-wrap,
 #staff,
-.navigation .header_wrap {
+.navigation .header_wrap,
+footer .footer_content-wrap {
   margin: 0px 250px;
   padding: 75px 0px; }
 
@@ -242,7 +254,8 @@ span.highlight {
   #out .showcases,
   #contact .contact_content-wrap,
   #staff,
-  .navigation .header_wrap {
+  .navigation .header_wrap,
+  footer .footer_content-wrap {
     margin: 0px 100px;
     padding: 75px 0px; }
   #front .credo-wrap,
@@ -264,7 +277,8 @@ span.highlight {
   #about .content,
   #contact .contact-info_wrap,
   #staff,
-  .navigation .header_wrap {
+  .navigation .header_wrap,
+  footer .footer_content-wrap {
     margin: 0px 35px;
     padding: 50px 0px; }
   #contact .contact_content-wrap {
@@ -284,7 +298,8 @@ span.highlight {
   #about .content,
   #contact .contact-info_wrap,
   #staff,
-  .navigation .header_wrap {
+  .navigation .header_wrap,
+  footer .footer_content-wrap {
     overflow: hidden;
     margin: 0px 10px; }
   .concept .logo-background {
@@ -684,7 +699,8 @@ span.highlight {
   background-position: center;
   width: 135px;
   height: 52px;
-  transition: width 0.5s, height 0.5s; }
+  transition: width 0.5s, height 0.5s;
+  cursor: pointer; }
 
 .navigation.larger .logo {
   width: 250px;
@@ -768,11 +784,27 @@ span.highlight {
   stroke-dasharray: none;
   stroke-opacity: 1; }
 
+footer {
+  padding: 50px 0px;
+  background-color: #1a391c;
+  color: #e6e6e6; }
+
+footer .logo {
+  display: block;
+  background-image: url("media/leo logo - transparent.png");
+  background-size: cover;
+  background-position: center;
+  width: 135px;
+  height: 52px;
+  cursor: pointer; }
+
 @media (max-width: 650px) {
   .header_container .lang-switch:hover {
     background-color: transparent; }
   .header_container .lang-switch:active {
-    background-color: rgba(91, 197, 97, 0.2); } }
+    background-color: rgba(91, 197, 97, 0.2); }
+  footer {
+    padding: 100px 0px; } }
 
 @media (max-width: 365px) {
   .navigation.larger .logo {

@@ -35,6 +35,7 @@
   height: 52px;
 
   transition: width 0.5s, height 0.5s;
+  cursor: pointer;
 }
 
 .navigation.larger .logo {
@@ -148,6 +149,23 @@
   stroke-opacity: 1;
 }
 
+footer {
+  // padding: 100px;
+  padding: 50px 0px;
+  background-color: $dark_green;
+  color: $whitish;
+}
+
+footer .logo {
+  display: block;
+  background-image: url("media/leo logo - transparent.png");
+  background-size: cover;
+  background-position: center;
+
+  width: 135px;
+  height: 52px;
+  cursor: pointer;
+}
 
 @media (max-width: 1300px) {
   // .navigation .lang-switch {
@@ -196,6 +214,11 @@
 
   .header_container .lang-switch:active {
     background-color: $light_green_alpha_alpha;
+  }
+
+  footer {
+    // padding: 100px;
+    padding: 100px 0px;
   }
 
   // .navigation .lang-switch {
