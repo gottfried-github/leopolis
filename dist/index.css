@@ -31,46 +31,54 @@ opacity: 1;
 .large-view_container.noned {
   display: none; }
 
+/*
 @font-face {
   font-family: Montserrat;
-  src: url(montserrat/Montserrat-Black.ttf);
-  font-weight: 900; }
-
+  src: url('montserrat/Montserrat-Black.ttf');
+  font-weight: 900;
+}
+*/
 @font-face {
   font-family: Montserrat;
-  src: url(montserrat/Montserrat-ExtraBold.ttf);
+  src: url("montserrat/Montserrat-ExtraBold.ttf");
   font-weight: 800; }
 
 @font-face {
   font-family: Montserrat;
-  src: url(montserrat/Montserrat-Bold.ttf);
+  src: url("montserrat/Montserrat-Bold.ttf");
   font-weight: bold; }
 
-@font-face {
-  font-family: Montserrat;
-  src: url(montserrat/Montserrat-SemiBold.ttf);
-  font-weight: 600; }
+/*
 
 @font-face {
   font-family: Montserrat;
-  src: url(montserrat/Montserrat-Medium.ttf);
-  font-weight: 500; }
+  src: url('montserrat/Montserrat-SemiBold.ttf');
+  font-weight: 600;
+}
 
 @font-face {
   font-family: Montserrat;
-  src: url(montserrat/Montserrat-Regular.ttf);
+  src: url('montserrat/Montserrat-Medium.ttf');
+  font-weight: 500;
+}
+*/
+@font-face {
+  font-family: Montserrat;
+  src: url("montserrat/Montserrat-Regular.ttf");
   font-weight: normal; }
 
 @font-face {
   font-family: Montserrat;
-  src: url(montserrat/Montserrat-Light.ttf);
+  src: url("montserrat/Montserrat-Light.ttf");
   font-weight: 300; }
 
+/*
 @font-face {
   font-family: Montserrat;
-  src: url(montserrat/Montserrat-ExtraLight.ttf);
-  font-weight: 200; }
-
+  src: url('montserrat/Montserrat-ExtraLight.ttf');
+  font-weight: 200;
+}
+*/
 .symbol-slide {
   position: relative; }
 
@@ -170,6 +178,9 @@ opacity: 1;
 
 section, nav, header, footer, address {
   display: block; }
+
+address {
+  font-style: normal; }
 
 a, a:link, a:visited, a:hover, a:focus, a:active {
   color: inherit;
@@ -275,6 +286,7 @@ footer .footer_content-wrap {
   .concept .concept-description .content,
   #front .credo-wrap,
   #about .content,
+  #contact .meet-time_wrap,
   #contact .contact-info_wrap,
   #staff,
   .navigation .header_wrap,
@@ -283,8 +295,10 @@ footer .footer_content-wrap {
     padding: 50px 0px; }
   #contact .contact_content-wrap {
     margin: 0px 0px; }
+  .navigation .header_wrap,
   #front .credo-wrap,
-  .navigation .header_wrap {
+  #contact .meet-time_wrap,
+  #contact .contact-info_wrap {
     padding: 0px; }
   #out .showcases {
     margin: 0px 0px;
@@ -294,6 +308,7 @@ footer .footer_content-wrap {
   .concept .concept-description .content,
   #front .credo-wrap,
   #about .content,
+  #contact .meet-time_wrap,
   #contact .contact-info_wrap,
   #staff,
   .navigation .header_wrap,
@@ -348,6 +363,12 @@ footer .footer_content-wrap {
 
 #about {
   position: relative; }
+
+#contact p.meet-time {
+  margin-bottom: 0px; }
+
+#contact .contact-info_wrap p {
+  margin-top: 0px; }
 
 #contact .street-view {
   float: left;
@@ -737,7 +758,7 @@ footer .footer_content-wrap {
   -ms-user-select: none;
   user-select: none;
   font-size: 1.250rem;
-  font-weight: 400; }
+  font-weight: normal; }
 
 .header_container .lang-switch {
   cursor: pointer; }
@@ -817,6 +838,15 @@ html, body {
   background-color: #e6e6e6;
   color: black;
   font-weight: 300; }
+
+#throughoutput {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0px;
+  height: 0px;
+  margin: 0px;
+  padding: 0px; }
 
 .large-view_wrap {
   position: fixed;

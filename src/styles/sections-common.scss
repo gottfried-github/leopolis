@@ -2,6 +2,10 @@ section, nav, header, footer, address {
   display: block;
 }
 
+address {
+  font-style: normal;
+}
+
 $margin_horizontal: 15px;
 
  a, a:link, a:visited, a:hover, a:focus, a:active {
@@ -160,6 +164,7 @@ footer .footer_content-wrap {
   .concept .concept-description .content,
   #front .credo-wrap,
   #about .content,
+  #contact .meet-time_wrap,
   #contact .contact-info_wrap,
   #staff,
   .navigation .header_wrap,
@@ -170,8 +175,10 @@ footer .footer_content-wrap {
   #contact .contact_content-wrap {
     margin: 0px 0px;
   }
+  .navigation .header_wrap,
   #front .credo-wrap,
-  .navigation .header_wrap {
+  #contact .meet-time_wrap,
+  #contact .contact-info_wrap {
     padding: 0px;
   }
 
@@ -198,6 +205,7 @@ footer .footer_content-wrap {
   .concept .concept-description .content,
   #front .credo-wrap,
   #about .content,
+  #contact .meet-time_wrap,
   #contact .contact-info_wrap,
   #staff,
   .navigation .header_wrap,
