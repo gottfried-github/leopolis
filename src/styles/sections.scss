@@ -30,6 +30,7 @@
 }
 
 #front .credo-wrap {
+  margin-top: 64px;
   height: 500px;
   line-height: 500px;
 }
@@ -192,10 +193,10 @@
   #front,
   .front-background,
   #front .credo-wrap {
-    height: 700px;
+    height: 600px;
   }
   #front .credo-wrap {
-    line-height: 700px;
+    line-height: 600px;
   }
 
   #staff .member {
@@ -217,9 +218,9 @@
   #front,
   .front-background,
   #front .credo-wrap {
-    height: 450px;
+    height: 550px;
   }
   #front .credo-wrap {
-    line-height: 450px;
+    line-height: 550px;
   }
 }
