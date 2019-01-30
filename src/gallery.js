@@ -59,16 +59,19 @@ class DeckItem {
   }
 
   getWidth() {
+    // if (!this.photo.loaded) throw new Error('photo must be loaded')
     return this.el.getBoundingClientRect().width
   }
 
   // get position of the item, relative to the containing Deck
   getOffset() {
+    // if (!this.photo.loaded) throw new Error('photo must be loaded')
     return this.el.offsetLeft
   }
 
   // get position of the midpoint of the item, relative to the containing deck
   getMidpoint() {
+    // if (!this.photo.loaded) throw new Error('photo must be loaded')
     return this.getOffset() + (this.getWidth() / 2)
   }
 
@@ -126,6 +129,7 @@ class DeckItem {
         }
 
         this.photo.show()
+        this.photo.loaded = true
         // img.style.visibility = 'visible'
       } catch(err) {
         Promise.reject(err)
@@ -222,7 +226,7 @@ class Deck {
   /**
   @param {boolean} centered if true - centers the item, if falsy - doesn't center
   */
-  goToItem(index, centered) {
+  goToItem(index, centered, dry) {
 
     if (index < 0 || index > this.items.length-1) {
       throw new Error("can't go to unexisting item at "+ index)
@@ -250,24 +254,32 @@ class Deck {
     this.position = deckPositionNew
 
     if (this.transitioning) {
-      this.el.style.transform = this.makeMatrix(this.offset)
+      if (dry) {
+        return false
+      } else {
+        this.el.style.transform = this.makeMatrix(this.offset)
+        return this.items[index]
+      }
     } else {
+      if (dry) {
+        this.el.style.transform = this.makeMatrix(this.offset)
+      } else {
+        function transitionendCb() {
+          this.transitionendCb()
+          this.el.removeEventListener('transitionend', transitionendCb)
+          this.transitioning = false
+        }
 
-      function transitionendCb() {
-        this.transitionendCb()
-        this.el.removeEventListener('transitionend', transitionendCb)
-        this.transitioning = false
+        this.el.classList.add('transition')
+
+        this.transitioning = true
+        this.el.addEventListener('transitionend', transitionendCb.bind(this))
+        this.el.style.transform = this.makeMatrix(this.offset)
       }
 
-      this.el.classList.add('transition')
+      return this.items[index]
 
-      this.transitioning = true
-      this.el.addEventListener('transitionend', transitionendCb.bind(this))
-      this.el.style.transform = this.makeMatrix(this.offset)
     }
-
-    return this.items[index]
-
   }
 
   makeMatrix(x) {
@@ -321,7 +333,20 @@ class Gallery {
     this.deck = new Deck(photoUrls, {
       getGalleryViewportWidth: () => { return this.el.getBoundingClientRect().width },
       loadCb: () => {
-        this.activeItem = this.deck.goToItem(0, false)
+        this.activeItem = this.deck.goToItem(0, false, true)
+
+        for (var i = 1; i < this.deck.items.length; i++) {
+
+          if (!this.deck.items[i].isInView()) {
+            this.activeItem = this.deck.items[i-1]
+            break
+          }
+        }
+
+        // window.setTimeout(function() {
+        //
+        // }, 600)
+
         // this.goToNext.call(this)
       },
       breakpoint: options.breakpoint
